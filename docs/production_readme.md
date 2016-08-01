@@ -1,10 +1,10 @@
-# FresherNote
+# Postr
 
-[FresherNote live][heroku] **NB:** This should be a link to your production site
+[Postr live][heroku] **NB:** This should be a link to your production site
 
 [heroku]: http://www.herokuapp.com
 
-FresherNote is a full-stack web application inspired by Evernote.  It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Flux architectural framework on the frontend.  
+Postr is a full-stack web application inspired by Evernote.  It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Flux architectural framework on the frontend.  
 
 ## Features & Implementation
 
@@ -12,7 +12,7 @@ FresherNote is a full-stack web application inspired by Evernote.  It utilizes R
 
 ### Single-Page App
 
-FresherNote is truly a single-page; all content is delivered on one static page.  The root page listens to a `SessionStore` and renders content based on a call to `SessionStore.currentUser()`.  Sensitive information is kept out of the frontend of the app by making an API call to `SessionsController#get_user`.
+Postr is truly a single-page; all content is delivered on one static page.  The root page listens to a `SessionStore` and renders content based on a call to `SessionStore.currentUser()`.  Sensitive information is kept out of the frontend of the app by making an API call to `SessionsController#get_user`.
 
 ```ruby
 class Api::SessionsController < ApplicationController
@@ -63,7 +63,7 @@ Tags are maintained on the frontend in the `TagStore`.  Because creating, editin
 
 ## Future Directions for the Project
 
-In addition to the features already implemented, I plan to continue work on this project.  The next steps for FresherNote are outlined below.
+In addition to the features already implemented, I plan to continue work on this project.  The next steps for Postr are outlined below.
 
 ### Search
 
@@ -71,4 +71,4 @@ Searching notes is a standard feature of Evernote.  I plan to utilize the Fuse.j
 
 ### Direct Messaging
 
-Although this is less essential functionality, I also plan to implement messaging between FresherNote users.  To do this, I will use WebRTC so that notifications of messages happens seamlessly.  
+Although this is less essential functionality, I also plan to implement messaging between Postr users.  To do this, I will use WebRTC so that notifications of messages happens seamlessly.  

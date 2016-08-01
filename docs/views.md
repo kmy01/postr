@@ -6,17 +6,17 @@
 ## New Session
 ![new-session]
 
-## NotesIndex / NoteIndexItem / NoteForm
-![notes]
+## PostIndex(Feed) / PostIndexItem / PostForm
+![feed]
 
-## NotebooksIndex / NotebookIndexItem
-![notebooks]
+## PostIndexItem
+![post-index-item]
 
-## NotebookForm
-![notebook-form]
+## PostForm
+![post-form]
 
 [new-user]: ./wireframes/new_user.png
 [new-session]: ./wireframes/new_session.png
-[notes]: ./wireframes/root_notes.png
-[notebooks]: ./wireframes/root_notebooks.png
-[notebook-form]: ./wireframes/notebook_form.png
+[feed]: ./wireframes/feed.png
+[post-index-item]: ./wireframes/post_index-item.png
+[post-form]: ./wireframes/post_form.png

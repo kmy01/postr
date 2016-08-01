@@ -1,23 +1,33 @@
-# Phase 4: Tags (1 days, W2 W 6pm)
+# Phase 4: Follows (1 days, W2 W 6pm)
 
 ## Rails
 
 ### Models
-* Tag
-* Taggings
+* Follows
 
 ### Controllers
+* Api::FollowsController (index, create, destroy)
 
 ### Views
-* tags/show.json.jbuilder
-* SearchIndex
+* follows/index.json.jbuilder
 
 ## Flux
 ### Views (React Components)
-* NoteTags
+* FollowButton
 
 ### Stores
+* Post
 
 ### Actions
+* `ApiActions.receiveAllFollowedPost`
+* `ApiActions.deleteFollowedPost`
+* `FollowsActions.fetchAllFollowedPost`
+* `FollowsActions.createFollows`
+* `FollowsActions.destroyFollows`
+
+### ApiUtil
+* `ApiUtil.fetchAllFollowedPost`
+* `ApiUtil.createFollows`
+* `ApiUtil.destroyFollows`
 
 ## Gems/Libraries

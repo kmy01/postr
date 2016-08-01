@@ -1,42 +1,36 @@
-# Phase 3: Notebooks (2 day, W2 Tu 6pm)
+# Phase 3: Likes (1 days, W2 Tu 6pm)
 
 ## Rails
 ### Models
-* Notebook
-* Tag
-* Tagging
+* Likes
 
 ### Controllers
-* Api::NotebooksController (create, destroy, index, show, update)
+* Api::LikesController (index, create, destroy)
 
 ### Views
-* notebooks/index.json.jbuilder
-* notebooks/show.json.jbuilder
+* likes/index.json.jbuilder
+<!-- * likes/show.json.jbuilder -->
 
 ## Flux
 ### Views (React Components)
-* NotebooksIndex
-  - NotebookIndexItem
-* NotebookForm
+* LikeButton
 
 ### Stores
-* Notebook
+* Post
 
 ### Actions
-* `ApiActions.receiveAllNotebooks`
-* `ApiActions.receiveSingleNotebook`
-* `ApiActions.deleteNotebook`
-* `NotebookActions.fetchAllNotebooks`
-* `NotebookActions.fetchSingleNotebook`
-* `NotebookActions.createNotebook`
-* `NotebookActions.editNotebook`
-* `NotebookActions.destroyNotebook`
+* `ApiActions.receiveAllLikedPost`
+<!-- * `ApiActions.receiveSingleLikedPost` -->
+* `ApiActions.deleteLikedPost`
+* `LikesActions.fetchAllLikedPost`
+<!-- * `LikesActions.fetchSingleLikePost` -->
+* `LikesActions.createLikes`
+* `LikesActions.destroyLikes`
 
 ### ApiUtil
-* `ApiUtil.fetchAllNotebooks`
-* `ApiUtil.fetchSingleNotebook`
-* `ApiUtil.createNotebook`
-* `ApiUtil.editNotebook`
-* `ApiUtil.destroyNotebook`
+* `ApiUtil.fetchAllLikedPost`
+<!-- * `ApiUtil.fetchSingleLikedPost` -->
+* `ApiUtil.createLikes`
+* `ApiUtil.destroyLikes`
 
 ## Gems/Libraries

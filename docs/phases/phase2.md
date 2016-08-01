@@ -1,40 +1,40 @@
-# Phase 2: Flux Architecture and Note CRUD (2 days, W1 F 6pm)
+# Phase 2: Feed / Posts Model, API, and components (3 days, W2 M 6pm)
 
 ## Rails
 ### Models
-* Note
+* Post
 
 ### Controllers
-* Api::NotesController (create, destroy, index, show, update)
+* Api::PostsController (create, destroy, index, show, update)
 
 ### Views
-* notes/index.json.jbuilder
-* notes/show.json.jbuilder
+* posts/index.json.jbuilder
+* posts/show.json.jbuilder
 
 ## Flux
 ### Views (React Components)
-* NotesIndex
-  - NotesIndexItem
-* NoteForm
+* PostsIndex
+  - PostsIndexItem
+* PostForm
 
 ### Stores
-* Note
+* Post
 
 ### Actions
-* `ApiActions.receiveAllNotes`
-* `ApiActions.receiveSingleNote`
-* `ApiActions.deleteNote`
-* `NoteActions.fetchAllNotes`
-* `NoteActions.fetchSingleNote`
-* `NoteActions.createNote`
-* `NoteActions.editNote`
-* `NoteActions.destroyNote`
+* `ApiActions.receiveAllPosts`
+* `ApiActions.receiveSinglePost`
+* `ApiActions.deletePost`
+* `PostActions.fetchAllPosts`
+* `PostActions.fetchSinglePost`
+* `PostActions.createPost`
+* `PostActions.editPost`
+* `PostActions.destroyPost`
 
 ### ApiUtil
-* `ApiUtil.fetchAllNotes`
-* `ApiUtil.fetchSingleNote`
-* `ApiUtil.createNote`
-* `ApiUtil.editNote`
-* `ApiUtil.destroyNote`
+* `ApiUtil.fetchAllPosts`
+* `ApiUtil.fetchSinglePost`
+* `ApiUtil.createPost`
+* `ApiUtil.editPost`
+* `ApiUtil.destroyPost`
 
 ## Gems/Libraries

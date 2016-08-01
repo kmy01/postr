@@ -19,7 +19,7 @@
 * App
 * LoginForm
 * SignupForm
-* NotesIndex (just a skeleton)
+* PostsIndex (just a skeleton)
 
 ### Stores
 * CurrentUser
