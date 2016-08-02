@@ -99,6 +99,135 @@ what you'll need to do.
 * `PostsIndex` component listens to `Post` store.
 <!-- * `PostDetail` component listens to `Post` store. -->
 
+## Like Cycles
+
+### Likes API Request Actions
+
+* `fetchLikes`
+  0. invoked from `LikesIndex` `didMount`/`willReceiveProps`
+  0. `GET /api/likes` is called.
+  0. `receiveAllLikes` is set as the success callback.
+
+  * `fetchSingleLike`
+  0. invoked from `LikeDetail` `didMount`/`willReceiveProps`
+  0. `GET /api/like/:id` is called.
+  0. `receiveSingleLike` is set as the success callback.
+
+* `createLike`
+  0. invoked from new like button `onClick`
+  0. `POST /api/likes` is called.
+  0. `receiveSingleLike` is set as the success callback.
+
+* `destroyLike`
+  0. invoked from delete like button `onClick`
+  0. `DELETE /api/likes/:id` is called.
+  0. `removeLike` is set as the success callback.
+
+### Likes API Response Actions
+
+* `receiveAllLikes`
+  0. invoked from an API callback.
+  0. `Like` store updates `_likes` and emits change.
+
+* `receiveSingleLike`
+  0. invoked from an API callback.
+  0. `Like` store updates `_likes[id]` and emits change.
+
+* `removeLike`
+  0. invoked from an API callback.
+  0. `Like` store removes `_likes[id]` and emits change.
+
+### Store Listeners
+
+* `LikesIndex` component listens to `Like` store.
+* `LikeDetail` component listens to `Like` store.
+
+## Follow Cycles
+
+### Follows API Request Actions
+
+* `fetchFollows`
+  0. invoked from `FollowsIndex` `didMount`/`willReceiveProps`
+  0. `GET /api/follows` is called.
+  0. `receiveAllFollows` is set as the success callback.
+
+  * `fetchSingleLike`
+  0. invoked from `FollowDetail` `didMount`/`willReceiveProps`
+  0. `GET /api/like/:id` is called.
+  0. `receiveSingleFollow` is set as the success callback.
+
+* `createFollow`
+  0. invoked from new follow button `onClick`
+  0. `POST /api/follows` is called.
+  0. `receiveSingleFollow` is set as the success callback.
+
+* `destroyFollow`
+  0. invoked from delete follow button `onClick`
+  0. `DELETE /api/follows/:id` is called.
+  0. `removeFollow` is set as the success callback.
+
+### Follows API Response Actions
+
+* `receiveAllFollows`
+  0. invoked from an API callback.
+  0. `Follow` store updates `_follows` and emits change.
+
+* `receiveSingleFollow`
+  0. invoked from an API callback.
+  0. `Follow` store updates `_follows[id]` and emits change.
+
+* `removeFollow`
+  0. invoked from an API callback.
+  0. `Follow` store removes `_follows[id]` and emits change.
+
+### Store Listeners
+
+* `FollowsIndex` component listens to `Follow` store.
+* `FollowDetail` component listens to `Follow` store.
+
+
+## Tag Cycles
+
+### Tags API Request Actions
+
+* `fetchTags`
+  0. invoked from `TagsDetail` `didMount`/`willReceiveProps`
+  0. `GET /api/tags` is called.
+  0. `receiveAllTags` is set as the success callback.
+
+  * `fetchSingleTag`
+  0. invoked from `TagsDetail` `didMount`/`willReceiveProps`
+  0. `GET /api/tags/:id` is called.
+  0. `receiveSingleTag` is set as the success callback.
+
+* `createTag`
+  0. invoked from new like button `onClick`
+  0. `POST /api/tags` is called.
+  0. `receiveSingleTag` is set as the success callback.
+
+* `destroyTag`
+  0. invoked from delete like button `onClick`
+  0. `DELETE /api/tags/:id` is called.
+  0. `removeTag` is set as the success callback.
+
+### Tags API Response Actions
+
+* `receiveAllTags`
+  0. invoked from an API callback.
+  0. `Tag` store updates `_tags` and emits change.
+
+* `receiveSingleTag`
+  0. invoked from an API callback.
+  0. `Tag` store updates `_tags[id]` and emits change.
+
+* `removeTag`
+  0. invoked from an API callback.
+  0. `Tag` store removes `_tags[id]` and emits change.
+
+### Store Listeners
+
+* `TagsDetail` component listens to `Tag` store.
+
 ## SearchSuggestion Cycles
 
 * `fetchSearchSuggestions`

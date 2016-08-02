@@ -35,21 +35,21 @@
 - Shows if a post has been liked by the user on feed
 - `GET /api/likes`
 - `POST /api/posts/:post_id/likes`: create a like association
-- `DELETE /api/posts/:post_id/likes/:like_id`: remove like by like_id
+- `DELETE /api/likes/:like_id`: remove like by like_id
 
 ### Follows
 
 - Shows if the post's author is followed by the user
 - `GET /api/follows`
 - `POST /api/posts/:post_id/follows`: create a follow association
-- `DELETE /api/posts/:post_id/follows/:follow_id`: remove follow by follow_id
+- `DELETE /api/follows/:follow_id`: remove follow by follow_id
 
 ### Reblogs
 
 - Shows reblogged post by the user on feed
 - `GET /api/reblogs`
 - `POST /api/posts/:post_id/reblogs`: create a reblog association
-- `DELETE /api/posts/:post_id/reblogs/:reblog_id`: remove like by reblog_id
+- `DELETE /api/reblogs/:reblog_id`: remove reblog by reblog_id
 
 ### Tags
 
@@ -58,5 +58,5 @@
   - includes query param for typeahead suggestions
 - `POST /api/posts/:post_id/tags`: add tag to post by name
   - if post doesn't already exist, it will be created
-- `DELETE /api/posts/:post_id/tags/:tag_name`: remove tag from post by
+- `DELETE /api/tags/:tag_name`: remove tag from post by
   name
