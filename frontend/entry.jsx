@@ -5,28 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // ReactDOM.render();
 });
 
-// $.ajax({
-//   url: '/api/users',
-//   method: 'POST',
-//   data: {user: {username: 'one', password: 'password123'}},
-//   success(resp) {
-//     console.log('success');
-//   }
-// })
+const SessionApiUtil = require('./util/session_api_util');
 
-// $.ajax({
-//   url: '/api/session',
-//   method: 'POST',
-//   data: {user: {username: 'one', password: 'password123'}},
-//   success(resp) {
-//     console.log('success');
-//   }
-// })
+window.SessionApiUtil = SessionApiUtil;
 
-$.ajax({
-  url: '/api/session',
-  method: 'DELETE',
-  success(resp) {
-    console.log('success');
-  }
-})
+
+let user = {username: 'two', password: 'password123'};
+
+SessionApiUtil.signup(user);
