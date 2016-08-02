@@ -8,6 +8,9 @@ module.exports = React.createClass({
         <div>
           <Link to="/login">Login</Link>
         </div>
+        <div>
+          <Link to="/signup">Sign Up</Link>
+        </div>
         {this.props.children}
       </div>
     );

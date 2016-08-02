@@ -5,12 +5,13 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
 const App = require('./components/app');
 const LoginForm = require('./components/session/login_form');
+const SignupForm = require('./components/session/signup_form');
 
 const router = (
   <Router history={hashHistory}>
     <Route path='/' component={App}>
       <Route path='/login' component={LoginForm} />
-      // <Route path='/signup' component={SignupForm} />
+      <Route path='/signup' component={SignupForm} />
     </Route>
   </Router>
 );

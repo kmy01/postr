@@ -19,7 +19,6 @@ module.exports = React.createClass({
 
   _onChange() {
     if (SessionStore.isUserLoggedIn()) {
-      debugger
       this.context.router.push('/');
     }
   },
