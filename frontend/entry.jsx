@@ -7,3 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // const SessionApiUtil = require('./util/session_api_util');
 // window.SessionApiUtil = SessionApiUtil;
+
+const SessionActions = require('./actions/session_actions');
+window.SessionActions = SessionActions;
