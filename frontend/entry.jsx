@@ -5,11 +5,5 @@ document.addEventListener('DOMContentLoaded', () => {
   // ReactDOM.render();
 });
 
-const SessionApiUtil = require('./util/session_api_util');
-
-window.SessionApiUtil = SessionApiUtil;
-
-
-let user = {username: 'two', password: 'password123'};
-
-SessionApiUtil.signup(user);
+// const SessionApiUtil = require('./util/session_api_util');
+// window.SessionApiUtil = SessionApiUtil;
