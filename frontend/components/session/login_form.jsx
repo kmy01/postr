@@ -52,7 +52,6 @@ module.exports = React.createClass({
   render() {
     return (
       <div>
-        {this.state.errors}
         <form onSubmit={this._onSubmit}>
           <input
             placeholder="Username"
@@ -66,6 +65,8 @@ module.exports = React.createClass({
             onChange={this._onPasswordChange} />
           <input type="submit" value="Login" />
         </form>
+
+        {this.state.errors}
       </div>
     );
   }
