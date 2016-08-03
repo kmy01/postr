@@ -1,6 +1,6 @@
 # Postr
 
-[Heroku link][heroku] 
+[Heroku link][heroku]
 
 [heroku]: https://postr-kmy.herokuapp.com
 
@@ -47,15 +47,15 @@ Postr is a web application inspired by Tumblr that will be build using Ruby on R
 
 **Objective:** Functioning rails project with front-end Authentication
 
-- [ ] create new project
-- [ ] create `User` model
-- [ ] authentication backend setup
-- [ ] create `StaticPages` controller and root view
-- [ ] set up webpack & flux scaffold with skeleton files
-- [ ] setup `APIUtil` to interact with the API
-- [ ] set up flux cycle for frontend auth
-- [ ] user signup/signin components
-- [ ] blank landing component after signin
+- [X] create new project
+- [X] create `User` model
+- [X] authentication backend setup
+- [X] create `StaticPages` controller and root view
+- [X] set up webpack & flux scaffold with skeleton files
+- [X] setup `APIUtil` to interact with the API
+- [X] set up flux cycle for frontend auth
+- [X] user signup/signin components
+- [X] blank landing component after signin
 - [ ] style signin/signup components
 - [ ] seed users
 

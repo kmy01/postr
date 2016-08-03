@@ -45,7 +45,7 @@ module.exports = React.createClass({
         <div>
           { SessionStore.currentUser() }
           <button
-            className="logout-button"
+            className="sub-buttons logout-button"
             onClick={this._handleLogout}>Logout</button>
         </div>
       );

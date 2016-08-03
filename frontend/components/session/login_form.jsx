@@ -62,26 +62,28 @@ module.exports = React.createClass({
 
   render() {
     return (
-      <div>
+      <div className="main-form">
         <form onSubmit={this._onSubmit}>
           <input
+            className="form-field"
             placeholder="Username"
             type="text"
             value={this.state.username}
             onChange={this._onUsernameChange} />
           <input
+            className="form-field"
             placeholder="Password"
             type="password"
             value={this.state.password}
             onChange={this._onPasswordChange} />
           <input
-            className="main-buttons"
-            type="submit" value="Login" />
-
+            className="main-buttons main-login-button"
+            type="submit" value="Log in" />
         </form>
+
         <button
-          className="main-buttons"
-          onClick={this._handleGuestLogin}>Guest Login</button>
+          className="main-buttons guest-button"
+          onClick={this._handleGuestLogin}>Guest Log in</button>
         <button
           className="sub-buttons"
           onClick={this._handleSignUp}>Sign Up</button>
