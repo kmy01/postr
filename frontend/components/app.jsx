@@ -39,36 +39,37 @@ module.exports = React.createClass({
     this.context.router.push('/signup');
   },
 
-  _toDisplay() {
-    if (this.state.isUserLoggedIn) {
-      return (
-        <div>
-          { SessionStore.currentUser() }
-          <button
-            className="sub-buttons logout-button"
-            onClick={this._handleLogout}>Logout</button>
-        </div>
-      );
-    } else {
-      return(
-        <div>
-          <button
-            className="main-buttons main-login-button"
-            onClick={this._handleLoginRedirect}>Login</button>
-          <button
-            className="main-buttons main-signup-button"
-            onClick={this._handleSignupRedirect}>Signup</button>
-        </div>
-      );
-    }
-  },
-
   render() {
-    return(
+    let signupDiv = (
       <div className="main-login-signup-div">
-        <header>
-        </header>
-        { this._toDisplay() }
+        <button
+          className="main-buttons main-login-button"
+          onClick={this._handleLoginRedirect}>Log in</button>
+        <button
+          className="main-buttons main-signup-button"
+          onClick={this._handleSignupRedirect}>Sign up</button>
+      </div>
+    );
+
+    let loggedInHeader = (
+      <header>
+        <div className="greeting">{ SessionStore.currentUser() }</div>
+        <button
+          className="sub-buttons logout-button"
+          onClick={this._handleLogout}>Log out</button>
+      </header>
+    );
+
+    if (this.state.isUserLoggedIn) {
+      signupDiv = '';
+    } else {
+      loggedInHeader = '';
+    }
+
+    return (
+      <div>
+        { loggedInHeader }
+        { signupDiv }
         {this.props.children}
       </div>
     );

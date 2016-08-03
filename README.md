@@ -47,17 +47,17 @@ Postr is a web application inspired by Tumblr that will be build using Ruby on R
 
 **Objective:** Functioning rails project with front-end Authentication
 
-- [X] create new project
-- [X] create `User` model
-- [X] authentication backend setup
-- [X] create `StaticPages` controller and root view
-- [X] set up webpack & flux scaffold with skeleton files
-- [X] setup `APIUtil` to interact with the API
-- [X] set up flux cycle for frontend auth
-- [X] user signup/signin components
-- [X] blank landing component after signin
-- [ ] style signin/signup components
-- [ ] seed users
+- [x] create new project
+- [x] create `User` model
+- [x] authentication backend setup
+- [x] create `StaticPages` controller and root view
+- [x] set up webpack & flux scaffold with skeleton files
+- [x] setup `APIUtil` to interact with the API
+- [x] set up flux cycle for frontend auth
+- [x] user signup/signin components
+- [x] blank landing component after signin
+- [x] style signin/signup components
+- [x] seed users
 
 ### Phase 2: Feed / Posts Model, API, and components (3 days, W2 M 6pm)
 
