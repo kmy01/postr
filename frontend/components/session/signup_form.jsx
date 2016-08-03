@@ -84,8 +84,9 @@ module.exports = React.createClass({
         <button className="sub-buttons"
           onClick={this._handleLogin}>Log in</button>
         </div>
-        
+
         {this.state.errors}
+
       </div>
     );
   }
