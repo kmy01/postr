@@ -9,7 +9,7 @@ module.exports = {
         successCb(resp);
       },
       error(resp) {
-        errorCb(resp);
+        errorCb(resp.responseJSON);
       }
     });
   },
@@ -24,7 +24,7 @@ module.exports = {
         successCb(resp);
       },
       error(resp) {
-        errorCb(resp);
+        errorCb(resp.responseJSON);
       }
     });
   },
@@ -38,7 +38,7 @@ module.exports = {
         successCb(resp);
       },
       error(resp) {
-        errorCb(resp);
+        errorCb(resp.responseJSON);
       }
     });
   }
