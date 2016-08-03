@@ -74,11 +74,17 @@ module.exports = React.createClass({
             type="password"
             value={this.state.password}
             onChange={this._onPasswordChange} />
-          <input type="submit" value="Login" />
+          <input
+            className="main-buttons"
+            type="submit" value="Login" />
 
         </form>
-        <button onClick={this._handleGuestLogin}>Guest Login</button>
-        <button onClick={this._handleSignUp}>Sign Up</button>
+        <button
+          className="main-buttons"
+          onClick={this._handleGuestLogin}>Guest Login</button>
+        <button
+          className="sub-buttons"
+          onClick={this._handleSignUp}>Sign Up</button>
 
         {this.state.errors}
       </div>

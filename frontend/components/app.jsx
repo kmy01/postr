@@ -29,19 +29,35 @@ module.exports = React.createClass({
     SessionActions.logout();
   },
 
+  _handleLoginRedirect(e) {
+    e.preventDefault();
+    this.context.router.push('/login');
+  },
+
+  _handleSignupRedirect(e) {
+    e.preventDefault();
+    this.context.router.push('/signup');
+  },
+
   _toDisplay() {
     if (this.state.isUserLoggedIn) {
       return (
         <div>
           { SessionStore.currentUser() }
-          <button onClick={this._handleLogout}>Logout</button>
+          <button
+            className="logout-button"
+            onClick={this._handleLogout}>Logout</button>
         </div>
       );
     } else {
       return(
         <div>
-          <Link to="/login">Login</Link>
-          <Link to="/signup">Sign Up</Link>
+          <button
+            className="main-buttons"
+            onClick={this._handleLoginRedirect}>Login</button>
+          <button
+            className="main-buttons"
+            onClick={this._handleSignupRedirect}>Signup</button>
         </div>
       );
     }
