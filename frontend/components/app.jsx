@@ -53,10 +53,10 @@ module.exports = React.createClass({
       return(
         <div>
           <button
-            className="main-buttons"
+            className="main-buttons main-login-button"
             onClick={this._handleLoginRedirect}>Login</button>
           <button
-            className="main-buttons"
+            className="main-buttons main-signup-button"
             onClick={this._handleSignupRedirect}>Signup</button>
         </div>
       );
@@ -65,10 +65,10 @@ module.exports = React.createClass({
 
   render() {
     return(
-      <div>
+      <div className="main-login-signup-div">
         <header>
-          { this._toDisplay() }
         </header>
+        { this._toDisplay() }
         {this.props.children}
       </div>
     );

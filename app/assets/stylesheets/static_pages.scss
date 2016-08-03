@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-html, body, div, header, h1, h2 {
+html, body, div, header, h1, h2, input, button {
   margin: 0;
   border: 0;
   padding: 0;
@@ -16,8 +16,49 @@ html, body, div, header, h1, h2 {
   background: transparent;
 }
 
+body {
+  background-image: image-url('background-kmy');
+  background-size: cover;
+  font-family: sans-serif;
+  font-size: 12px;
+}
+
 .group:after {
   content: '';
   display: block;
   clear: both;
+}
+
+input {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.main-buttons {
+  width: 300px;
+  height: 50px;
+  margin-top: 10px;
+  border: 1px solid white;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.main-buttons:hover {
+  cursor: pointer;
+}
+
+.main-signup-button {
+  background-color: #529ecc;
+}
+
+.main-login-button {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.main-login-signup-div {
+  margin: auto;
+  width: 300px;
+  height: 100px;
+  transform: translateY(50%);
 }
