@@ -2,10 +2,17 @@
   width: 300px;
   height: 50px;
   margin-top: 10px;
+<<<<<<< 16c9289362d408d08c2e8b24663167c5a1c962fe
   text-align: center;
   font-size: 16px;
   font-weight: bold;
   border-radius: 2px;
+=======
+  border: 1px solid white;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+>>>>>>> add button styling
 }
 
 .main-buttons:hover {
@@ -14,12 +21,18 @@
 
 .main-signup-button {
   background-color: #529ecc;
+<<<<<<< 16c9289362d408d08c2e8b24663167c5a1c962fe
   border-radius: 2px;
+=======
+>>>>>>> add button styling
 }
 
 .main-login-button {
   background-color: rgba(255, 255, 255, 0.3);
+<<<<<<< 16c9289362d408d08c2e8b24663167c5a1c962fe
   border-radius: 2px;
+=======
+>>>>>>> add button styling
 }
 
 .guest-button {
@@ -27,6 +40,7 @@
 }
 
 .sub-buttons {
+<<<<<<< 16c9289362d408d08c2e8b24663167c5a1c962fe
   float: right;
   margin-top: 15px;
   margin-right: 25px;
@@ -36,6 +50,12 @@
   text-align: center;
   border-radius: 2px;
   font-weight: bold;
+=======
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 80px;
+  height: 30px;
+  text-align: center;
+>>>>>>> add button styling
 }
 
 .sub-buttons:hover {

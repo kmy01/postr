@@ -61,7 +61,18 @@ module.exports = React.createClass({
     );
 
     if (this.state.isUserLoggedIn) {
+<<<<<<< 16c9289362d408d08c2e8b24663167c5a1c962fe
       signupDiv = '';
+=======
+      return (
+        <div>
+          { SessionStore.currentUser() }
+          <button
+            className="sub-buttons logout-button"
+            onClick={this._handleLogout}>Logout</button>
+        </div>
+      );
+>>>>>>> add button styling
     } else {
       loggedInHeader = '';
     }

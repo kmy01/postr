@@ -69,6 +69,7 @@ module.exports = React.createClass({
     });
 
     return (
+<<<<<<< 16c9289362d408d08c2e8b24663167c5a1c962fe
       <div>
         <header className="group">
           <button
@@ -102,6 +103,35 @@ module.exports = React.createClass({
             className="main-buttons guest-button"
             onClick={this._handleGuestLogin}>Guest Log in</button>
         </div>
+=======
+      <div className="main-form">
+        <form onSubmit={this._onSubmit}>
+          <input
+            className="form-field"
+            placeholder="Username"
+            type="text"
+            value={this.state.username}
+            onChange={this._onUsernameChange} />
+          <input
+            className="form-field"
+            placeholder="Password"
+            type="password"
+            value={this.state.password}
+            onChange={this._onPasswordChange} />
+          <input
+            className="main-buttons main-login-button"
+            type="submit" value="Log in" />
+        </form>
+
+        <button
+          className="main-buttons guest-button"
+          onClick={this._handleGuestLogin}>Guest Log in</button>
+        <button
+          className="sub-buttons"
+          onClick={this._handleSignUp}>Sign Up</button>
+
+        {this.state.errors}
+>>>>>>> add button styling
       </div>
     );
   }
