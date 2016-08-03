@@ -4,16 +4,26 @@ const ReactDOM = require('react-dom');
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
 const SessionActions = require('./actions/session_actions');
+const SessionStore = require('./stores/session_store');
 
 const App = require('./components/app');
 const LoginForm = require('./components/session/login_form');
 const SignupForm = require('./components/session/signup_form');
+
+
+const _ensureLoggedIn = function (nextState, replace) {
+  if (!SessionStore.isUserLoggedIn()) {
+    replace('/login');
+  }
+}
 
 const router = (
   <Router history={hashHistory}>
     <Route path='/' component={App}>
       <Route path='/login' component={LoginForm} />
       <Route path='/signup' component={SignupForm} />
+      // <Route path='/signup' component={SignupForm} onEnter={ _ensureLoggedIn }/>
+
     </Route>
   </Router>
 );
