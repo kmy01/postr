@@ -47,6 +47,11 @@ module.exports = React.createClass({
     SessionActions.login(guestData);
   },
 
+  _handleSignUp(e) {
+    e.preventDefault();
+    this.context.router.push('/signup');
+  },
+
   _onUsernameChange(e) {
     this.setState({ username: e.target.value });
   },
@@ -70,8 +75,10 @@ module.exports = React.createClass({
             value={this.state.password}
             onChange={this._onPasswordChange} />
           <input type="submit" value="Login" />
-          <button onClick={this._handleGuestLogin}>Guest Login</button>
+
         </form>
+        <button onClick={this._handleGuestLogin}>Guest Login</button>
+        <button onClick={this._handleSignUp}>Sign Up</button>
 
         {this.state.errors}
       </div>

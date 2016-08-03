@@ -42,6 +42,11 @@ module.exports = React.createClass({
       // this.setState({ username: '', password: '' });
   },
 
+  _handleLogin(e) {
+    e.preventDefault();
+    this.context.router.push('/login')
+  },
+
   _onUsernameChange(e) {
     this.setState({ username: e.target.value });
   },
@@ -66,6 +71,7 @@ module.exports = React.createClass({
             onChange={this._onPasswordChange} />
           <input type="submit" value="Sign Up" />
         </form>
+        <button onClick={this._handleLogin}>Login</button>
 
         {this.state.errors}
       </div>
