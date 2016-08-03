@@ -2,7 +2,6 @@
   width: 300px;
   height: 50px;
   margin-top: 10px;
-  border: 1px solid white;
   text-align: center;
   font-size: 16px;
   font-weight: bold;
@@ -18,6 +17,7 @@
 
 .main-login-button {
   background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
 }
 
 .guest-button {
@@ -26,9 +26,10 @@
 
 .sub-buttons {
   background-color: rgba(255, 255, 255, 0.3);
-  width: 80px;
-  height: 30px;
+  width: 65px;
+  height: 35px;
   text-align: center;
+  border-radius: 2px;
 }
 
 .sub-buttons:hover {

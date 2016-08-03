@@ -60,13 +60,13 @@ module.exports = React.createClass({
       <div className="main-form">
         <form onSubmit={this._onSubmit}>
           <input
-            className="form-field"
+            className="form-field username-field"
             placeholder="Username"
             type="text"
             value={this.state.username}
             onChange={this._onUsernameChange} />
           <input
-            className="form-field"
+            className="form-field password-field"
             placeholder="Password"
             type="password"
             value={this.state.password}

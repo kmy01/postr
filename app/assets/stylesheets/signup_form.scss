@@ -1,0 +1,39 @@
+input {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+
+.main-login-signup-div {
+  margin: auto;
+  width: 300px;
+}
+
+.main-form {
+  margin: 150px auto;
+  width: 300px;
+}
+
+.form-field {
+  width: 300px;
+  height: 50px;
+  background-color: white;
+  border-color: #e6e6e6;
+  border-style: solid;
+  color: black;
+  font-size: 16px;
+  text-indent: 15px;
+}
+
+.username-field {
+  border-top-right-radius: 2px;
+  border-top-left-radius: 2px;
+  border-top-width: 1px;
+  border-left-width: 1px;
+  border-right-width: 1px;
+}
+
+.password-field {
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-width: 1px;
+}
