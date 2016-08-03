@@ -74,6 +74,7 @@ module.exports = React.createClass({
           <ul className="error-list">
             { errorsList }
           </ul>
+
           <form onSubmit={this._onSubmit}>
             <input
               className="form-field username-field"
