@@ -15,3 +15,9 @@ html, body, div, header, h1, h2 {
   color: inherit;
   background: transparent;
 }
+
+.group:after {
+  content: '';
+  display: block;
+  clear: both;
+}
