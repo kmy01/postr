@@ -4,12 +4,12 @@ const SessionStore = require('../stores/session_store');
 const SessionActions = require('../actions/session_actions');
 
 module.exports = React.createClass({
-  getInitialState() {
-    return { isUserLoggedIn: SessionStore.isUserLoggedIn() };
-  },
-
   contextTypes: {
     router: React.PropTypes.object.isRequired
+  },
+
+  getInitialState() {
+    return { isUserLoggedIn: SessionStore.isUserLoggedIn() };
   },
 
   componentDidMount() {

@@ -3,6 +3,8 @@ const ReactDOM = require('react-dom');
 
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
+const SessionActions = require('./actions/session_actions');
+
 const App = require('./components/app');
 const LoginForm = require('./components/session/login_form');
 const SignupForm = require('./components/session/signup_form');
@@ -17,6 +19,9 @@ const router = (
 );
 
 document.addEventListener('DOMContentLoaded', () => {
+  if (window.currentUser) {
+    SessionActions.receiveCurrentUser(window.currentUser);
+  }
   ReactDOM.render(router, document.getElementById('root'));
 });
 
