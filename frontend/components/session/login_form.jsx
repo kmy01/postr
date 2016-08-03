@@ -41,6 +41,12 @@ module.exports = React.createClass({
     this.setState({ username: '', password: '' });
   },
 
+  _handleGuestLogin(e) {
+    e.preventDefault();
+    const guestData = { username: 'guest', password: 'password123' }
+    SessionActions.login(guestData);
+  },
+
   _onUsernameChange(e) {
     this.setState({ username: e.target.value });
   },
@@ -64,6 +70,7 @@ module.exports = React.createClass({
             value={this.state.password}
             onChange={this._onPasswordChange} />
           <input type="submit" value="Login" />
+          <button onClick={this._handleGuestLogin}>Guest Login</button>
         </form>
 
         {this.state.errors}

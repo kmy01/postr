@@ -20,11 +20,11 @@ const _ensureLoggedIn = function (nextState, replace) {
 const router = (
   <Router history={hashHistory}>
     <Route path='/' component={App}>
-      <Route path='/login' component={LoginForm} />
-      <Route path='/signup' component={SignupForm} />
       // <Route path='/signup' component={SignupForm} onEnter={ _ensureLoggedIn }/>
 
     </Route>
+    <Route path='/login' component={LoginForm} />
+    <Route path='/signup' component={SignupForm} />
   </Router>
 );
 
