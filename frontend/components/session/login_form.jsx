@@ -1,6 +1,7 @@
 const React = require('react');
 const SessionActions = require('../../actions/session_actions');
 const SessionStore = require('../../stores/session_store');
+const ErrorStore = require('../../stores/error_store');
 
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
@@ -10,11 +11,22 @@ module.exports = React.createClass({
   },
 
   getInitialState() {
-    return { username: '', password: '' };
+    return { username: '', password: '', errors: []};
   },
 
   componentDidMount() {
-    this.listener = SessionStore.addListener(this._onChange)
+    this.sessionListener = SessionStore.addListener(this._onChange);
+    this.errorListener = ErrorStore.addListener(this._handleError);
+  },
+
+  componentWillUnmount() {
+    this.sessionListener.remove();
+    this.errorListener.remove();
+  },
+
+  _handleError() {
+    const form = this.props.location.pathname.slice(1);
+    this.setState({ errors: ErrorStore.errors(form)})
   },
 
   _onChange() {
@@ -39,19 +51,22 @@ module.exports = React.createClass({
 
   render() {
     return (
-      <form onSubmit={this._onSubmit}>
-        <input
-          placeholder="Username"
-          type="text"
-          value={this.state.username}
-          onChange={this._onUsernameChange} />
-        <input
-          placeholder="Password"
-          type="password"
-          value={this.state.password}
-          onChange={this._onPasswordChange} />
-        <input type="submit" value="Login" />
-      </form>
+      <div>
+        {this.state.errors}
+        <form onSubmit={this._onSubmit}>
+          <input
+            placeholder="Username"
+            type="text"
+            value={this.state.username}
+            onChange={this._onUsernameChange} />
+          <input
+            placeholder="Password"
+            type="password"
+            value={this.state.password}
+            onChange={this._onPasswordChange} />
+          <input type="submit" value="Login" />
+        </form>
+      </div>
     );
   }
 });

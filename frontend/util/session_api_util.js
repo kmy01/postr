@@ -9,7 +9,7 @@ module.exports = {
         successCb(resp);
       },
       error(resp) {
-        errorCb(resp.responseJSON);
+        errorCb(resp.responseJSON, 'signup');
       }
     });
   },
@@ -24,7 +24,7 @@ module.exports = {
         successCb(resp);
       },
       error(resp) {
-        errorCb(resp.responseJSON);
+        errorCb(resp.responseJSON, 'login');
       }
     });
   },
@@ -38,7 +38,7 @@ module.exports = {
         successCb(resp);
       },
       error(resp) {
-        errorCb(resp.responseJSON);
+        errorCb(resp.responseJSON, 'logout');
       }
     });
   }

@@ -5,7 +5,7 @@ const AppDispatcher = require('../dispatcher/dispatcher');
 module.exports = {
   setErrors(errors, form) {
     AppDispatcher.dispatch({
-      actionType: ErrorConstants.CLEAR_ERRORS,
+      actionType: ErrorConstants.SET_ERRORS,
       errors: errors,
       form: form
     });

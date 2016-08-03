@@ -14,7 +14,7 @@ ErrorStore.errors = function (form) {
   return [];
 };
 
-ErrorStore._setErrors = function (form, errors) {
+ErrorStore._setErrors = function (errors, form) {
   _errors = errors;
   _form = form;
   this.__emitChange();
@@ -29,7 +29,7 @@ ErrorStore._clearErrors = function () {
 ErrorStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
     case ErrorConstants.SET_ERRORS:
-      this._setErrors(payload.form, payload.errors);
+      this._setErrors(payload.errors, payload.form);
       break;
     case ErrorConstants.CLEAR_ERRORS:
       this._clearErrors();

@@ -1,7 +1,7 @@
 const SessionApiUtil = require('../util/session_api_util');
 const SessionConstants = require('../constants/session_constants');
 const AppDispatcher = require('../dispatcher/dispatcher');
-const ErrorActions = require('./error_action');
+const ErrorActions = require('./error_actions');
 
 module.exports = {
   signup(userData) {
