@@ -1,2 +1,2 @@
-module Api::PostsHelper
+module PostsHelper
 end
