@@ -35,7 +35,8 @@ module.exports = React.createClass({
     }
   },
 
-  _onSubmit() {
+  _onSubmit(e) {
+    e.preventDefault();
     const userData = this.state;
     SessionActions.login(userData);
     this.setState({ username: '', password: '' });
