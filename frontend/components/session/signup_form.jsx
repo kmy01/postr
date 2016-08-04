@@ -35,11 +35,10 @@ module.exports = React.createClass({
     }
   },
 
-  _onSubmit() {
+  _onSubmit(e) {
+      e.preventDefault();
       const userData = this.state;
       SessionActions.signup(userData);
-      // SessionActions.login(userData);
-      // this.setState({ username: '', password: '' });
   },
 
   _handleLogin(e) {
