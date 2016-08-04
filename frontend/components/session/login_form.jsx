@@ -61,6 +61,13 @@ module.exports = React.createClass({
   },
 
   render() {
+    let errorsList = this.state.errors.map((error, i) => {
+      if (i === 0) {
+        return <li key={i} style={{paddingTop: '10px'}}>{error}</li>;
+      }
+      return <li key={i}>{error}</li>;
+    });
+
     return (
       <div>
         <header className="group">
@@ -70,6 +77,9 @@ module.exports = React.createClass({
         </header>
 
         <div className="main-form">
+          <ul className="error-list">
+            { errorsList }
+          </ul>
           <form onSubmit={this._onSubmit}>
             <input
               className="form-field username-field"
@@ -91,8 +101,6 @@ module.exports = React.createClass({
           <button
             className="main-buttons guest-button"
             onClick={this._handleGuestLogin}>Guest Log in</button>
-
-          {this.state.errors}
         </div>
       </div>
     );
