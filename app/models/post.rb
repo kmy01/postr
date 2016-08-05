@@ -8,15 +8,10 @@ class Post < ActiveRecord::Base
     primary_key: :id
 
   # has_attached_file :media_content, default_url: "/images/:style/missing.png"
+  has_attached_file :media_content
   validates_attachment_content_type :media_content,
-    content_type: {
-      content_type: 'image/jpeg',
-                    'image/png',
-                    'audio/mpeg',
-                    'video/mp4',
-                    'video/avi'
-    }
-  validates_attachment_file_name :avatar,
-    matches: [/png\Z/, /jpe?g\Z/, /mp3\Z/, /mp4\Z/, /avi\Z/]
+    content_type: ['image/jpeg','image/png','audio/mpeg','video/mp4','video/avi']
+  validates_attachment_file_name :media_content,
+    matches: [/png\Z/i, /jpe?g\Z/i, /mp3\Z/i, /mp4\Z/i, /avi\Z/i]
 
 end
