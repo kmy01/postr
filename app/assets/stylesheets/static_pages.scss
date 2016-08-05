@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-html, body, div, header, h1, h2, input, button, ul, li {
+html, body, div, header, h1, h2, input, button, ul, li, img {
   margin: 0;
   border: 0;
   padding: 0;
@@ -53,4 +53,9 @@ body {
   padding-right: 10px;
   padding-bottom: 10px;
 
+}
+
+.img-preview {
+  max-width: 300px;
+  height: auto;
 }
