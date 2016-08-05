@@ -20,7 +20,7 @@ const _ensureLoggedIn = function (nextState, replace) {
 const router = (
   <Router history={hashHistory}>
     <Route path='/' component={App}>
-      
+
     </Route>
     <Route path='/login' component={LoginForm} />
     <Route path='/signup' component={SignupForm} />
@@ -39,3 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // const SessionActions = require('./actions/session_actions');
 // window.SessionActions = SessionActions;
+
+// const PostActions = require('./actions/post_actions');
+// const PostStore = require('./stores/post_store');
+// window.PostStore = PostStore;
+// window.PostActions = PostActions;
