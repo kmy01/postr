@@ -4,6 +4,7 @@ module.exports = {
       url: '/api/posts',
       method: 'GET',
       success(resp) {
+        console.log(resp);
         successCb(resp);
       },
       error(resp) {
@@ -58,7 +59,7 @@ module.exports = {
       url: `/api/posts/${id}`,
       method: 'DELETE',
       success(resp) {
-        successCb(resp);
+        successCb(id);
       },
       error(resp) {
         errorCb(resp);
