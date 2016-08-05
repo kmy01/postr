@@ -22,9 +22,9 @@ const router = (
   <Router history={hashHistory}>
     <Route path='/' component={App}>
       <IndexRoute component={Splash} />
-      <Route path='/dashboard' component={Dashboard} />
+      <Route path='/dashboard' component={Dashboard} onEnter={_ensureLoggedIn}/>
     </Route>
-    
+
     <Route path='/login' component={LoginForm} />
     <Route path='/signup' component={SignupForm} />
   </Router>
