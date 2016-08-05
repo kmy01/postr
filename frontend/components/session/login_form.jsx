@@ -31,7 +31,7 @@ module.exports = React.createClass({
 
   _onChange() {
     if (SessionStore.isUserLoggedIn()) {
-      this.context.router.push('/');
+      this.context.router.push('/dashboard');
     }
   },
 
