@@ -12,6 +12,12 @@ module.exports = React.createClass({
     return { isUserLoggedIn: SessionStore.isUserLoggedIn() };
   },
 
+  componentWillMount() {
+    if (SessionStore.isUserLoggedIn()) {
+      this.context.router.push('/dashboard');
+    }
+  },
+
   componentDidMount() {
     this.listener = SessionStore.addListener(this._onChange);
   },
@@ -22,11 +28,9 @@ module.exports = React.createClass({
 
   _onChange() {
     this.setState({ isUserLoggedIn: SessionStore.isUserLoggedIn() });
-  },
-
-  _handleLogout(e) {
-    e.preventDefault();
-    SessionActions.logout();
+    if (SessionStore.isUserLoggedIn()) {
+      this.context.router.push('/dashboard');
+    }
   },
 
   _handleLoginRedirect(e) {
@@ -60,26 +64,9 @@ module.exports = React.createClass({
       </div>
     );
 
-    let loggedInHeader = (
-      <header>
-        <div className="greeting">{ SessionStore.currentUser() }</div>
-        <button
-          className="sub-buttons logout-button"
-          onClick={this._handleLogout}>Log out</button>
-      </header>
-    );
-
-    if (this.state.isUserLoggedIn) {
-      signupDiv = '';
-    } else {
-      loggedInHeader = '';
-    }
-
     return (
       <div>
-        { loggedInHeader }
         { signupDiv }
-
 
         {this.props.children}
       </div>
