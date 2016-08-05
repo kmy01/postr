@@ -34,7 +34,7 @@ module.exports = React.createClass({
   _loggedInHeader() {
     return (
       <header>
-        <div className="greeting">{ SessionStore.currentUser }</div>
+        <div className="greeting">{ SessionStore.currentUser() }</div>
         <button
           className="sub-buttons logout-button"
           onClick={this._handleLogout}>Log out</button>
