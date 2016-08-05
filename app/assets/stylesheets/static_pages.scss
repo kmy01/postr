@@ -18,7 +18,7 @@ html, body, div, header, h1, h2, input, button, ul, li {
 }
 
 body {
-  background-image: image-url('background-kmy');
+  background: image-url('background-kmy') no-repeat center center fixed;
   background-size: cover;
   font-family: sans-serif;
   font-size: 12px;
