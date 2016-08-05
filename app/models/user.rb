@@ -5,6 +5,11 @@ class User < ActiveRecord::Base
 
   attr_reader :password
 
+  has_many :posts,
+    class_name: :Post,
+    foreign_key: :author_id,
+    primary_key: :id
+
   def self.find_by_credentials(username, password)
     @user = User.find_by_username(username)
     return @user if (@user && @user.is_password?(password))
