@@ -30,7 +30,10 @@ module.exports = {
     $.ajax({
       url: '/api/posts',
       method: 'POST',
-      data: {post: postData},
+      processData: false,
+      contentType: false,
+      dataType: 'json',
+      data: postData,
       success(resp) {
         successCb(resp);
       },
@@ -44,7 +47,7 @@ module.exports = {
     $.ajax({
       url: `/api/posts/${postData.id}`,
       method: 'PATCH',
-      data: {post: postData},
+      data: postData,
       success(resp) {
         successCb(resp);
       },
