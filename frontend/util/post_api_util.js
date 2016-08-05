@@ -25,11 +25,11 @@ module.exports = {
     });
   },
 
-  createPost(post, successCb, errorCb) {
+  createPost(postData, successCb, errorCb) {
     $.ajax({
       url: '/api/posts',
       method: 'POST',
-      data: {post: post},
+      data: {post: postData},
       success(resp) {
         successCb(resp);
       },
@@ -39,11 +39,11 @@ module.exports = {
     });
   },
 
-  updatePost(post, successCb, errorCb) {
+  updatePost(postData, successCb, errorCb) {
     $.ajax({
-      url: `/api/posts/${post.id}`,
+      url: `/api/posts/${postData.id}`,
       method: 'PATCH',
-      data: {post: post},
+      data: {post: postData},
       success(resp) {
         successCb(resp);
       },
