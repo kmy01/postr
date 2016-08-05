@@ -4,8 +4,6 @@ const PostActions = require('../../../actions/post_actions');
 module.exports = React.createClass({
   getInitialState() {
     let textPostData = {
-      author_id: window.currentUser,
-      post_type: 'text',
       title: '',
       body: ''
     };
@@ -23,9 +21,14 @@ module.exports = React.createClass({
 
   _onSubmit(e) {
     e.preventDefault();
-    const postData = this.state;
+    const postData = new FormData();
+    postData.append('post[author_id]', window.currentUser.id);
+    postData.append('post[post_type]', 'text');
+    postData.append('post[title]', this.state.title);
+    postData.append('post[body]', this.state.body);
+
     PostActions.createPost(postData);
-    this.setState({title: '', body: ''});
+    this.setState({ title: '', body: '' });
   },
 
   _onTitleChange(e) {
