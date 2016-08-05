@@ -45,6 +45,7 @@ class Api::PostsController < ApplicationController
       :link_url,
       :audio_url,
       :video_url,
+      :media_content,
       :author_id
     )
   end
