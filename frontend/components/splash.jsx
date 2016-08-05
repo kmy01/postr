@@ -39,6 +39,12 @@ module.exports = React.createClass({
     this.context.router.push('/signup');
   },
 
+  _handleGuestLogin(e) {
+    e.preventDefault();
+    const guestData = { username: 'guest', password: 'password123' }
+    SessionActions.login(guestData);
+  },
+
   render() {
     let signupDiv = (
       <div className="main-login-signup-div">
@@ -48,6 +54,9 @@ module.exports = React.createClass({
         <button
           className="main-buttons main-signup-button"
           onClick={this._handleSignupRedirect}>Sign up</button>
+        <button
+          className="main-buttons guest-button"
+          onClick={this._handleGuestLogin}>Guest Log in</button>
       </div>
     );
 
@@ -70,6 +79,8 @@ module.exports = React.createClass({
       <div>
         { loggedInHeader }
         { signupDiv }
+
+
         {this.props.children}
       </div>
     );
