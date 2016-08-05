@@ -42,12 +42,6 @@ module.exports = React.createClass({
     this.setState({ username: '', password: '' });
   },
 
-  _handleGuestLogin(e) {
-    e.preventDefault();
-    const guestData = { username: 'guest', password: 'password123' }
-    SessionActions.login(guestData);
-  },
-
   _handleSignUp(e) {
     e.preventDefault();
     this.context.router.push('/signup');
@@ -99,10 +93,6 @@ module.exports = React.createClass({
               className="main-buttons main-login-button"
               type="submit" value="Log in" />
           </form>
-
-          <button
-            className="main-buttons guest-button"
-            onClick={this._handleGuestLogin}>Guest Log in</button>
         </div>
       </div>
     );
