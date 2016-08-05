@@ -64,16 +64,15 @@ Postr is a web application inspired by Tumblr that will be build using Ruby on R
 **Objective:** Posts can be created, read, edited and destroyed through
 the API.
 
-- [ ] create `Post` model
+- [x] create `Post` model
 - [ ] seed the database with a small amount of test data
-- [ ] CRUD API for posts (`PostsController`)
-- [ ] jBuilder views for posts
-- [ ] test out API interaction in the console.
+- [x] CRUD API for posts (`PostsController`)
+- [x] jBuilder views for posts
+- [x] test out API interaction in the console.
 - implement each post component, building out the flux loop as needed.
   - [ ] `PostsIndex`
   - [ ] `PostIndexItem`
   - [ ] `PostForm`
-- [ ] save Posts to the DB when the form loses focus or is left idle after editing.
 - [ ] style posts components
 - [ ] seed posts
 
