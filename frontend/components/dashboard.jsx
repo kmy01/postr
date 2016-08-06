@@ -11,6 +11,9 @@ const LinkForm = require('./posts/link_form/link_form');
 const AudioForm = require('./posts/audio_form/audio_form');
 const VideoForm = require('./posts/video_form/video_form');
 
+const PostFeed = require('./posts/post_feed');
+
+
 module.exports = React.createClass({
   contextTypes: {
     router: React.PropTypes.object.isRequired
@@ -61,6 +64,7 @@ module.exports = React.createClass({
         <AudioForm />
         <br/>
         <VideoForm />
+        <PostFeed />
       </div>
     );
   }

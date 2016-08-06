@@ -72,6 +72,7 @@ module.exports = React.createClass({
       <div>
         <video
           className='video-post'
+          controls
           src={post.video_url} />
         <div>{ post.body }</div>
       </div>
@@ -80,7 +81,7 @@ module.exports = React.createClass({
 
   render() {
     return(
-      <div>
+      <div className='post-feed-item'>
         { this.props.post.author.username }
         { this._postToRender() }
       </div>

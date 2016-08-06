@@ -29,7 +29,7 @@ module.exports = React.createClass({
     if (!this.state.mediaFile) {
       postData.append('post[photo_url]', this.state.photoUrl);
     }
-    debugger
+    
     PostActions.createPost(postData);
     this.setState({
       body: '',
