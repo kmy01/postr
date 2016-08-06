@@ -1,12 +1,13 @@
 const React = require('react');
 const PostActions = require('../../../actions/post_actions');
+const SessionStore = require('../../../stores/session_store');
 
 module.exports = React.createClass({
   getInitialState() {
     return {
       body: '',
-      mediaFile: undefined,
-      photoUrl: undefined
+      mediaFile: '',
+      photoUrl: ''
     };
   },
 
@@ -21,16 +22,17 @@ module.exports = React.createClass({
   _onSubmit(e) {
     e.preventDefault();
     const postData = new FormData();
-    postData.append('post[author_id]', window.currentUser.id);
+    postData.append('post[author_id]', SessionStore.currentUser().id);
     postData.append('post[post_type]', 'photo');
     postData.append('post[body]', this.state.body);
     postData.append('post[media_content]', this.state.mediaFile);
+    postData.append('post[photo_url]', this.state.photoUrl);
 
     PostActions.createPost(postData);
     this.setState({
       body: '',
-      mediaFile: undefined,
-      photoUrl: undefined
+      mediaFile: '',
+      photoUrl: ''
     });
   },
 
@@ -59,6 +61,12 @@ module.exports = React.createClass({
     }
   },
 
+  _onUrlChange(e) {
+    e.preventDefault();
+    this.setState({ photoUrl: e.target.value })
+    //listen for idle?
+  },
+
   render() {
     return (
       <form>
@@ -68,6 +76,10 @@ module.exports = React.createClass({
         <input
           type='file'
           onChange={this._onFileChange} />
+        <input
+          placeholder="Photo Url"
+          type='url'
+          onChange={this._onUrlChange} />
         <button
           onClick={this._onSubmit}>Post</button>
         <img
