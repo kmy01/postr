@@ -1,1 +1,1 @@
-json.extract! @post, :id, :post_type, :title, :body
+json.partial! 'post', post: @post
