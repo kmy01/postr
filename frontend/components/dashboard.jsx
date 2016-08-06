@@ -4,8 +4,11 @@ const NavBar = require('./nav_bar');
 
 const SessionActions = require('../actions/session_actions');
 const SessionStore = require('../stores/session_store');
+
 const TextForm = require('./posts/text_form/text_form');
 const PhotoForm = require('./posts/photo_form/photo_form');
+const LinkForm = require('./posts/link_form/link_form');
+const AudioForm = require('./posts/audio_form/audio_form');
 
 module.exports = React.createClass({
   contextTypes: {
@@ -34,7 +37,7 @@ module.exports = React.createClass({
   _loggedInHeader() {
     return (
       <header>
-        <div className="greeting">{ SessionStore.currentUser() }</div>
+        <div className="greeting">{ SessionStore.currentUser().username }</div>
         <button
           className="sub-buttons logout-button"
           onClick={this._handleLogout}>Log out</button>
@@ -51,6 +54,10 @@ module.exports = React.createClass({
         <TextForm />
         <br/>
         <PhotoForm />
+        <br/>
+        <LinkForm />
+        <br/>
+        <AudioForm />
       </div>
     );
   }
