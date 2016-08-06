@@ -5,6 +5,7 @@ json.post_type post.post_type
 json.author do
   json.id post.author.id
   json.username post.author.username
+  json.avatar_url asset_path(post.author.avatar.url)
 end
 
 json.created_at post.created_at

@@ -82,8 +82,13 @@ module.exports = React.createClass({
   render() {
     return(
       <div className='post-feed-item'>
-        { this.props.post.author.username }
-        { this._postToRender() }
+        <img
+          className='avatar'
+          src={this.props.post.author.avatar_url} />
+        <div>
+          { this.props.post.author.username }
+          { this._postToRender() }
+        </div>
       </div>
     );
   }
