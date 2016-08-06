@@ -13,9 +13,7 @@ module.exports = React.createClass({
   },
 
   componentWillMount() {
-    if (SessionStore.isUserLoggedIn()) {
-      this.context.router.push('/dashboard');
-    }
+    document.body.classList.add('splash');
   },
 
   componentDidMount() {
@@ -29,6 +27,7 @@ module.exports = React.createClass({
   _onChange() {
     this.setState({ isUserLoggedIn: SessionStore.isUserLoggedIn() });
     if (SessionStore.isUserLoggedIn()) {
+      document.body.classList.remove('splash');
       this.context.router.push('/dashboard');
     }
   },
