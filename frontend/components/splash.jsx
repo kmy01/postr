@@ -13,7 +13,11 @@ module.exports = React.createClass({
   },
 
   componentWillMount() {
-    document.body.classList.add('splash');
+    if (SessionStore.isUserLoggedIn()) {
+      this.context.router.push('/dashboard');
+    } else {
+      document.body.classList.add('splash');
+    }
   },
 
   componentDidMount() {
