@@ -9,6 +9,7 @@ const TextForm = require('./posts/text_form/text_form');
 const PhotoForm = require('./posts/photo_form/photo_form');
 const LinkForm = require('./posts/link_form/link_form');
 const AudioForm = require('./posts/audio_form/audio_form');
+const VideoForm = require('./posts/video_form/video_form');
 
 module.exports = React.createClass({
   contextTypes: {
@@ -58,6 +59,8 @@ module.exports = React.createClass({
         <LinkForm />
         <br/>
         <AudioForm />
+        <br/>
+        <VideoForm />
       </div>
     );
   }
