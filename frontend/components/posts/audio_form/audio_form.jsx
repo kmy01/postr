@@ -26,7 +26,9 @@ module.exports = React.createClass({
     postData.append('post[post_type]', 'audio');
     postData.append('post[body]', this.state.body);
     postData.append('post[media_content]', this.state.mediaFile);
-    postData.append('post[audio_url]', this.state.audioUrl);
+    if (!this.state.mediaFile) {
+      postData.append('post[audio_url]', this.state.audioUrl);
+    }
 
     PostActions.createPost(postData);
     this.setState({
