@@ -1,5 +1,6 @@
 const React = require('react');
 const PostActions = require('../../../actions/post_actions');
+const SessionStore = require('../../../stores/session_store');
 
 module.exports = React.createClass({
   getInitialState() {
@@ -22,7 +23,7 @@ module.exports = React.createClass({
   _onSubmit(e) {
     e.preventDefault();
     const postData = new FormData();
-    postData.append('post[author_id]', window.currentUser.id);
+    postData.append('post[author_id]', SessionStore.currentUser().id);
     postData.append('post[post_type]', 'text');
     postData.append('post[title]', this.state.title);
     postData.append('post[body]', this.state.body);
