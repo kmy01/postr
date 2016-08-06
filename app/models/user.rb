@@ -5,6 +5,12 @@ class User < ActiveRecord::Base
 
   attr_reader :password
 
+  has_attached_file :avatar, default_url: 'avatar.jpg'
+  validates_attachment_content_type :avatar,
+    content_type: ['image/jpeg','image/png',]
+  validates_attachment_file_name :avatar,
+    matches: [/png\Z/i, /jpe?g\Z/i]
+
   has_many :posts,
     class_name: 'Post',
     foreign_key: :author_id,
