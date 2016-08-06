@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   attr_reader :password
 
   has_many :posts,
-    class_name: :Post,
+    class_name: 'Post',
     foreign_key: :author_id,
     primary_key: :id
 
