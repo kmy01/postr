@@ -13,7 +13,7 @@ class Api::PostsController < ApplicationController
     @post = Post.create(post_params)
     @post.author_id = current_user.id
     if @post.save
-      render json: @post
+      render partial: 'api/posts/post' post: @post
     else
       render json: @post.errors.full_messages, status: 400
     end
@@ -22,7 +22,7 @@ class Api::PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      render json: @post
+      render partial: 'api/posts/post' post: @post
     else
       render json: @post.errors.full_messages, status: 400
     end
