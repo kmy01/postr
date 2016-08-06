@@ -85,7 +85,7 @@ module.exports = React.createClass({
         <button
           onClick={this._onSubmit}>Post</button>
         <img
-          className="img-preview"
+          className="preview"
           src={this.state.photoUrl} />
       </form>
     );
