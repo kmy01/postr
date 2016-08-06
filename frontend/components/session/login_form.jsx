@@ -14,6 +14,14 @@ module.exports = React.createClass({
     return { username: '', password: '', errors: []};
   },
 
+  componentWillMount() {
+    if (SessionStore.isUserLoggedIn()) {
+      this.context.router.push('/dashboard');
+    } else {
+      document.body.classList.add('splash');
+    }
+  },
+
   componentDidMount() {
     this.sessionListener = SessionStore.addListener(this._onChange);
     this.errorListener = ErrorStore.addListener(this._handleError);
@@ -31,6 +39,7 @@ module.exports = React.createClass({
 
   _onChange() {
     if (SessionStore.isUserLoggedIn()) {
+      document.body.classList.remove('splash');
       this.context.router.push('/dashboard');
     }
   },
