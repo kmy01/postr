@@ -41,7 +41,7 @@ module.exports = React.createClass({
     if (SessionStore.isUserLoggedIn()) {
       this.context.router.push('/');
       document.body.classList.remove('splash');
-      
+
     }
   },
 
