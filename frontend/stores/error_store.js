@@ -9,7 +9,6 @@ let _form = '';
 
 ErrorStore.errors = function (form) {
   if (form === _form) {
-    console.log(_errors);
     return _errors.slice();
   }
   return [];
