@@ -34,6 +34,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'paperclip', '~> 5.0.0.beta1'
 gem 'figaro'
 gem 'aws-sdk', '>= 2.0'
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -47,7 +48,6 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'annotate'
-  gem 'rails_12factor'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
