@@ -6,4 +6,6 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy, :show]
   end
+
+  get '*path', to: 'static_pages#root'
 end
