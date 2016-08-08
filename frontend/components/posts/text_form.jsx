@@ -51,8 +51,15 @@ module.exports = React.createClass({
         <textarea
           value={this.state.body}
           onChange={this._onBodyChange} />
-        <button
-          onClick={this._onSubmit}>Post</button>
+        
+        <div className='form-controls group'>
+          <button
+            className='form-button post-button'
+            onClick={this._onSubmit}>Post</button>
+          <button
+            className='form-button close-button'
+            onClick={this.props._closeModal}>Close</button>
+        </div>
       </form>
     );
   }

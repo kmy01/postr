@@ -71,6 +71,11 @@ module.exports = React.createClass({
   render() {
     return (
       <form className='audio-form'>
+        <audio
+          className="audio-preview"
+          controls
+          src={this.state.audioUrl} />
+
         <textarea
           value={this.state.body}
           onChange={this._onBodyChange} />
@@ -81,12 +86,15 @@ module.exports = React.createClass({
           placeholder="Audio Url"
           type='url'
           onChange={this._onUrlChange} />
-        <button
-          onClick={this._onSubmit}>Post</button>
-        <audio
-          className="audio-preview"
-          controls
-          src={this.state.audioUrl} />
+        
+        <div className='form-controls group'>
+          <button
+            className='form-button post-button'
+            onClick={this._onSubmit}>Post</button>
+          <button
+            className='form-button close-button'
+            onClick={this.props._closeModal}>Close</button>
+        </div>
       </form>
     );
   }

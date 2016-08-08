@@ -52,12 +52,6 @@ module.exports = React.createClass({
       });
     };
 
-    // fileReader.addEventListener('load', () => {
-    //   this.setState({
-    //     mediaFile: file,
-    //     photoUrl: fileReader.result
-    //   });
-    // })
     if (file) {
       fileReader.readAsDataURL(file);
     }
@@ -71,6 +65,16 @@ module.exports = React.createClass({
   render() {
     return (
       <form className='video-form'>
+        <video
+          className="preview"
+          controls
+          src={this.state.videoUrl} />
+        <iframe
+          width="536" height="auto"
+          src={this.state.videoUrl}
+          frameborder="0"
+          allowfullscreen></iframe>
+
         <textarea
           value={this.state.body}
           onChange={this._onBodyChange} />
@@ -81,18 +85,15 @@ module.exports = React.createClass({
           placeholder="Video Url"
           type='url'
           onChange={this._onUrlChange} />
-        <button
-          onClick={this._onSubmit}>Post</button>
-        <video
-          className="preview"
-          controls
-          src={this.state.videoUrl} />
-        <iframe
-          width="640" height="360"
-          src={this.state.videoUrl}
-          frameborder="0"
-          allowfullscreen></iframe>
 
+        <div className='form-controls group'>
+          <button
+            className='form-button post-button'
+            onClick={this._onSubmit}>Post</button>
+          <button
+            className='form-button close-button'
+            onClick={this.props._closeModal}>Close</button>
+        </div>
       </form>
     );
   }

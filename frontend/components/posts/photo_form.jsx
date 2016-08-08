@@ -72,6 +72,10 @@ module.exports = React.createClass({
   render() {
     return (
       <form className='photo-form'>
+        <img
+          className="preview"
+          src={this.state.photoUrl} />
+
         <textarea
           value={this.state.body}
           onChange={this._onBodyChange} />
@@ -82,11 +86,15 @@ module.exports = React.createClass({
           placeholder="Photo Url"
           type='url'
           onChange={this._onUrlChange} />
-        <button
-          onClick={this._onSubmit}>Post</button>
-        <img
-          className="preview"
-          src={this.state.photoUrl} />
+
+        <div className='form-controls group'>
+          <button
+            className='form-button post-button'
+            onClick={this._onSubmit}>Post</button>
+          <button
+            className='form-button close-button'
+            onClick={this.props._closeModal}>Close</button>
+        </div>
       </form>
     );
   }
