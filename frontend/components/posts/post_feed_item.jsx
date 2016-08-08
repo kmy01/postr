@@ -80,15 +80,21 @@ module.exports = React.createClass({
   },
 
   render() {
+    const author = this.props.post.author;
+
     return(
       <div className='post-container group'>
         <img
           className='avatar'
-          src={this.props.post.author.avatar_url} />
+          src={author.avatar_url} />
         <div className='post-feed-item'>
-          <div>
-            { this.props.post.author.username }
-            { this._postToRender() }
+          <div className='post-feed-item-header'>
+            { author.username }
+          </div>
+
+          { this._postToRender() }
+
+          <div className='post-feed-item-footer'>
           </div>
         </div>
       </div>
