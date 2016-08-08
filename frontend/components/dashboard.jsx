@@ -27,44 +27,21 @@ module.exports = React.createClass({
     this.sessionListener.remove();
   },
 
-  _onChange() {
-    if (!SessionStore.isUserLoggedIn()) {
-      this.context.router.push('/');
-    }
-  },
-
-  _handleLogout(e) {
-    e.preventDefault();
-    SessionActions.logout();
-  },
-
-  _loggedInHeader() {
-    return (
-      <header>
-        <div className="greeting">{ SessionStore.currentUser().username }</div>
-        <button
-          className="sub-buttons logout-button"
-          onClick={this._handleLogout}>Log out</button>
-      </header>
-    );
-  },
   render() {
     return (
       <div>
-        { this._loggedInHeader() }
-        <NavBar />
-        <PostFormBar />
-        <br/>
-        <TextForm />
-        <br/>
-        <PhotoForm />
-        <br/>
-        <LinkForm />
-        <br/>
-        <AudioForm />
-        <br/>
-        <VideoForm />
-        <PostFeed />
+        <header className='header-nav group'>
+          <NavBar />
+        </header>
+        <main className='main'>
+          <PostFormBar />
+          <TextForm />
+          <PhotoForm />
+          <LinkForm />
+          <AudioForm />
+          <VideoForm />
+          <PostFeed />
+        </main>
       </div>
     );
   }
