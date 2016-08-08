@@ -4,11 +4,11 @@ const ModalStyle = require('./post_form_modal_style');
 
 const SessionStore = require('../../stores/session_store');
 
-const TextForm = require('./text_form/text_form');
-const PhotoForm = require('./photo_form/photo_form');
-const LinkForm = require('./link_form/link_form');
-const AudioForm = require('./audio_form/audio_form');
-const VideoForm = require('./video_form/video_form');
+const TextForm = require('./text_form');
+const PhotoForm = require('./photo_form');
+const LinkForm = require('./link_form');
+const AudioForm = require('./audio_form');
+const VideoForm = require('./video_form');
 
 module.exports = React.createClass({
   getInitialState() {

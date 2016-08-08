@@ -1,6 +1,6 @@
 const React = require('react');
-const PostActions = require('../../../actions/post_actions');
-const SessionStore = require('../../../stores/session_store');
+const PostActions = require('../../actions/post_actions');
+const SessionStore = require('../../stores/session_store');
 
 module.exports = React.createClass({
   getInitialState() {
