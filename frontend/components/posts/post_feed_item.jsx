@@ -81,7 +81,7 @@ module.exports = React.createClass({
 
   render() {
     return(
-      <div>
+      <div className='post-container group'>
         <img
           className='avatar'
           src={this.props.post.author.avatar_url} />

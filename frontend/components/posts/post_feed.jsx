@@ -30,7 +30,7 @@ module.exports = React.createClass({
     });
 
     return(
-      <ul>
+      <ul className='post-feed group'>
         { postItems }
       </ul>
     );
