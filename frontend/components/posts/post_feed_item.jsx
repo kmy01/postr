@@ -30,51 +30,60 @@ module.exports = React.createClass({
 
   _textPost(post) {
     return(
-      <div>
-        <h2>{ post.title }</h2>
-        <div>{ post.body }</div>
+      <div className='post-feed-item-content'>
+        <h2
+          className='text-post-title'>{ post.title }</h2>
+        <div
+          className='post-body'>{ post.body }</div>
       </div>
     );
   },
 
   _photoPost(post) {
     return(
-      <div>
-        <img className='photo-post' src={post.photo_url} />
-        <div>{ post.body }</div>
+      <div className='post-feed-item-content'>
+        <img
+          className='photo-post' src={post.photo_url} />
+        <div
+          className='post-body'>{ post.body }</div>
       </div>
     );
   },
 
   _linkPost(post) {
     return(
-      <div>
-        <a href={post.link_url}>{ post.link_url }</a>
-        <div>{ post.body }</div>
+      <div className='post-feed-item-content'>
+        <a
+          className='link-post'
+          href={post.link_url}>{ post.link_url }</a>
+        <div
+          className='post-body'>{ post.body }</div>
       </div>
     );
   },
 
   _audioPost(post) {
     return(
-      <div>
+      <div className='post-feed-item-content'>
         <audio
           className='audio-post'
           controls
           src={post.audio_url} />
-        <div>{ post.body }</div>
+        <div
+          className='post-body'>{ post.body }</div>
       </div>
     );
   },
 
   _videoPost(post) {
     return(
-      <div>
+      <div className='post-feed-item-content'>
         <video
           className='video-post'
           controls
           src={post.video_url} />
-        <div>{ post.body }</div>
+        <div
+          className='post-body'>{ post.body }</div>
       </div>
     );
   },
