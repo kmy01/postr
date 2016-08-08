@@ -13,7 +13,7 @@ module.exports = {
     maxWidth        : '540px',
     height          : '500px',
     top             : '55px',
-    left            : '96px',
+    left            : '90px',
     padding         : '0',
     border          : '1px solid #ccc',
     zIndex          : 11
