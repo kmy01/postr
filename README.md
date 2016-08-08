@@ -70,9 +70,9 @@ the API.
 - [x] jBuilder views for posts
 - [x] test out API interaction in the console.
 - implement each post component, building out the flux loop as needed.
-  - [ ] `PostsIndex`
-  - [ ] `PostIndexItem`
-  - [ ] `PostForm`
+  - [x] `PostsIndex`
+  - [x] `PostIndexItem`
+  - [x] `PostForm`
 - [ ] style posts components
 - [ ] seed posts
 
