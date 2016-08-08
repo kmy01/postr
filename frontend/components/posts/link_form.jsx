@@ -28,6 +28,7 @@ module.exports = React.createClass({
 
     PostActions.createPost(postData);
     this.setState({ linkUrl: '', body: '' });
+    this.props._closeModal();
   },
 
   _onLinkChange(e) {

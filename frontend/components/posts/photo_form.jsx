@@ -36,6 +36,7 @@ module.exports = React.createClass({
       mediaFile: '',
       photoUrl: ''
     });
+    this.props._closeModal();
   },
 
   _onBodyChange(e) {
@@ -52,12 +53,6 @@ module.exports = React.createClass({
       });
     };
 
-    // fileReader.addEventListener('load', () => {
-    //   this.setState({
-    //     mediaFile: file,
-    //     photoUrl: fileReader.result
-    //   });
-    // })
     if (file) {
       fileReader.readAsDataURL(file);
     }
@@ -75,7 +70,6 @@ module.exports = React.createClass({
         <img
           className="preview"
           src={this.state.photoUrl} />
-
         <div className='upload-inputs group'>
           <input
             className='url-input'

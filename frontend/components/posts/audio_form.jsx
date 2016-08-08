@@ -36,6 +36,7 @@ module.exports = React.createClass({
       mediaFile: '',
       audioUrl: ''
     });
+    this.props._closeModal();
   },
 
   _onBodyChange(e) {
@@ -52,12 +53,6 @@ module.exports = React.createClass({
       });
     };
 
-    // fileReader.addEventListener('load', () => {
-    //   this.setState({
-    //     mediaFile: file,
-    //     photoUrl: fileReader.result
-    //   });
-    // })
     if (file) {
       fileReader.readAsDataURL(file);
     }

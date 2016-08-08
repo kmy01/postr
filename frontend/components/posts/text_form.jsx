@@ -30,6 +30,7 @@ module.exports = React.createClass({
 
     PostActions.createPost(postData);
     this.setState({ title: '', body: '' });
+    this.props._closeModal();
   },
 
   _onTitleChange(e) {
@@ -51,7 +52,7 @@ module.exports = React.createClass({
         <textarea
           value={this.state.body}
           onChange={this._onBodyChange} />
-        
+
         <div className='form-controls group'>
           <button
             className='form-button post-button'

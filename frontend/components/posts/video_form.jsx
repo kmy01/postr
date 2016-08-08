@@ -36,6 +36,7 @@ module.exports = React.createClass({
       mediaFile: '',
       videoUrl: ''
     });
+    this.props._closeModal();
   },
 
   _onBodyChange(e) {
