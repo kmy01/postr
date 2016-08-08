@@ -31,15 +31,15 @@ module.exports = React.createClass({
 
   _formToShow(form_type) {
     if (form_type === 'text') {
-      return <TextForm />;
+      return <TextForm _closeModal={this._closeModal}/>;
     } else if (form_type ==='photo') {
-      return <PhotoForm />;
+      return <PhotoForm _closeModal={this._closeModal}/>;
     } else if (form_type ==='link') {
-      return <LinkForm />;
+      return <LinkForm _closeModal={this._closeModal}/>;
     } else if (form_type ==='audio') {
-      return <AudioForm />;
+      return <AudioForm _closeModal={this._closeModal}/>;
     } else if (form_type ==='video') {
-      return <VideoForm />;
+      return <VideoForm _closeModal={this._closeModal}/>;
     }
   },
 
