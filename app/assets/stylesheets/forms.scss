@@ -3,10 +3,33 @@
   height: auto;
 }
 
-.form-icons {
+.forms {
+  margin-bottom: 20px;
+  border-radius: 3px;
+  width: 620px;
+}
 
+.text-form, .photo-form, .link-form, .audio-form, .video-form {
+  color: #444;
+}
+
+.form-icons {
+  float: right;
+  width: 540px;
+  border-radius: 3px;
+  background: #fff;
+  color: #696969;
+  font-size: 15px;
 }
 
 .form-icons > li {
   float: left;
+  padding: 0 15px;
+  border-right: solid 1px #ccc;
+}
+
+.form-icons > li:last-child {
+  float: left;
+  padding: 0 15px;
+  border: none;
 }
