@@ -2,14 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.post-feed {
+  width: 620px;
+}
+
+.post-container {
+  margin-bottom: 20px;
+
+}
+
 .post-feed-item {
+  float: right;
   background: white;
   color: #444;
-  max-width: 540px;
-  margin-bottom: 20px;
+  width: 540px;
   border-radius: 3px;
 }
 
 .photo-post, .audio-post, .video-post {
-  max-width: 540px;
+  width: 540px;
 }
