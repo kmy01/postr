@@ -76,16 +76,21 @@ module.exports = React.createClass({
           className="preview"
           src={this.state.photoUrl} />
 
+        <div className='upload-inputs group'>
+          <input
+            className='url-input'
+            placeholder="Photo Url"
+            type='url'
+            onChange={this._onUrlChange} />
+          <input
+            className='file-input'
+            type='file'
+            onChange={this._onFileChange} />
+        </div>
+
         <textarea
           value={this.state.body}
           onChange={this._onBodyChange} />
-        <input
-          type='file'
-          onChange={this._onFileChange} />
-        <input
-          placeholder="Photo Url"
-          type='url'
-          onChange={this._onUrlChange} />
 
         <div className='form-controls group'>
           <button

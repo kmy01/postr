@@ -76,17 +76,21 @@ module.exports = React.createClass({
           controls
           src={this.state.audioUrl} />
 
+        <div className='upload-inputs group'>
+          <input
+            className='url-input'
+            placeholder="Audio Url"
+            type='url'
+            onChange={this._onUrlChange} />
+          <input
+            className='file-input'
+            type='file'
+            onChange={this._onFileChange} />
+        </div>
         <textarea
           value={this.state.body}
           onChange={this._onBodyChange} />
-        <input
-          type='file'
-          onChange={this._onFileChange} />
-        <input
-          placeholder="Audio Url"
-          type='url'
-          onChange={this._onUrlChange} />
-        
+
         <div className='form-controls group'>
           <button
             className='form-button post-button'

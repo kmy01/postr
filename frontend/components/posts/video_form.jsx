@@ -75,16 +75,21 @@ module.exports = React.createClass({
           frameborder="0"
           allowfullscreen></iframe>
 
+        <div className='upload-inputs group'>
+          <input
+            className='url-input'
+            placeholder="Video Url"
+            type='url'
+            onChange={this._onUrlChange} />
+          <input
+            className='file-input'
+            type='file'
+            onChange={this._onFileChange} />
+        </div>
+
         <textarea
           value={this.state.body}
           onChange={this._onBodyChange} />
-        <input
-          type='file'
-          onChange={this._onFileChange} />
-        <input
-          placeholder="Video Url"
-          type='url'
-          onChange={this._onUrlChange} />
 
         <div className='form-controls group'>
           <button

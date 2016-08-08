@@ -10,7 +10,7 @@ module.exports = {
   },
   content : {
     position        : 'fixed',
-    maxWidth        : '540px',
+    width           : '540px',
     height          : '500px',
     top             : '55px',
     left            : '90px',

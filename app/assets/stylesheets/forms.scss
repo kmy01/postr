@@ -9,8 +9,30 @@
   width: 620px;
 }
 
-.text-form, .photo-form, .link-form, .audio-form, .video-form {
+.text-form, .photo-form, .link-form,
+.audio-form, .video-form {
   color: #444;
+}
+
+.text-form > input {
+  width: 500px;
+  height: 45px;
+  line-height: 45px;
+  padding: 20px;
+  font-size: 36px;
+  font-weight: lighter;
+  color: #444;
+}
+
+.text-form > textarea, .photo-form > textarea,
+.link-form > textarea, .audio-form > textarea,
+.video-form > textarea {
+  background: rgb(244,244,244);
+  width: 500px;
+  padding: 20px;
+  height: 200px;
+  color: #444;
+  resize: none;
 }
 
 .form-icons {
@@ -32,4 +54,43 @@
   float: left;
   padding: 0 15px;
   border: none;
+}
+
+.form-controls {
+  padding: 15px 20px;
+}
+
+.form-button {
+  color: #fff;
+  font-size: 13px;
+  border-radius: 2px;
+  padding: 5px 7px;
+
+}
+
+.post-button {
+  float: right;
+  border-radius: 2px;
+  background: #529ecc;
+}
+
+.close-button {
+  float: left;
+  background: #9da6af;
+}
+
+.upload-inputs {
+  font-size: 14px;
+}
+
+.url-input {
+  padding: 20px;
+  float: left;
+  line-height: 24px
+}
+
+.file-input {
+  float: right;
+  padding: 20px;
+
 }

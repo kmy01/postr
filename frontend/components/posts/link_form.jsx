@@ -42,6 +42,7 @@ module.exports = React.createClass({
     return (
       <form className='link-form'>
         <input
+          className='url-input'
           placeholder="Link"
           value={this.state.linkUrl}
           type="url"
@@ -49,7 +50,7 @@ module.exports = React.createClass({
         <textarea
           value={this.state.body}
           onChange={this._onBodyChange} />
-        
+
         <div className='form-controls group'>
           <button
             className='form-button post-button'
