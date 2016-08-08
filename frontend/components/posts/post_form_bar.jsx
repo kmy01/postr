@@ -1,5 +1,6 @@
 const React = require('react');
 const Modal = require('react-modal');
+const ModalStyle = require('./post_form_modal_style');
 
 const SessionStore = require('../../stores/session_store');
 
@@ -73,7 +74,8 @@ module.exports = React.createClass({
 
         <Modal
           isOpen={this.state.modalOpen}
-          onRequestClose={this._closeModal}>
+          onRequestClose={this._closeModal}
+          style={ModalStyle}>
           { this._formToShow(this.form_type) }
         </Modal>
       </div>
