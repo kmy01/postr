@@ -23,7 +23,7 @@ module.exports = React.createClass({
   },
 
   render() {
-    let postItems = this.state.posts.map((post) => {
+    let postItems = this.state.posts.reverse().map((post) => {
       return(
         <li key={post.id}><PostFeedItem post={post} /></li>
       );
