@@ -1,7 +1,7 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 
-import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 const SessionActions = require('./actions/session_actions');
 const SessionStore = require('./stores/session_store');
@@ -19,7 +19,7 @@ const _ensureLoggedIn = function (nextState, replace) {
 }
 
 const router = (
-  <Router history={hashHistory}>
+  <Router history={browserHistory}>
     <Route path='/' component={App}>
       <IndexRoute component={Splash} />
       <Route path='/dashboard' component={Dashboard} onEnter={_ensureLoggedIn}/>
