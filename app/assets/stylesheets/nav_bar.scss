@@ -1,11 +1,11 @@
 .header-nav {
   background: rgb(54, 70, 93);
   border-bottom: 1px solid hsla(0, 0%, 100%,.07);
-  position: fixed;
+  position: absolute;
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 1;
 }
 
 .logo {
