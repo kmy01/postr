@@ -7,7 +7,7 @@ module.exports = React.createClass({
     return {
       body: '',
       mediaFile: '',
-      photoUrl: ''
+      audioUrl: ''
     };
   },
 
@@ -23,18 +23,18 @@ module.exports = React.createClass({
     e.preventDefault();
     const postData = new FormData();
     postData.append('post[author_id]', SessionStore.currentUser().id);
-    postData.append('post[post_type]', 'photo');
+    postData.append('post[post_type]', 'audio');
     postData.append('post[body]', this.state.body);
     postData.append('post[media_content]', this.state.mediaFile);
     if (!this.state.mediaFile) {
-      postData.append('post[photo_url]', this.state.photoUrl);
+      postData.append('post[audio_url]', this.state.audioUrl);
     }
-    
+
     PostActions.createPost(postData);
     this.setState({
       body: '',
       mediaFile: '',
-      photoUrl: ''
+      audioUrl: ''
     });
   },
 
@@ -48,7 +48,7 @@ module.exports = React.createClass({
     fileReader.onloadend = () => {
       this.setState({
         mediaFile: file,
-        photoUrl: fileReader.result
+        audioUrl: fileReader.result
       });
     };
 
@@ -65,13 +65,12 @@ module.exports = React.createClass({
 
   _onUrlChange(e) {
     e.preventDefault();
-    this.setState({ photoUrl: e.target.value })
-    //listen for idle?
+    this.setState({ audioUrl: e.target.value })
   },
 
   render() {
     return (
-      <form>
+      <form className='audio-form'>
         <textarea
           value={this.state.body}
           onChange={this._onBodyChange} />
@@ -79,14 +78,15 @@ module.exports = React.createClass({
           type='file'
           onChange={this._onFileChange} />
         <input
-          placeholder="Photo Url"
+          placeholder="Audio Url"
           type='url'
           onChange={this._onUrlChange} />
         <button
           onClick={this._onSubmit}>Post</button>
-        <img
-          className="preview"
-          src={this.state.photoUrl} />
+        <audio
+          className="audio-preview"
+          controls
+          src={this.state.audioUrl} />
       </form>
     );
   }

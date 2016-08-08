@@ -4,10 +4,12 @@ const SessionStore = require('../../../stores/session_store');
 
 module.exports = React.createClass({
   getInitialState() {
-    return {
-      linkUrl: '',
+    let textPostData = {
+      title: '',
       body: ''
     };
+
+    return textPostData;
   },
 
   componentDidMount() {
@@ -22,30 +24,30 @@ module.exports = React.createClass({
     e.preventDefault();
     const postData = new FormData();
     postData.append('post[author_id]', SessionStore.currentUser().id);
-    postData.append('post[post_type]', 'link');
-    postData.append('post[link_url]', this.state.linkUrl);
+    postData.append('post[post_type]', 'text');
+    postData.append('post[title]', this.state.title);
     postData.append('post[body]', this.state.body);
 
     PostActions.createPost(postData);
-    this.setState({ linkUrl: '', body: '' });
+    this.setState({ title: '', body: '' });
   },
 
-  _onLinkChange(e) {
-    this.setState({ linkUrl: e.target.value });
+  _onTitleChange(e) {
+    this.setState({title: e.target.value});
   },
 
   _onBodyChange(e) {
-    this.setState({ body: e.target.value });
+    this.setState({body: e.target.value});
   },
 
   render() {
     return (
-      <form>
+      <form className='text-form'>
         <input
-          placeholder="Link"
-          value={this.state.linkUrl}
-          type="url"
-          onChange={this._onLinkChange} />
+          placeholder="Title"
+          value={this.state.title}
+          type="text"
+          onChange={this._onTitleChange} />
         <textarea
           value={this.state.body}
           onChange={this._onBodyChange} />

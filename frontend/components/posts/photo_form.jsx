@@ -7,7 +7,7 @@ module.exports = React.createClass({
     return {
       body: '',
       mediaFile: '',
-      videoUrl: ''
+      photoUrl: ''
     };
   },
 
@@ -23,18 +23,18 @@ module.exports = React.createClass({
     e.preventDefault();
     const postData = new FormData();
     postData.append('post[author_id]', SessionStore.currentUser().id);
-    postData.append('post[post_type]', 'video');
+    postData.append('post[post_type]', 'photo');
     postData.append('post[body]', this.state.body);
     postData.append('post[media_content]', this.state.mediaFile);
     if (!this.state.mediaFile) {
-      postData.append('post[video_url]', this.state.videoUrl);
+      postData.append('post[photo_url]', this.state.photoUrl);
     }
 
     PostActions.createPost(postData);
     this.setState({
       body: '',
       mediaFile: '',
-      videoUrl: ''
+      photoUrl: ''
     });
   },
 
@@ -48,7 +48,7 @@ module.exports = React.createClass({
     fileReader.onloadend = () => {
       this.setState({
         mediaFile: file,
-        videoUrl: fileReader.result
+        photoUrl: fileReader.result
       });
     };
 
@@ -65,12 +65,13 @@ module.exports = React.createClass({
 
   _onUrlChange(e) {
     e.preventDefault();
-    this.setState({ videoUrl: e.target.value })
+    this.setState({ photoUrl: e.target.value })
+    //listen for idle?
   },
 
   render() {
     return (
-      <form>
+      <form className='photo-form'>
         <textarea
           value={this.state.body}
           onChange={this._onBodyChange} />
@@ -78,21 +79,14 @@ module.exports = React.createClass({
           type='file'
           onChange={this._onFileChange} />
         <input
-          placeholder="Video Url"
+          placeholder="Photo Url"
           type='url'
           onChange={this._onUrlChange} />
         <button
           onClick={this._onSubmit}>Post</button>
-        <video
+        <img
           className="preview"
-          controls
-          src={this.state.videoUrl} />
-        <iframe
-          width="640" height="360"
-          src={this.state.videoUrl}
-          frameborder="0"
-          allowfullscreen></iframe>
-
+          src={this.state.photoUrl} />
       </form>
     );
   }
