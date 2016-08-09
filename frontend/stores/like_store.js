@@ -4,7 +4,7 @@ const Store = require('flux/utils').Store;
 
 const LikeStore = new Store(AppDispatcher);
 
-const _likes = {};
+let _likes = {};
 
 LikeStore.all = function () {
   return Object.keys(_likes).map((id) => {
@@ -12,8 +12,22 @@ LikeStore.all = function () {
   });
 };
 
-LikeStore.find = function () {
+LikeStore.find = function (postId, userId) {
+  let like;
+  Object.keys(_likes).forEach((id) => {
+    if (_likes[id].post_id === postId && _likes[id].user_id === userId) {
+      like = _likes[id];
+    }
+  });
+  return like;
+};
 
+LikeStore._resetAllLikes = function (likes) {
+  _likes = {};
+  likes.forEach((like) => {
+    _likes[like.id] = like;
+  });
+  this.__emitChange();
 };
 
 LikeStore._addLike = function(like) {
@@ -28,11 +42,16 @@ LikeStore._removeLike = function(like) {
 
 LikeStore.__onDispatch = function(payload) {
   switch (payload.actionType) {
+    case LikeConstants.LIKES_RECEIVED:
+      this._resetAllLikes(payload.likes);
+      break;
     case LikeConstants.LIKE_RECEIVED:
       this._addLike(payload.like);
       break;
     case LikeConstants.LIKE_REMOVED:
-      this._removeLike(like);
+      this._removeLike(payload.like);
       break;
   }
 };
+
+module.exports = LikeStore;

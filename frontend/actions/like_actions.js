@@ -4,12 +4,23 @@ const LikeConstants = require('../constants/like_constants');
 const ErrorActions = require('./error_actions');
 
 module.exports = {
+  fetchAllLikes() {
+    LikeApiUtil.fetchAllLikes(this.receiveAllLikes, ErrorActions.setErrors);
+  },
+
   createLike(likeData) {
     LikeApiUtil.createLike(likeData, this.receiveLike, ErrorActions.setErrors);
   },
 
   deleteLike(id) {
     LikeApiUtil.deleteLike(id, this.removeLike, ErrorActions.setErrors);
+  },
+
+  receiveAllLikes(likes) {
+    AppDispatcher.dispatch({
+      actionType: LikeConstants.LIKES_RECEIVED,
+      likes: likes
+    });
   },
 
   receiveLike(like) {
