@@ -30,6 +30,7 @@ module.exports = React.createClass({
         </header>
         <main className='main'>
           <PostFormBar />
+
           <PostFeed />
         </main>
       </div>

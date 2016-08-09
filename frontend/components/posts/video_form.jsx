@@ -67,11 +67,11 @@ module.exports = React.createClass({
     return (
       <form className='video-form'>
         <video
-          className="preview"
+          className='preview'
           controls
           src={this.state.videoUrl} />
         <iframe
-          width="536" height="auto"
+          className='preview'
           src={this.state.videoUrl}
           frameborder="0"
           allowfullscreen></iframe>

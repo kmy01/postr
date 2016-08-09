@@ -53,9 +53,10 @@ module.exports = React.createClass({
   _linkPost(post) {
     return(
       <div className='post-feed-item-content'>
-        <a
-          className='link-post'
-          href={post.link_url}>{ post.link_url }</a>
+        <div className='link-post'>
+          <a
+            href={post.link_url}>{ post.link_url }</a>
+        </div>
         <div
           className='post-body'>{ post.body }</div>
       </div>
@@ -82,6 +83,12 @@ module.exports = React.createClass({
           className='video-post'
           controls
           src={post.video_url} />
+        <iframe
+          className='video-post'
+          src={post.video_url}
+          frameBorder="0"
+          allowFullScreen></iframe>
+
         <div
           className='post-body'>{ post.body }</div>
       </div>
