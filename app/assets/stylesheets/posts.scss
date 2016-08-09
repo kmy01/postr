@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
 .post-feed {
   width: 620px;
 }
@@ -19,6 +21,51 @@
   border-radius: 3px;
 }
 
+.post-feed-item-header {
+  padding: 15px 20px;
+  font-size: 13px;
+}
+
+.post-feed-item-content {
+}
+
+.post-feed-item-footer {
+  padding: 15px 20px;
+}
+
 .photo-post, .audio-post, .video-post {
-  width: 540px;
+  width: 100%;
+  height: auto;
+}
+
+.post-body {
+  padding: 15px 20px 0 20px;
+  color: #444;
+  font-size: 14px;
+}
+
+.text-post-title{
+  padding: 5px 20px 0 20px;
+  font-size: 36px;
+}
+
+.photo-post {
+  padding-top: 5px;
+}
+
+.link-post {
+  padding: 5px 20px 0 20px;
+  font-size: 24px;
+  word-wrap: break-word;
+}
+
+.audio-post {
+  padding-top: 5px;
+  height: 25px;
+
+}
+
+.video-post {
+  padding-top: 5px;
+
 }
