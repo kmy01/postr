@@ -7,7 +7,7 @@ class Api::SessionsController < ApplicationController
 
     if user
       log_in(user)
-      render json: user
+      render partial: 'api/users/user', object: user
     else
       render json: ['Invalid credentials'], status: 401
     end
