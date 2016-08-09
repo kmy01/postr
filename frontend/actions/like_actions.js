@@ -21,7 +21,8 @@ module.exports = {
 
   removeLike(like) {
     AppDispatcher.dispatch({
-      actionType: LikeConstants.LIKE_REMOVED
+      actionType: LikeConstants.LIKE_REMOVED,
+      like: like
     });
   }
 };
