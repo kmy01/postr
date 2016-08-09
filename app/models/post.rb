@@ -7,6 +7,15 @@ class Post < ActiveRecord::Base
     foreign_key: :author_id,
     primary_key: :id
 
+  has_many :likes,
+    class_name: 'Like',
+    foreign_key: :post_id,
+    primary_key: :id
+
+  has_many :likers,
+    through: :likes,
+    source: :user
+
   # has_attached_file :media_content, default_url: "/images/:style/missing.png"
   has_attached_file :media_content
   validates_attachment_content_type :media_content,
