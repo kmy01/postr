@@ -10,22 +10,23 @@ module.exports = React.createClass({
   },
 
   componentDidMount() {
-    this.listener = PostStore.addListener(this._onChange);
+    this.postListener = PostStore.addListener(this._onPostChange);
     PostActions.fetchAllPosts();
   },
 
-  _onChange() {
+  componentWillUnmount() {
+    this.postListener.remove();
+  },
+
+  _onPostChange() {
     this.setState({ posts: PostStore.all() });
   },
 
-  componentWillUnmount() {
-    this.listener.remove();
-  },
-
   render() {
-    let postItems = this.state.posts.reverse().map((post) => {
+    let postItems = this.state.posts.map((post) => {
       return(
-        <li key={post.id}><PostFeedItem post={post} /></li>
+        <li key={post.id}><PostFeedItem
+          post={post} /></li>
       );
     });
 

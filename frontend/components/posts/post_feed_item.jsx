@@ -2,7 +2,70 @@ const React = require('react');
 const SessionStore = require('../../stores/session_store');
 const PostConstants = require('../../constants/post_constants');
 
+const LikeActions = require('../../actions/like_actions');
+const LikeStore = require('../../stores/like_store');
+
 module.exports = React.createClass({
+  getInitialState() {
+    const currentUser = SessionStore.currentUser();
+    const likers = this.props.post.likes.map((like) => {
+      return like.user_id;
+    });
+
+    return {
+      currentUser: currentUser,
+      likedByUser: likers.includes(currentUser.id)
+    };
+  },
+
+  componentDidMount() {
+  },
+
+  componentWillUnMount() {
+  },
+
+  _findLikeId() {
+    const likes = this.props.post.likes;
+    const postId = this.props.post.id;
+    const userId = this.state.currentUser.id;
+    let likeId;
+
+    Object.keys(this.props.post.likes).forEach((id) => {
+      if (likes[id].post_id === postId && likes[id].user_id === userId ) {
+        likeId = id;
+      }
+    });
+
+    return likeId;
+  },
+
+  _handleLike() {
+    if (this.state.likedByUser) {
+      LikeActions.deleteLike(this._findLikeId());
+      this.setState({
+        likedByUser: false
+      });
+    } else {
+      let likeData = {
+        like: {
+          post_id: this.props.post.id,
+        }
+      }
+      LikeActions.createLike(likeData);
+      this.setState({
+        likedByUser: true
+      });
+    }
+  },
+
+  _likeText() {
+    if (this.state.likedByUser) {
+      return 'UnLike';
+    } else {
+      return 'Like';
+    }
+  },
+
   _postToRender() {
     let post = this.props.post;
     let postRender;
@@ -97,7 +160,6 @@ module.exports = React.createClass({
 
   render() {
     const author = this.props.post.author;
-
     return(
       <div className='post-container group'>
         <img
@@ -111,6 +173,8 @@ module.exports = React.createClass({
           { this._postToRender() }
 
           <div className='post-feed-item-footer'>
+            <button
+              onClick={this._handleLike}>{ this._likeText() }</button>
           </div>
         </div>
       </div>
