@@ -11,9 +11,10 @@ module.exports = {
   content : {
     position        : 'fixed',
     width           : '540px',
-    height          : '1000px',
+    height          : '800px',
     top             : '55px',
-    left            : '90px',
+    margin          : '0 auto',
+    left            : '120px',
     padding         : '0',
     border          : '1px solid #ccc',
     zIndex          : 11,
