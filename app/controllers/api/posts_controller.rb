@@ -2,7 +2,7 @@ class Api::PostsController < ApplicationController
   # before action require sign in
   # before ction require user be owner
   def index
-    @posts = Post.all
+    @posts = Post.all.includes(:likes, :author)
   end
 
   def show
