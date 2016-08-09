@@ -80,12 +80,12 @@ the API.
 
 **Objective:** Posts can be liked by multiple users
 
-- [ ] create `Like` model and join table
+- [x] create `Like` model and join table
 - build out API, Flux loop, and components for:
   - [ ] fetching post liked by user
-  - [ ] adding likes to post
+  - [x] adding likes to post
 - [ ] Style new elements
-- [ ] Seed liked post
+- [x] Seed liked post
 
 ### Phase 4: Follows (1 days, W2 W 6pm)
 
