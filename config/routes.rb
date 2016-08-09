@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :api do
     resources :posts, only: [:create, :index, :show, :update, :destroy]
     resources :users, only: [:create]
+    resources :likes, only: [:create, :destroy]
     resource :session, only: [:create, :destroy, :show]
   end
 
