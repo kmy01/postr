@@ -3,7 +3,6 @@ const SessionStore = require('../../stores/session_store');
 const PostConstants = require('../../constants/post_constants');
 
 const LikeActions = require('../../actions/like_actions');
-const LikeStore = require('../../stores/like_store');
 
 module.exports = React.createClass({
   getInitialState() {
@@ -18,6 +17,16 @@ module.exports = React.createClass({
     };
   },
 
+  componentWillReceiveProps(newProps) {
+    const likers = newProps.post.likes.map((like) => {
+      return like.user_id;
+    });
+
+    this.setState({
+      likedByUser: likers.includes(this.state.currentUser.id)
+    });
+  },
+
   componentDidMount() {
   },
 
@@ -30,9 +39,9 @@ module.exports = React.createClass({
     const userId = this.state.currentUser.id;
     let likeId;
 
-    Object.keys(this.props.post.likes).forEach((id) => {
-      if (likes[id].post_id === postId && likes[id].user_id === userId ) {
-        likeId = id;
+    likes.forEach((like) => {
+      if (like.post_id === postId && like.user_id === userId ) {
+        likeId = like.id;
       }
     });
 
@@ -42,9 +51,6 @@ module.exports = React.createClass({
   _handleLike() {
     if (this.state.likedByUser) {
       LikeActions.deleteLike(this._findLikeId());
-      this.setState({
-        likedByUser: false
-      });
     } else {
       let likeData = {
         like: {
@@ -52,9 +58,6 @@ module.exports = React.createClass({
         }
       }
       LikeActions.createLike(likeData);
-      this.setState({
-        likedByUser: true
-      });
     }
   },
 
