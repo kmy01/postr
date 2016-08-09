@@ -8,6 +8,8 @@ json.author do
   json.avatar_url asset_path(post.author.avatar.url)
 end
 
+json.likes post.likes
+
 json.created_at post.created_at
 
 case post.post_type
