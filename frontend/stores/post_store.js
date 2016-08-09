@@ -1,5 +1,7 @@
 const AppDispatcher = require('../dispatcher/dispatcher');
 const PostConstants = require('../constants/post_constants');
+const LikeConstants = require('../constants/like_constants');
+
 const Store = require('flux/utils').Store;
 
 const PostStore = new Store(AppDispatcher);
@@ -34,6 +36,23 @@ PostStore._removePost = function(id) {
   this.__emitChange();
 };
 
+PostStore._addLike = function(like) {
+  _posts[like.post_id].likes.push(like);
+  this.__emitChange();
+};
+
+PostStore._removeLike = function(like) {
+  const postId = like.post_id;
+  const likeId = like.id;
+  _posts[postId].likes.forEach((likeEl, i) => {
+    if (likeEl.id === likeId) {
+      _posts[postId].likes.splice(i, 1);
+      return false;
+    }
+  });
+  this.__emitChange();
+};
+
 PostStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
     case PostConstants.POSTS_RECEIVED:
@@ -44,6 +63,12 @@ PostStore.__onDispatch = function (payload) {
       break;
     case PostConstants.POST_REMOVED:
       this._removePost(payload.id);
+      break;
+    case LikeConstants.LIKE_RECEIVED:
+      this._addLike(payload.like);
+      break;
+    case LikeConstants.LIKE_REMOVED:
+      this._removeLike(payload.like);
       break;
   }
 };
