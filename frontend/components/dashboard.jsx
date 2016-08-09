@@ -1,25 +1,32 @@
 const React = require('react');
 
-const SessionActions = require('../actions/session_actions');
-const SessionStore = require('../stores/session_store');
-
-const PostFormBar = require('./posts/post_form_bar');
 const NavBar = require('./nav_bar');
+const PostFormBar = require('./posts/post_form_bar');
 
 const PostFeed = require('./posts/post_feed');
-
+const PostStore = require('../stores/post_store');
+const PostActions = require('../actions/post_actions');
 
 module.exports = React.createClass({
   contextTypes: {
     router: React.PropTypes.object.isRequired
   },
 
+  getInitialState() {
+    return({ posts: PostStore.all() });
+  },
+
   componentDidMount() {
-    this.sessionListener = SessionStore.addListener(this._onChange);
+    this.postListener = PostStore.addListener(this._onPostChange);
+    PostActions.fetchAllPosts();
   },
 
   componentWillUnmount() {
-    this.sessionListener.remove();
+    this.postListener.remove();
+  },
+
+  _onPostChange() {
+    this.setState({ posts: PostStore.all() });
   },
 
   render() {
@@ -31,7 +38,7 @@ module.exports = React.createClass({
         <main className='main'>
           <PostFormBar />
 
-          <PostFeed />
+          <PostFeed posts={this.state.posts}/>
         </main>
       </div>
     );
