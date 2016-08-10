@@ -15,3 +15,10 @@ json.liked_posts do
     json.likes post.likes
   end
 end
+
+json.followees do
+  json.array! user.followees do |followee|
+    json.extract! followee, :id, :username
+    json.avatar_url asset_path(followee.avatar.url)
+  end
+end
