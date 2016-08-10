@@ -43,7 +43,7 @@ module.exports = React.createClass({
               <li><a href='#'>Edit Profile</a></li>
               <li><a href='#'>Posts</a></li>
               <li><a href='/likes'>Likes</a></li>
-              <li><a href='#'>Following</a></li>
+              <li><a href='/following'>Following</a></li>
               <li onClick={this._handleLogout}>Logout</li>
             </ul>
           </li>
