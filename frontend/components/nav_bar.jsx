@@ -42,7 +42,7 @@ module.exports = React.createClass({
               <li>{ SessionStore.currentUser().username }</li>
               <li><a href='#'>Edit Profile</a></li>
               <li><a href='#'>Posts</a></li>
-              <li><a href='#'>Likes</a></li>
+              <li><a href='/likes'>Likes</a></li>
               <li><a href='#'>Following</a></li>
               <li onClick={this._handleLogout}>Logout</li>
             </ul>
