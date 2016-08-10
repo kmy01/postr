@@ -2,8 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-
 .post-feed {
   width: 620px;
   margin: 0 auto;
@@ -11,7 +9,6 @@
 
 .post-container {
   margin-bottom: 20px;
-
 }
 
 .post-feed-item {
@@ -27,11 +24,25 @@
   font-size: 13px;
 }
 
+.post-feed-item-header > a {
+  float: left;
+}
+
+.post-header-follow {
+  float: right;
+  cursor: pointer;
+}
+
 .post-feed-item-content {
 }
 
 .post-feed-item-footer {
   padding: 15px 20px;
+}
+
+.like-button {
+  float: right;
+  cursor: pointer;
 }
 
 .photo-post, .audio-post, .video-post {
@@ -63,10 +74,8 @@
 .audio-post {
   padding-top: 5px;
   height: 25px;
-
 }
 
 .video-post {
   padding-top: 5px;
-
 }
