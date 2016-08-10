@@ -56,8 +56,18 @@ SessionStore._removeFollow = function (follow) {
     if (post.author.id === follow.followee_id) {
       const idx = post.author.followers.indexOf(_currentUser.id);
       post.author.followers.splice(idx, 1);
+      // return false;
     }
   });
+
+  _currentUser.followees.forEach((followee) => {
+    if (followee.id === follow.followee_id) {
+      const idx = _currentUser.followees.indexOf(followee);
+      _currentUser.followees.splice(idx, 1);
+      // return false;
+    }
+  });
+
   this.__emitChange();
 };
 
