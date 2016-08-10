@@ -60,6 +60,10 @@
   padding: 5px 10px;
 }
 
+.account-list > li > a {
+  display: block;
+}
+
 .account-list > li:first-child {
   background: #eee;
   border-top-right-radius: 2px;
