@@ -1,6 +1,7 @@
 const AppDispatcher = require('../dispatcher/dispatcher');
 const PostConstants = require('../constants/post_constants');
 const LikeConstants = require('../constants/like_constants');
+const FollowConstants = require('../constants/follow_constants');
 
 const Store = require('flux/utils').Store;
 
@@ -53,6 +54,27 @@ PostStore._removeLike = function(like) {
   this.__emitChange();
 };
 
+PostStore._addFollow = function(follow) {
+  Object.keys(_posts).forEach((postId) => {
+    const post = _posts[postId];
+    if (post.author.id === follow.followee_id) {
+      post.author.followers.push(follow.follower_id);
+    }
+  });
+  this.__emitChange();
+};
+
+PostStore._removeFollow = function(follow) {
+  Object.keys(_posts).forEach((postId) => {
+    const post = _posts[postId];
+    if (post.author.id === follow.followee_id) {
+      const idx = post.author.followers.indexOf(follow.follower_id);
+      post.author.followers.splice(idx, 1);
+    }
+  });
+  this.__emitChange();
+};
+
 PostStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
     case PostConstants.POSTS_RECEIVED:
@@ -69,6 +91,12 @@ PostStore.__onDispatch = function (payload) {
       break;
     case LikeConstants.LIKE_REMOVED:
       this._removeLike(payload.like);
+      break;
+    case FollowConstants.FOLLOW_RECEIVED:
+      this._addFollow(payload.follow);
+      break;
+    case FollowConstants.FOLLOW_REMOVED:
+      this._removeFollow(payload.follow);
       break;
   }
 };
