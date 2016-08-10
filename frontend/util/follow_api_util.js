@@ -13,10 +13,11 @@ module.exports = {
     });
   },
 
-  deleteFollow(id, successCb, errorCb) {
+  deleteFollow(followData, successCb, errorCb) {
     $.ajax({
-      url: `/api/follows/${id}`,
+      url: `api/follows`,
       method: 'DELETE',
+      data: followData,
       success(resp) {
         successCb(resp);
       },

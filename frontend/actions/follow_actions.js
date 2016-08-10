@@ -8,8 +8,8 @@ module.exports ={
     FollowApiUtil.createFollow(followData, this.receiveFollow, ErrorActions.setErrors);
   },
 
-  deleteFollow(id) {
-    FollowApiUtil.deleteFollow(id, this.removeFollow, ErrorActions.setErrors);
+  deleteFollow(followData) {
+    FollowApiUtil.deleteFollow(followData, this.removeFollow, ErrorActions.setErrors);
   },
 
   receiveFollow(follow) {
