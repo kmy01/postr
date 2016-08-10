@@ -82,9 +82,9 @@ the API.
 
 - [x] create `Like` model and join table
 - build out API, Flux loop, and components for:
-  - [ ] fetching post liked by user
+  - [x] fetching post liked by user
   - [x] adding likes to post
-- [ ] Style new elements
+- [x] Style new elements
 - [x] Seed liked post
 
 ### Phase 4: Follows (1 days, W2 W 6pm)
