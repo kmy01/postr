@@ -192,16 +192,18 @@ module.exports = React.createClass({
           className='avatar'
           src={author.avatar_url} />
         <div className='post-feed-item'>
-          <div className='post-feed-item-header'>
-            { author.username }
+          <div className='post-feed-item-header group'>
+            <a href='#'>{ author.username }</a>
             <button
+              className='post-header-follow'
               onClick={this._handleFollow}>{ this._followText() }</button>
           </div>
 
           { this._postToRender() }
 
-          <div className='post-feed-item-footer'>
+          <div className='post-feed-item-footer group'>
             <button
+              className='like-button'
               onClick={this._handleLike}>{ this._likeText() }</button>
           </div>
         </div>
