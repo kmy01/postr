@@ -10,6 +10,7 @@ const SessionStore = require('./stores/session_store');
 const App = require('./components/app');
 const Splash = require('./components/splash');
 const Dashboard = require('./components/dashboard');
+const Likes = require('./components/likes');
 const LoginForm = require('./components/session/login_form');
 const SignupForm = require('./components/session/signup_form');
 
@@ -24,6 +25,7 @@ const router = (
     <Route path='/' component={App}>
       <IndexRoute component={Splash} />
       <Route path='/dashboard' component={Dashboard} onEnter={_ensureLoggedIn}/>
+      <Route path='/likes' component={Likes} onEnter={_ensureLoggedIn}/>
     </Route>
 
     <Route path='/login' component={LoginForm} />
