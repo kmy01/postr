@@ -86,7 +86,7 @@ module.exports = React.createClass({
     if (this.state.currentUser.id === this.props.post.author.id) {
       return '';
     } else if (this.state.followByUser) {
-      return 'UnFollow';
+      return 'Unfollow';
     } else {
       return 'Follow';
     }
