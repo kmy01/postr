@@ -91,12 +91,12 @@ the API.
 
 **Objective:** Posts can be followed by multiple users
 
-- [ ] create `Follow` join table
+- [x] create `Follow` join table
 - build out API, Flux loop, and components for:
-  - [ ] fetching post of author followed by user
-  - [ ] follow a user
-- [ ] Style new elements
-- [ ] Seed followers/followee
+  - [x] fetching post of author followed by user
+  - [x] follow a user
+- [x] Style new elements
+- [x] Seed followers/followee
 
 ### Phase 5: Tags (1 days, W2 Th 6pm)
 
