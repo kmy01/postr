@@ -18,7 +18,13 @@ SessionStore._logout = function () {
 };
 
 SessionStore.currentUser = function () {
-  return { id: _currentUser.id, username: _currentUser.username, avatar_url: _currentUser.avatar_url, liked_posts: _currentUser.liked_posts};
+  return {
+    id: _currentUser.id,
+    username: _currentUser.username,
+    avatar_url: _currentUser.avatar_url,
+    liked_posts: _currentUser.liked_posts,
+    followees: _currentUser.followees
+  };
 };
 
 SessionStore.isUserLoggedIn = function () {
