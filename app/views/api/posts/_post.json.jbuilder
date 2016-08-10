@@ -6,6 +6,7 @@ json.author do
   json.id post.author.id
   json.username post.author.username
   json.avatar_url asset_path(post.author.avatar.url)
+  json.followers post.author.followers.map(&:id)
 end
 
 json.likes post.likes
