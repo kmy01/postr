@@ -3,7 +3,7 @@ const FollowApiUtil = require('../util/follow_api_util');
 const FollowConstants = require('../constants/follow_constants');
 const ErrorActions = require('../actions/error_actions');
 
-module.epxorts ={
+module.exports ={
   createFollow(followData) {
     FollowApiUtil.createFollow(followData, this.receiveFollow, ErrorActions.setErrors);
   },
