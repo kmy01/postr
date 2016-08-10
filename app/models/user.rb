@@ -25,6 +25,26 @@ class User < ActiveRecord::Base
     through: :likes,
     source: :post
 
+  # associations for when the user is the follower
+  has_many :follower_follows,
+    class_name: 'Follow',
+    foreign_key: :follower_id,
+    primary_key: :id
+
+  has_many :followees,
+    through: :follower_follows,
+    source: :followee
+
+  # associations for when the user is the followee
+  has_many :followee_follows,
+    class_name: 'Follow',
+    foreign_key: :followee_id,
+    primary_key: :id
+
+  has_many :followers,
+    through: :followee_follows,
+    source: :follower
+
   def self.find_by_credentials(username, password)
     @user = User.find_by_username(username)
     return @user if (@user && @user.is_password?(password))
