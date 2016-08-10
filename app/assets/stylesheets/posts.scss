@@ -26,10 +26,18 @@
 
 .post-feed-item-header > a {
   float: left;
+  color: #b2b2b2;
+  font-weight: 500;
+}
+
+.post-feed-item-header > a:hover {
+  float: left;
+  color: #808080;
 }
 
 .post-header-follow {
   float: right;
+  color: #529ecc;
   cursor: pointer;
 }
 
