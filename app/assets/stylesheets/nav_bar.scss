@@ -75,3 +75,7 @@
 .account-list > li:first-child:hover {
   background: #eee;
 }
+
+.account-list > li:last-child:hover {
+  border-radius: 2px;
+}
