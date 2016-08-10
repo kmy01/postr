@@ -3,6 +3,7 @@ const SessionStore = require('../../stores/session_store');
 const PostConstants = require('../../constants/post_constants');
 
 const LikeActions = require('../../actions/like_actions');
+const FollowActions = require('../../actions/follow_actions');
 
 module.exports = React.createClass({
   getInitialState() {
@@ -10,10 +11,12 @@ module.exports = React.createClass({
     const likers = this.props.post.likes.map((like) => {
       return like.user_id;
     });
+    const followers = this.props.post.author.followers;
 
     return {
       currentUser: currentUser,
-      likedByUser: likers.includes(currentUser.id)
+      likedByUser: likers.includes(currentUser.id),
+      followByUser: followers.includes(currentUser.id)
     };
   },
 
@@ -21,16 +24,12 @@ module.exports = React.createClass({
     const likers = newProps.post.likes.map((like) => {
       return like.user_id;
     });
+    const followers = this.props.post.author.followers;
 
     this.setState({
-      likedByUser: likers.includes(this.state.currentUser.id)
+      likedByUser: likers.includes(this.state.currentUser.id),
+      followByUser: followers.includes(currentUser.id)
     });
-  },
-
-  componentDidMount() {
-  },
-
-  componentWillUnMount() {
   },
 
   _findLikeId() {
@@ -66,6 +65,30 @@ module.exports = React.createClass({
       return 'UnLike';
     } else {
       return 'Like';
+    }
+  },
+
+  _handleFollow() {
+    let followData = {
+      follow: {
+        followee_id: this.props.post.author.id
+      }
+    };
+
+    if (this.state.followByUser) {
+      FollowActions.deleteFollow(followData);
+    } else {
+      FollowActions.createFollow(followData);
+    }
+  },
+
+  _followText() {
+    if (this.state.currentUser.id === this.props.post.author.id) {
+      return '';
+    } else if (this.state.followByUser) {
+      return 'UnFollow';
+    } else {
+      return 'Follow';
     }
   },
 
@@ -171,6 +194,8 @@ module.exports = React.createClass({
         <div className='post-feed-item'>
           <div className='post-feed-item-header'>
             { author.username }
+            <button
+              onClick={this._handleFollow}>{ this._followText() }</button>
           </div>
 
           { this._postToRender() }
