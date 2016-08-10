@@ -11,6 +11,7 @@ const App = require('./components/app');
 const Splash = require('./components/splash');
 const Dashboard = require('./components/dashboard');
 const Likes = require('./components/likes');
+const Follows = require('./components/follows');
 const LoginForm = require('./components/session/login_form');
 const SignupForm = require('./components/session/signup_form');
 
@@ -26,6 +27,7 @@ const router = (
       <IndexRoute component={Splash} />
       <Route path='/dashboard' component={Dashboard} onEnter={_ensureLoggedIn}/>
       <Route path='/likes' component={Likes} onEnter={_ensureLoggedIn}/>
+      <Route path='/following' component={Follows} onEnter={_ensureLoggedIn}/>
     </Route>
 
     <Route path='/login' component={LoginForm} />
