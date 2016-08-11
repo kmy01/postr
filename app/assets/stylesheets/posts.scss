@@ -91,3 +91,17 @@
 .video-post {
   padding-top: 5px;
 }
+
+.post-feed-tags {
+  padding: 10px 20px 0 20px;
+  color: #b2b2b2;
+}
+
+.post-feed-tags > li {
+  display: inline;
+  padding-right: 5px;
+}
+
+.post-feed-tags > li:hover {
+  color: #808080;
+}
