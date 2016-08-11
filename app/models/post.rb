@@ -16,6 +16,17 @@ class Post < ActiveRecord::Base
     through: :likes,
     source: :user
 
+  has_many :taggings,
+    class_name: 'Tagging',
+    foreign_key: :post_id,
+    primary_key: :id,
+    dependent: :destroy,
+    inverse_of: :post
+
+  has_many :tags,
+    through: :taggings,
+    source: :tag
+
   # has_attached_file :media_content, default_url: "/images/:style/missing.png"
   has_attached_file :media_content
   validates_attachment_content_type :media_content,
