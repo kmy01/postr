@@ -12,6 +12,7 @@ const Splash = require('./components/splash');
 const Dashboard = require('./components/dashboard');
 const Likes = require('./components/likes');
 const Follows = require('./components/follows');
+const Tagged = require('./components/tagged');
 const LoginForm = require('./components/session/login_form');
 const SignupForm = require('./components/session/signup_form');
 
@@ -28,6 +29,7 @@ const router = (
       <Route path='/dashboard' component={Dashboard} onEnter={_ensureLoggedIn}/>
       <Route path='/likes' component={Likes} onEnter={_ensureLoggedIn}/>
       <Route path='/following' component={Follows} onEnter={_ensureLoggedIn}/>
+      <Route path='/tagged/:tagName' component={Tagged} onEnter={_ensureLoggedIn}/>
     </Route>
 
     <Route path='/login' component={LoginForm} />
