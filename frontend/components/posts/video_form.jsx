@@ -51,13 +51,13 @@ module.exports = React.createClass({
     if (file) {
       fileReader.readAsDataURL(file);
     }
-    this.props._changeHeight('646px');
+    this.props._changeHeight('547px');
   },
 
   _onUrlChange(e) {
     e.preventDefault();
     this.setState({ videoUrl: e.target.value })
-    this.props._changeHeight('646px');
+    this.props._changeHeight('547px');
   },
 
   _onTagChange(e) {
@@ -65,20 +65,28 @@ module.exports = React.createClass({
   },
 
   _renderPreview() {
-    if (this.state.videoUrl) {
-      return
-      <div>
-        <video
-          className='preview'
-          controls
-          src={this.state.videoUrl} />
-        <iframe
-          className='preview'
-          src={this.state.videoUrl}
-          frameborder="0"
-          allowfullscreen></iframe>
+    const videoUrl = this.state.videoUrl;
+    let videoRender;
 
-      </div>;
+    if (videoUrl.includes('youtube') || videoUrl.includes('vimeo')) {
+      videoRender = (
+        <iframe
+          className='video-preview'
+          src={videoUrl}
+          frameBorder="0"
+          allowFullScreen></iframe>
+      );
+    } else {
+      videoRender = (
+        <video
+          className='video-preview'
+          controls
+          src={videoUrl} />
+      );
+    }
+
+    if (this.state.videoUrl) {
+      return videoRender;
     }
   },
 
