@@ -1,7 +1,12 @@
 .preview {
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 405px;
   border: none;
+}
+
+.audio-preview {
+  padding-top: 15px;
+  width: 100%;
 }
 
 .forms {
@@ -18,7 +23,7 @@
 
 .tag-input, .link-url-input {
   width: 500px;
-  padding: 20px;
+  padding: 15px 20px;
   font-weight: lighter;
   color: #444;
 }
@@ -32,13 +37,21 @@
   font-size: 36px;
 }
 
-.text-form > textarea, .photo-form > textarea,
-.link-form > textarea, .audio-form > textarea,
-.video-form > textarea {
+.text-form > textarea, .link-form > textarea {
   background: rgb(244,244,244);
   width: 500px;
   padding: 20px;
   height: 200px;
+  color: #444;
+  resize: none;
+}
+
+.photo-form > textarea, .video-form > textarea,
+.audio-form > textarea {
+  background: rgb(244,244,244);
+  width: 500px;
+  padding: 20px;
+  height: 60px;
   color: #444;
   resize: none;
 }
@@ -65,7 +78,7 @@
 }
 
 .form-controls {
-  padding: 15px 20px;
+  padding: 0 20px 15px 20px;
 }
 
 .form-button {
@@ -73,7 +86,6 @@
   font-size: 13px;
   border-radius: 2px;
   padding: 5px 7px;
-
 }
 
 .post-button {
@@ -92,13 +104,24 @@
 }
 
 .url-input {
-  padding: 20px;
+  box-sizing: border-box;
   float: left;
-  line-height: 24px
+  line-height: 24px;
+  padding: 15px 20px;
+  width: 90%;
 }
 
 .file-input {
+  background: blue;
+  box-sizing: border-box;
   float: right;
-  padding: 20px;
+  line-height: 24px;
+  padding: 15px 20px;
+  width: 10%;
+}
 
+.file-input > input {
+  display: block;
+  width: 100%;
+  opacity: 0;
 }
