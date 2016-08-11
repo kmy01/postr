@@ -49,7 +49,7 @@ module.exports = React.createClass({
     return (
       <form className='link-form'>
         <input
-          className='url-input'
+          className='link-url-input'
           placeholder="Link"
           value={this.state.linkUrl}
           type="url"
@@ -59,6 +59,7 @@ module.exports = React.createClass({
           onChange={this._onBodyChange} />
 
         <input
+          className='tag-input'
           placeholder='#tags'
           value={this.state.tags}
           type='text'

@@ -60,6 +60,7 @@ module.exports = React.createClass({
           value={this.state.body}
           onChange={this._onBodyChange} />
         <input
+          className='tag-input'
           placeholder='#tags'
           value={this.state.tags}
           type='text'
