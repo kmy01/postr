@@ -121,7 +121,7 @@ module.exports = React.createClass({
   _tagsToRender() {
     return this.props.post.tags.map((tag) => {
       return (
-        <li key={tag}><a href={`#`}>{ '#' + tag }</a></li>
+        <li key={tag}><a href={`/tagged/${tag}`}>{ '#' + tag }</a></li>
       );
     });
   },
