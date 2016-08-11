@@ -74,7 +74,7 @@ Post.create!(
   post_type: 'photo',
   author_id: 4,
   photo_url: 'https://tctechcrunch2011.files.wordpress.com/2015/08/tesla_model_s.jpg',
-  body: 'Tesla Model S'
+  body: 'Tesla Model S',
   tag_ids: [8, 9, 6]
 ) # 6
 
