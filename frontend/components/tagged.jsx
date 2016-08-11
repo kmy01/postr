@@ -1,8 +1,6 @@
 const React = require('react');
 
 const NavBar = require('./nav_bar');
-
-const SessionStore = require('../stores/session_store');
 const PostFeed = require('./posts/post_feed');
 
 const PostStore = require('../stores/post_store');
@@ -31,7 +29,6 @@ module.exports = React.createClass({
   },
 
   render() {
-    debugger
     return (
       <div>
         <header className='header-nav group'>
