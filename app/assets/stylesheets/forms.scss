@@ -1,7 +1,12 @@
 .preview {
-  width: auto;
+  margin: 0 auto;
   height: 405px;
   border: none;
+}
+
+.video-preview {
+  width: 540px;
+  height: 303px;
 }
 
 .audio-preview {
