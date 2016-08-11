@@ -174,21 +174,37 @@ module.exports = React.createClass({
     );
   },
 
+  _videoToRender() {
+    const videoUrl = this.props.post.video_url;
+    let videoRender;
+
+    if (videoUrl.includes('youtube') || videoUrl.includes('vimeo')) {
+      videoRender = (
+        <iframe
+          className='video-preview'
+          src={videoUrl}
+          frameBorder="0"
+          allowFullScreen></iframe>
+      );
+    } else {
+      videoRender = (
+        <video
+          className='video-preview'
+          controls
+          src={videoUrl} />
+      );
+    }
+
+    return videoRender;
+  },
+
   _videoPost(post) {
     return(
       <div className='post-feed-item-content'>
-        <video
-          className='video-post'
-          controls
-          src={post.video_url} />
-        <iframe
-          className='video-post'
-          src={post.video_url}
-          frameBorder="0"
-          allowFullScreen></iframe>
-
+        { this._videoToRender() }
         <div
-          className='post-body'>{ post.body }</div>
+          className='post-body'>{ post.body }
+        </div>
       </div>
     );
   },
