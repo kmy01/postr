@@ -6,7 +6,8 @@ module.exports = React.createClass({
   getInitialState() {
     return {
       linkUrl: '',
-      body: ''
+      body: '',
+      tags: ''
     };
   },
 
@@ -25,9 +26,10 @@ module.exports = React.createClass({
     postData.append('post[post_type]', 'link');
     postData.append('post[link_url]', this.state.linkUrl);
     postData.append('post[body]', this.state.body);
+    postData.append('tags', this.state.tags);
 
     PostActions.createPost(postData);
-    this.setState({ linkUrl: '', body: '' });
+    this.setState({ linkUrl: '', body: '', tags: '' });
     this.props._closeModal();
   },
 
@@ -37,6 +39,10 @@ module.exports = React.createClass({
 
   _onBodyChange(e) {
     this.setState({ body: e.target.value });
+  },
+
+  _onTagChange(e) {
+    this.setState({ tags: e.target.value })
   },
 
   render() {
@@ -51,6 +57,12 @@ module.exports = React.createClass({
         <textarea
           value={this.state.body}
           onChange={this._onBodyChange} />
+
+        <input
+          placeholder='#tags'
+          value={this.state.tags}
+          type='text'
+          onChange={this._onTagChange} />
 
         <div className='form-controls group'>
           <button

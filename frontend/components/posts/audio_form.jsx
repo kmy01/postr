@@ -7,7 +7,8 @@ module.exports = React.createClass({
     return {
       body: '',
       mediaFile: '',
-      audioUrl: ''
+      audioUrl: '',
+      tags: ''
     };
   },
 
@@ -29,12 +30,14 @@ module.exports = React.createClass({
     if (!this.state.mediaFile) {
       postData.append('post[audio_url]', this.state.audioUrl);
     }
+    postData.append('tags', this.state.tags);
 
     PostActions.createPost(postData);
     this.setState({
       body: '',
       mediaFile: '',
-      audioUrl: ''
+      audioUrl: '',
+      tags: ''
     });
     this.props._closeModal();
   },
@@ -63,6 +66,10 @@ module.exports = React.createClass({
     this.setState({ audioUrl: e.target.value })
   },
 
+  _onTagChange(e) {
+    this.setState({ tags: e.target.value })
+  },
+
   render() {
     return (
       <form className='audio-form'>
@@ -85,6 +92,12 @@ module.exports = React.createClass({
         <textarea
           value={this.state.body}
           onChange={this._onBodyChange} />
+
+        <input
+          placeholder='#tags'
+          value={this.state.tags}
+          type='text'
+          onChange={this._onTagChange} />
 
         <div className='form-controls group'>
           <button

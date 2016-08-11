@@ -31,7 +31,7 @@ module.exports = React.createClass({
     postData.append('tags', this.state.tags);
 
     PostActions.createPost(postData);
-    this.setState({ title: '', body: '' });
+    this.setState({ title: '', body: '', tags: '' });
     this.props._closeModal();
   },
 

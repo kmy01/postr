@@ -7,7 +7,8 @@ module.exports = React.createClass({
     return {
       body: '',
       mediaFile: '',
-      photoUrl: ''
+      photoUrl: '',
+      tags: ''
     };
   },
 
@@ -29,12 +30,14 @@ module.exports = React.createClass({
     if (!this.state.mediaFile) {
       postData.append('post[photo_url]', this.state.photoUrl);
     }
+    postData.append('tags', this.state.tags);
 
     PostActions.createPost(postData);
     this.setState({
       body: '',
       mediaFile: '',
-      photoUrl: ''
+      photoUrl: '',
+      tags: ''
     });
     this.props._closeModal();
   },
@@ -64,6 +67,10 @@ module.exports = React.createClass({
     //listen for idle?
   },
 
+  _onTagChange(e) {
+    this.setState({ tags: e.target.value })
+  },
+
   render() {
     return (
       <form className='photo-form'>
@@ -85,6 +92,12 @@ module.exports = React.createClass({
         <textarea
           value={this.state.body}
           onChange={this._onBodyChange} />
+
+        <input
+          placeholder='#tags'
+          value={this.state.tags}
+          type='text'
+          onChange={this._onTagChange} />
 
         <div className='form-controls group'>
           <button

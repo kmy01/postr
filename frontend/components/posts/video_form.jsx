@@ -7,7 +7,8 @@ module.exports = React.createClass({
     return {
       body: '',
       mediaFile: '',
-      videoUrl: ''
+      videoUrl: '',
+      tags: ''
     };
   },
 
@@ -29,12 +30,14 @@ module.exports = React.createClass({
     if (!this.state.mediaFile) {
       postData.append('post[video_url]', this.state.videoUrl);
     }
+    postData.append('tags', this.state.tags);
 
     PostActions.createPost(postData);
     this.setState({
       body: '',
       mediaFile: '',
-      videoUrl: ''
+      videoUrl: '',
+      tags: ''
     });
     this.props._closeModal();
   },
@@ -61,6 +64,10 @@ module.exports = React.createClass({
   _onUrlChange(e) {
     e.preventDefault();
     this.setState({ videoUrl: e.target.value })
+  },
+
+  _onTagChange(e) {
+    this.setState({ tags: e.target.value })
   },
 
   render() {
@@ -91,6 +98,12 @@ module.exports = React.createClass({
         <textarea
           value={this.state.body}
           onChange={this._onBodyChange} />
+
+        <input
+          placeholder='#tags'
+          value={this.state.tags}
+          type='text'
+          onChange={this._onTagChange} />
 
         <div className='form-controls group'>
           <button
