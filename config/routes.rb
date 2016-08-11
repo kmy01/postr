@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :posts, only: [:create, :index, :show, :update, :destroy]
     resources :likes, only: [:index, :create, :destroy]
     resource :follows, only: [:create, :destroy]
-    resource :tags, only: [:index]
+    resources :tags, only: [:index]
   end
 
   get '*path', to: 'static_pages#root'
