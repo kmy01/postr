@@ -18,7 +18,6 @@ module.exports = {
       method: 'GET',
       data: { tag: tagName },
       success(resp) {
-        debugger
         successCb(resp);
       },
       error(resp) {
