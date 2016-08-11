@@ -39,3 +39,4 @@ when 'video'
 end
 
 json.body post.body
+json.tags post.tags.map(&:name)
