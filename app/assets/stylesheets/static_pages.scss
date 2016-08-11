@@ -29,9 +29,11 @@ body {
 }
 
 .main-logo {
+  background: image-url('main-logo.svg') no-repeat;
+  width: 205px;
+  height: 62px;
   display: block;
-  margin: 0 auto;
-  padding: 10px 0;
+  margin: 10px auto;
 }
 
 .splash {

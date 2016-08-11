@@ -82,9 +82,7 @@ module.exports = React.createClass({
         </header>
 
         <div className="main-form">
-          <img
-            className='main-logo'
-            src='assets/main-logo.svg'/>
+          <div className='main-logo'></div>
           <ul className="error-list">
             { errorsList }
           </ul>
