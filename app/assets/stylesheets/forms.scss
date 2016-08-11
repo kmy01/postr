@@ -18,12 +18,14 @@
 
 .text-form > input {
   width: 500px;
-  height: 45px;
-  line-height: 45px;
   padding: 20px;
-  font-size: 36px;
   font-weight: lighter;
   color: #444;
+}
+
+.text-title {
+  line-height: 45px;
+  font-size: 36px;
 }
 
 .text-form > textarea, .photo-form > textarea,
