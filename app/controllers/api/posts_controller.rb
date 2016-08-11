@@ -10,7 +10,10 @@ class Api::PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    params_with_tags = post_params
+    params_with_tags[:tag_ids] = get_tag_ids(params[:tags])
+
+    @post = Post.new(params_with_tags)
     @post.author_id = current_user.id
     if @post.save
       render partial: 'api/posts/post', object: @post
@@ -46,7 +49,22 @@ class Api::PostsController < ApplicationController
       :audio_url,
       :video_url,
       :media_content,
-      :author_id
+      :author_id,
+      tag_ids: []
     )
+  end
+
+  def get_tag_ids(tag_string)
+    tag_names = tag_string.split(' ')
+    tag_ids = []
+
+    tag_names.each do |tag_name|
+      unless Tag.find_by_name(tag_name)
+        Tag.create(name: tag_name)
+      end
+      tag_ids << Tag.find_by_name(tag_name).id
+    end
+
+    tag_ids
   end
 end
