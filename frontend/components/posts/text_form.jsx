@@ -6,7 +6,8 @@ module.exports = React.createClass({
   getInitialState() {
     let textPostData = {
       title: '',
-      body: ''
+      body: '',
+      tags: ''
     };
 
     return textPostData;
@@ -27,6 +28,7 @@ module.exports = React.createClass({
     postData.append('post[post_type]', 'text');
     postData.append('post[title]', this.state.title);
     postData.append('post[body]', this.state.body);
+    postData.append('tags', this.state.tags);
 
     PostActions.createPost(postData);
     this.setState({ title: '', body: '' });
@@ -34,24 +36,34 @@ module.exports = React.createClass({
   },
 
   _onTitleChange(e) {
-    this.setState({title: e.target.value});
+    this.setState({ title: e.target.value });
   },
 
   _onBodyChange(e) {
-    this.setState({body: e.target.value});
+    this.setState({ body: e.target.value });
+  },
+
+  _onTagChange(e) {
+    this.setState({ tags: e.target.value })
   },
 
   render() {
     return (
       <form className='text-form'>
         <input
-          placeholder="Title"
+          className='text-title'
+          placeholder='Title'
           value={this.state.title}
-          type="text"
+          type='text'
           onChange={this._onTitleChange} />
         <textarea
           value={this.state.body}
           onChange={this._onBodyChange} />
+        <input
+          placeholder='#tags'
+          value={this.state.tags}
+          type='text'
+          onChange={this._onTagChange} />
 
         <div className='form-controls group'>
           <button
