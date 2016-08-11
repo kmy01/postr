@@ -55,6 +55,9 @@ module.exports = React.createClass({
   render() {
     let signupDiv = (
       <div className="main-login-signup-div">
+        <img
+          className='main-logo'
+          src='assets/main-logo.svg'/>
         <button
           className="main-buttons main-login-button"
           onClick={this._handleLoginRedirect}>Log in</button>
