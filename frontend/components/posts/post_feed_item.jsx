@@ -21,6 +21,7 @@ module.exports = React.createClass({
   },
 
   componentWillReceiveProps(newProps) {
+    const currentUser = SessionStore.currentUser();
     const likers = newProps.post.likes.map((like) => {
       return like.user_id;
     });
