@@ -12,6 +12,21 @@ module.exports = {
     });
   },
 
+  fetchTaggedPosts(tagName, successCb, errorCb) {
+    $.ajax({
+      url: '/api/tags',
+      method: 'GET',
+      data: { tag: tagName },
+      success(resp) {
+        debugger
+        successCb(resp);
+      },
+      error(resp) {
+        errorCb(resp);
+      }
+    });
+  },
+
   fetchSinglePost(id, successCb, errorCb) {
     $.ajax({
       url: `/api/posts/${id}`,
