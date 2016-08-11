@@ -16,7 +16,7 @@
   color: #444;
 }
 
-.text-form > input {
+.tag-input, .link-url-input {
   width: 500px;
   padding: 20px;
   font-weight: lighter;
@@ -24,6 +24,10 @@
 }
 
 .text-title {
+  width: 500px;
+  padding: 20px;
+  font-weight: lighter;
+  color: #444;
   line-height: 45px;
   font-size: 36px;
 }
