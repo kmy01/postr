@@ -12,14 +12,6 @@ module.exports = React.createClass({
     };
   },
 
-  componentDidMount() {
-    //store listener
-  },
-
-  componentWillUnmount() {
-    //remove listeners
-  },
-
   _onSubmit(e) {
     e.preventDefault();
     const postData = new FormData();
@@ -59,24 +51,32 @@ module.exports = React.createClass({
     if (file) {
       fileReader.readAsDataURL(file);
     }
+    this.props._changeHeight('291px');
   },
 
   _onUrlChange(e) {
     e.preventDefault();
     this.setState({ audioUrl: e.target.value })
+    this.props._changeHeight('291px');
   },
 
   _onTagChange(e) {
     this.setState({ tags: e.target.value })
   },
 
+  _renderPreview() {
+    if (this.state.audioUrl) {
+      return <audio
+        className="audio-preview"
+        controls
+        src={this.state.audioUrl} />;
+    }
+  },
+
   render() {
     return (
       <form className='audio-form'>
-        <audio
-          className="audio-preview"
-          controls
-          src={this.state.audioUrl} />
+        { this._renderPreview() }
 
         <div className='upload-inputs group'>
           <input
@@ -84,10 +84,11 @@ module.exports = React.createClass({
             placeholder="Audio Url"
             type='url'
             onChange={this._onUrlChange} />
-          <input
-            className='file-input'
-            type='file'
-            onChange={this._onFileChange} />
+          <label className='file-input'>
+            <input
+              type='file'
+              onChange={this._onFileChange} />
+          </label>
         </div>
         <textarea
           value={this.state.body}

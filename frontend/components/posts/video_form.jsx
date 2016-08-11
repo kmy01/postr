@@ -12,14 +12,6 @@ module.exports = React.createClass({
     };
   },
 
-  componentDidMount() {
-    //store listener
-  },
-
-  componentWillUnmount() {
-    //remove listeners
-  },
-
   _onSubmit(e) {
     e.preventDefault();
     const postData = new FormData();
@@ -59,20 +51,23 @@ module.exports = React.createClass({
     if (file) {
       fileReader.readAsDataURL(file);
     }
+    this.props._changeHeight('646px');
   },
 
   _onUrlChange(e) {
     e.preventDefault();
     this.setState({ videoUrl: e.target.value })
+    this.props._changeHeight('646px');
   },
 
   _onTagChange(e) {
     this.setState({ tags: e.target.value })
   },
 
-  render() {
-    return (
-      <form className='video-form'>
+  _renderPreview() {
+    if (this.state.videoUrl) {
+      return
+      <div>
         <video
           className='preview'
           controls
@@ -83,16 +78,26 @@ module.exports = React.createClass({
           frameborder="0"
           allowfullscreen></iframe>
 
+      </div>;
+    }
+  },
+
+  render() {
+    return (
+      <form className='video-form'>
+        { this._renderPreview() }
+
         <div className='upload-inputs group'>
           <input
             className='url-input'
             placeholder="Video Url"
             type='url'
             onChange={this._onUrlChange} />
-          <input
-            className='file-input'
-            type='file'
-            onChange={this._onFileChange} />
+          <label className='file-input'>
+            <input
+              type='file'
+              onChange={this._onFileChange} />
+          </label>
         </div>
 
         <textarea

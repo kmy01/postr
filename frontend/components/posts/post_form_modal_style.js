@@ -9,14 +9,13 @@ module.exports = {
     zIndex          : 10
   },
   content : {
-    position        : 'fixed',
+    position        : 'absolute',
     width           : '540px',
     height          : '800px',
     top             : '55px',
     margin          : '0 auto',
     left            : '120px',
     padding         : '0',
-    border          : '1px solid #ccc',
     zIndex          : 11,
     overflow        : 'hidden'
   }

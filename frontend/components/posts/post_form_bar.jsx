@@ -12,7 +12,7 @@ const VideoForm = require('./video_form');
 
 module.exports = React.createClass({
   getInitialState() {
-    return ({ modalOpen: false });
+    return ({ ModalStyle: ModalStyle, modalOpen: false });
   },
 
   componentDidMount() {
@@ -21,6 +21,19 @@ module.exports = React.createClass({
 
   _openModal(form_type) {
     this.form_type = form_type;
+    switch (form_type) {
+      case 'text':
+        this.state.ModalStyle.content.height = '412px';
+        break;
+      case 'link':
+        this.state.ModalStyle.content.height = '371px';
+        break;
+      case 'photo':
+      case 'audio':
+      case 'video':
+        this.state.ModalStyle.content.height = '241px';
+        break;
+    }
     this.setState({ modalOpen: true });
   },
 
@@ -33,14 +46,33 @@ module.exports = React.createClass({
     if (form_type === 'text') {
       return <TextForm _closeModal={this._closeModal}/>;
     } else if (form_type ==='photo') {
-      return <PhotoForm _closeModal={this._closeModal}/>;
+      return (
+        <PhotoForm
+          _changeHeight={this._changeHeight}
+          _closeModal={this._closeModal}/>
+      );
     } else if (form_type ==='link') {
       return <LinkForm _closeModal={this._closeModal}/>;
     } else if (form_type ==='audio') {
-      return <AudioForm _closeModal={this._closeModal}/>;
+      return (
+        <AudioForm
+          _changeHeight={this._changeHeight}
+          _closeModal={this._closeModal}/>
+      );
     } else if (form_type ==='video') {
-      return <VideoForm _closeModal={this._closeModal}/>;
+      return (
+        <VideoForm
+          _changeHeight={this._changeHeight}
+          _closeModal={this._closeModal}/>
+      );
     }
+  },
+
+  _changeHeight(height) {
+    ModalStyle.content.height = height;
+    this.setState({
+      ModalStyle: ModalStyle
+    });
   },
 
   render() {
@@ -75,7 +107,7 @@ module.exports = React.createClass({
         <Modal
           isOpen={this.state.modalOpen}
           onRequestClose={this._closeModal}
-          style={ModalStyle}>
+          style={this.state.ModalStyle}>
           { this._formToShow(this.form_type) }
         </Modal>
       </div>

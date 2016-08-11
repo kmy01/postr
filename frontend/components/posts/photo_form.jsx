@@ -12,14 +12,6 @@ module.exports = React.createClass({
     };
   },
 
-  componentDidMount() {
-    //store listener
-  },
-
-  componentWillUnmount() {
-    //remove listeners
-  },
-
   _onSubmit(e) {
     e.preventDefault();
     const postData = new FormData();
@@ -59,11 +51,13 @@ module.exports = React.createClass({
     if (file) {
       fileReader.readAsDataURL(file);
     }
+    this.props._changeHeight('646px');
   },
 
   _onUrlChange(e) {
     e.preventDefault();
     this.setState({ photoUrl: e.target.value })
+    this.props._changeHeight('646px');
     //listen for idle?
   },
 
@@ -71,22 +65,30 @@ module.exports = React.createClass({
     this.setState({ tags: e.target.value })
   },
 
+  _renderPreview() {
+    if (this.state.photoUrl) {
+      return <img
+        className="preview"
+        src={this.state.photoUrl} />;
+    }
+  },
+
   render() {
     return (
       <form className='photo-form'>
-        <img
-          className="preview"
-          src={this.state.photoUrl} />
+        { this._renderPreview() }
+
         <div className='upload-inputs group'>
           <input
             className='url-input'
             placeholder="Photo Url"
             type='url'
             onChange={this._onUrlChange} />
-          <input
-            className='file-input'
-            type='file'
-            onChange={this._onFileChange} />
+          <label className='file-input'>
+            <input
+              type='file'
+              onChange={this._onFileChange} />
+          </label>
         </div>
 
         <textarea
