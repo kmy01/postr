@@ -118,6 +118,14 @@ module.exports = React.createClass({
     return postRender;
   },
 
+  _tagsToRender() {
+    return this.props.post.tags.map((tag) => {
+      return (
+        <li key={tag}><a href={`#`}>{ '#' + tag }</a></li>
+      );
+    });
+  },
+
   _textPost(post) {
     return(
       <div className='post-feed-item-content'>
@@ -201,6 +209,10 @@ module.exports = React.createClass({
           </div>
 
           { this._postToRender() }
+
+          <ul className='post-feed-tags'>
+            { this._tagsToRender() }
+          </ul>
 
           <div className='post-feed-item-footer group'>
             <button
