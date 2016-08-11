@@ -13,6 +13,7 @@ json.liked_posts do
       json.avatar_url asset_path(post.author.avatar.url)
     end
     json.likes post.likes
+    json.tags post.tags.map(&:name)
   end
 end
 
