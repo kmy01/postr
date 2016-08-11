@@ -27,9 +27,6 @@ Tag.create(name: 'pets') # 11
 Tag.create(name: 'cute') # 12
 Tag.create(name: 'adventure') # 13
 
-
-
-
 Post.create!(
   post_type: 'text',
   author_id: 1,
@@ -156,6 +153,25 @@ Post.create!(
   body: "Coding err day!",
   tag_ids: [10, 12]
 ) # 16
+
+Post.create!(
+  post_type: 'video',
+  author_id: 3,
+  video_url: 'https://player.vimeo.com/video/178300706',
+  body: 'Aerial View',
+  tag_ids: [5, 7, 13]
+) # 17
+
+Post.create!(
+  post_type: 'photo',
+  author_id: 5,
+  photo_url: 'https://img.buzzfeed.com/buzzfeed-static/static/2014-11/10/16/enhanced/webdr07/edit-11431-1415655953-15.jpg?no-auto',
+  body: 'Cute Hedge Hog',
+  tag_ids: [11, 12]
+) # 15
+
+
+
 
 Like.create(post_id: 14, user_id: 1)
 Like.create(post_id: 10, user_id: 1)
