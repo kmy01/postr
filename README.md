@@ -8,25 +8,25 @@
 
 Postr is a web application inspired by Tumblr that will be build using Ruby on Rails and React.js.  By the end of Week 9, this app will, at a minimum, satisfy the following criteria:
 
-- [ ] Hosting on Heroku
-- [ ] New account creation, login, and guest/demo login
+- [x] Hosting on Heroku
+- [x] New account creation, login, and guest/demo login
 - [ ] A production README, replacing this README (**NB**: check out the [sample production README](docs/production_readme.md) -- you'll write this later)
-- [ ] Form for posting for various types of media
+- [x] Form for posting for various types of media
   - [ ] Smooth, bug-free navigation
   - [ ] Adequate seed data to demonstrate the site's features
   - [ ] Adequate CSS styling
-- [ ] Feed for user's dashboard
-  - [ ] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
-- [ ] Follow other users
-  - [ ] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
-- [ ] Likes, liking post
-  - [ ] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
+- [x] Feed for user's dashboard
+  - [x] Smooth, bug-free navigation
+  - [x] Adequate seed data to demonstrate the site's features
+  - [x] Adequate CSS styling
+- [x] Follow other users
+  - [x] Smooth, bug-free navigation
+  - [x] Adequate seed data to demonstrate the site's features
+  - [x] Adequate CSS styling
+- [x] Likes, liking post
+  - [x] Smooth, bug-free navigation
+  - [x] Adequate seed data to demonstrate the site's features
+  - [x] Adequate CSS styling
 
 ## Design Docs
 * [View Wireframes][views]
@@ -102,13 +102,13 @@ the API.
 
 **Objective:** Posts can be tagged with multiple tags, and tags are searchable.
 
-- [ ] create `Tag` model and join table
+- [x] create `Tag` model and join table
 - build out API, Flux loop, and components for:
-  - [ ] fetching tags for post
-  - [ ] adding tags to post
-  - [ ] creating tags while adding to post
-- [ ] Style new elements
-- [ ] Seed tags and tag the seeded post
+  - [x] fetching tags for post
+  - [x] adding tags to post
+  - [x] creating tags while adding to post
+- [x] Style new elements
+- [x] Seed tags and tag the seeded post
 
 ## Bonus 1: Reblogs
 
