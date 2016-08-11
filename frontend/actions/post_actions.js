@@ -8,6 +8,10 @@ module.exports = {
     PostApiUtil.fetchAllPosts(this.receiveAllPosts, ErrorActions.setErrors);
   },
 
+  fetchTaggedPosts(tagName) {
+    PostApiUtil.fetchTaggedPosts(tagName, this.receiveAllPosts, ErrorActions.setErrors);
+  },
+
   fetchSinglePost(id) {
     PostApiUtil.fetchSinglePost(id, this.receiveSinglePost, ErrorActions.setErrors);
   },
