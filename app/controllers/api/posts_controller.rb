@@ -2,7 +2,11 @@ class Api::PostsController < ApplicationController
   # before action require sign in
   # before ction require user be owner
   def index
-    @posts = Post.all.includes(:likes, :tags, author: :followers)
+    if params[:pathname]
+      @posts = Post.joins(author: :followers).where("follower_id = ?", current_user.id)
+    else
+      @posts = Post.all.includes(:likes, :tags, author: :followers)
+    end
   end
 
   def show
