@@ -5,7 +5,8 @@ class Api::PostsController < ApplicationController
     if params[:pathname]
       @posts = Post.joins(author: :followers).where("follower_id = ? OR author_id = ?", current_user.id, current_user.id)
     else
-      @posts = Post.all.includes(:likes, :tags, author: :followers)
+      # @posts = Post.includes(:likes, :tags, author: :followers).where('author_id != ?', current_user.id)
+      @posts = Post.where.not('author_id = ?', current_user.id).joins(author: :followers).where.not("follower_id = ?", current_user.id)
     end
   end
 
