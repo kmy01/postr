@@ -1,9 +1,9 @@
 const React = require('react');
-
+const Masonry = require('react-masonry-component');
 const NavBar = require('./nav_bar');
 const PostFormBar = require('./posts/post_form_bar');
+const ExploreItem = require('./explore_item');
 
-const PostFeed = require('./posts/post_feed');
 const PostStore = require('../stores/post_store');
 const PostActions = require('../actions/post_actions');
 
@@ -32,13 +32,35 @@ module.exports = React.createClass({
   },
 
   render() {
+    function compare(a, b) {
+      if (a.created_at > b.created_at) {
+        return -1;
+      } else if (a.created_at < b.created_at) {
+        return 1;
+      }
+      return 0;
+    };
+
+    let posts = this.state.posts.sort(compare);
+
+    let postItems = posts.map((post) => {
+      return(
+        <li key={post.id}><ExploreItem
+          post={post} /></li>
+      );
+    });
+
     return (
       <div>
         <header className='header-nav group'>
           <NavBar />
         </header>
         <main className='main'>
-          <PostFeed posts={this.state.posts}/>
+          <Masonry
+            className={'explore'}
+            elementType={'ul'}>
+            { postItems }
+          </Masonry>
         </main>
       </div>
     );
