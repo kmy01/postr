@@ -125,7 +125,7 @@
 }
 
 .file-input {
-  background: url('icons/upload.svg') no-repeat center;
+  background: image-url('icons/upload.svg') no-repeat center;
   background-size: 80% 80%;
   display: inline-block;
   box-sizing: border-box;
@@ -149,26 +149,26 @@
 }
 
 .text-icon {
-  background: url('forms/text.svg') no-repeat;
+  background: image-url('forms/text.svg') no-repeat;
   background-size: 100% 100%;
 }
 
 .photo-icon {
-  background: url('forms/photo.svg') no-repeat;
+  background: image-url('forms/photo.svg') no-repeat;
   background-size: 100% 100%;
 }
 
 .link-icon {
-  background: url('forms/link.svg') no-repeat;
+  background: image-url('forms/link.svg') no-repeat;
   background-size: 100% 100%;
 }
 
 .audio-icon {
-  background: url('forms/audio.svg') no-repeat;
+  background: image-url('forms/audio.svg') no-repeat;
   background-size: 100% 100%;
 }
 
 .video-icon {
-  background: url('forms/video.svg') no-repeat;
+  background: image-url('forms/video.svg') no-repeat;
   background-size: 100% 100%;
 }
