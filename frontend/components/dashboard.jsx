@@ -7,6 +7,8 @@ const PostFeed = require('./posts/post_feed');
 const PostStore = require('../stores/post_store');
 const PostActions = require('../actions/post_actions');
 
+const SessionStore = require('../stores/session_store');
+
 module.exports = React.createClass({
   contextTypes: {
     router: React.PropTypes.object.isRequired
@@ -18,7 +20,7 @@ module.exports = React.createClass({
 
   componentDidMount() {
     this.postListener = PostStore.addListener(this._onPostChange);
-    PostActions.fetchAllPosts();
+    PostActions.fetchAllPosts('dashboard');
   },
 
   componentWillUnmount() {
