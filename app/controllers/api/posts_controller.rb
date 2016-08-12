@@ -3,7 +3,7 @@ class Api::PostsController < ApplicationController
   # before ction require user be owner
   def index
     if params[:pathname]
-      @posts = Post.joins(author: :followers).where("follower_id = ?", current_user.id)
+      @posts = Post.joins(author: :followers).where("follower_id = ? OR author_id = ?", current_user.id, current_user.id)
     else
       @posts = Post.all.includes(:likes, :tags, author: :followers)
     end
