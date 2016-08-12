@@ -35,12 +35,11 @@ module.exports = React.createClass({
 
         <ul className='nav-list'>
           <li><a href='/dashboard'>Home</a></li>
-          <li><a href='#'>Explore</a></li>
+          <li><a href='/explore'>Explore</a></li>
           <li className='account'>
             <div>Account</div>
             <ul className='account-list'>
               <li>{ SessionStore.currentUser().username }</li>
-              <li><a href='#'>Edit Profile</a></li>
               <li><a href='#'>Posts</a></li>
               <li><a href='/likes'>Likes</a></li>
               <li><a href='/following'>Following</a></li>
