@@ -1,8 +1,9 @@
 module.exports = {
-  fetchAllPosts(successCb, errorCb) {
+  fetchAllPosts(successCb, errorCb, pathname) {
     $.ajax({
       url: '/api/posts',
       method: 'GET',
+      data: { pathname: pathname},
       success(resp) {
         successCb(resp);
       },

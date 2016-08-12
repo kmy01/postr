@@ -4,8 +4,8 @@ const AppDispatcher = require('../dispatcher/dispatcher');
 const ErrorActions = require('./error_actions');
 
 module.exports = {
-  fetchAllPosts() {
-    PostApiUtil.fetchAllPosts(this.receiveAllPosts, ErrorActions.setErrors);
+  fetchAllPosts(pathname) {
+    PostApiUtil.fetchAllPosts(this.receiveAllPosts, ErrorActions.setErrors, pathname);
   },
 
   fetchTaggedPosts(tagName) {
