@@ -30,8 +30,7 @@ module.exports = React.createClass({
   render() {
     return (
       <nav className='nav-bar group'>
-        <div className='logo'> a logo </div>
-        <div className='search-bar'> this is a search bar </div>
+        <div className='logo'><a href='/'>postr</a></div>
 
         <ul className='nav-list'>
           <li><a href='/dashboard'>Home</a></li>
