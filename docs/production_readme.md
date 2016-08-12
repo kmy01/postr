@@ -1,65 +1,40 @@
 # Postr
 
-[Postr live][heroku] **NB:** This should be a link to your production site
+[Postr live][heroku]
 
-[heroku]: http://www.herokuapp.com
+[heroku]: http://postr-kmy.herokuapp.com
 
-Postr is a full-stack web application inspired by Evernote.  It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Flux architectural framework on the frontend.  
+Postr is a full-stack web application inspired by Tumblr.  It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Flux architectural framework on the frontend.  
 
 ## Features & Implementation
 
- **NB**: don't copy and paste any of this.  Many folks will implement similar features, and many employers will see the READMEs of a lot of a/A grads.  You must write in a way that distinguishes your README from that of other students', but use this as a guide for what topics to cover.  
+### Blogging App
 
-### Single-Page App
+Postr is a multi purpose blogging platform that allows users to easily find new and interesting content. Upon entering the root page, the application listens for any active users through a `SessionStore` using the `SessionStore.currentUser()` method. The application makes a redirect when a user signs in or a new user is created.
 
-Postr is truly a single-page; all content is delivered on one static page.  The root page listens to a `SessionStore` and renders content based on a call to `SessionStore.currentUser()`.  Sensitive information is kept out of the frontend of the app by making an API call to `SessionsController#get_user`.
+### Blogging through different forms of media
 
-```ruby
-class Api::SessionsController < ApplicationController
-    def get_user
-      if current_user
-        render :current_user
-      else
-        render json: errors.full_messages
-      end
-    end
- end
-  ```
+  On Postr users are able to create post in various different forms (text, photo, link, audio, video). Each post is stored within a table on the database that has columns for accommodating the different types of media the user wishes to post. Posts are fetched through an API call to the database where it is then stored in a `PostStore`.
 
-### Note Rendering and Editing
+  The `Dashboard` component and the `Explore` component handles the job of rendering the post. The former renders post from other users that the user follows and the latter renders all existing post that is not created by the user. Each of the main components have a `PostFeed` component and within that it has a `PostFeedItem` component that holds each individual post.
 
-  On the database side, the notes are stored in one table in the database, which contains columns for `id`, `user_id`, `content`, and `updated_at`.  Upon login, an API call is made to the database which joins the user table and the note table on `user_id` and filters by the current user's `id`.  These notes are held in the `NoteStore` until the user's session is destroyed.  
+  There are five main forms: `TextForm`, `PhotoForm`, `LinkForm`, `AudioForm`, `VideoForm` that users can utilize to post their different contents.
 
-  Notes are rendered in two different components: the `CondensedNote` components, which show the title and first few words of the note content, and the `ExpandedNote` components, which are editable and show all note text.  The `NoteIndex` renders all of the `CondensedNote`s as subcomponents, as well as one `ExpandedNote` component, which renders based on `NoteStore.selectedNote()`. The UI of the `NoteIndex` is taken directly from Evernote for a professional, clean look:  
+![dashboard](docs/dashboard.png)
+![explore](docs/explore.png)
+![text form](docs/textform.png)
 
-![image of notebook index](noteIndex.png)
+### Liking Posts
 
-Note editing is implemented using the Quill.js library, allowing for a Word-processor-like user experience.
+Users are able to like and unlike any post that they come across whether in the dashboard or in the explore locations. This is done through a `likes` join table in the database. The table joins a `user_id` to a `post_id`. The data is passed with the post json data when fetched.
 
-### Notebooks
+### Following Other Users
 
-Implementing Notebooks started with a notebook table in the database.  The `Notebook` table contains two columns: `title` and `id`.  Additionally, a `notebook_id` column was added to the `Note` table.  
-
-The React component structure for notebooks mirrored that of notes: the `NotebookIndex` component renders a list of `CondensedNotebook`s as subcomponents, along with one `ExpandedNotebook`, kept track of by `NotebookStore.selectedNotebook()`.  
-
-`NotebookIndex` render method:
-
-```javascript
-render: function () {
-  return ({this.state.notebooks.map(function (notebook) {
-    return <CondensedNotebook notebook={notebook} />
-  }
-  <ExpandedNotebook notebook={this.state.selectedNotebook} />)
-}
-```
+Users are able to follow other users. A followee's post will appear on the follower's dashboard. This gives users easy access to all their followers. This is done through a `follows` join table in the database. This table joins a `follower_id` to a `followee_id`. Each of the id is associated to a user.
 
 ### Tags
 
-As with notebooks, tags are stored in the database through a `tag` table and a join table.  The `tag` table contains the columns `id` and `tag_name`.  The `tagged_notes` table is the associated join table, which contains three columns: `id`, `tag_id`, and `note_id`.  
-
-Tags are maintained on the frontend in the `TagStore`.  Because creating, editing, and destroying notes can potentially affect `Tag` objects, the `NoteIndex` and the `NotebookIndex` both listen to the `TagStore`.  It was not necessary to create a `Tag` component, as tags are simply rendered as part of the individual `Note` components.  
-
-![tag screenshot](tagScreenshot.png)
+Users are able to create tags with their post that they've created. Clicking on the tags displayed on the post will direct users to another page with all post that relates to the tag. This is done with a `tags` table and a `taggings` join table. When a user creates a post with tags, the controller first checks if the tags exist in the tags table, if not it creates a new tag. Then it creates new taggings that associates the tag to the post. There is an inverse of relationship between the taggings and the post since both are being created at the same time.
 
 ## Future Directions for the Project
 
@@ -67,8 +42,8 @@ In addition to the features already implemented, I plan to continue work on this
 
 ### Search
 
-Searching notes is a standard feature of Evernote.  I plan to utilize the Fuse.js library to create a fuzzy search of notes and notebooks.  This search will look go through tags, note titles, notebook titles, and note content.  
+Searching will allow users to search the database for keywords which will check any existing tags that match the search term.
 
-### Direct Messaging
+### Reblogging
 
-Although this is less essential functionality, I also plan to implement messaging between Postr users.  To do this, I will use WebRTC so that notifications of messages happens seamlessly.  
+This feature will allow users to reblog another user's post. This will create a new post that is associated to the original post.
