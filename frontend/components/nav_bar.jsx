@@ -39,7 +39,6 @@ module.exports = React.createClass({
             <div>Account</div>
             <ul className='account-list'>
               <li>{ SessionStore.currentUser().username }</li>
-              <li><a href='#'>Posts</a></li>
               <li><a href='/likes'>Likes</a></li>
               <li><a href='/following'>Following</a></li>
               <li onClick={this._handleLogout}>Logout</li>
