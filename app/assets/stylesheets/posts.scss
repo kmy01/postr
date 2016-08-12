@@ -28,12 +28,13 @@
   float: left;
   color: #b2b2b2;
   font-weight: 500;
+  cursor: default; //remove link when user link has been implemented
 }
-
-.post-feed-item-header > a:hover {
-  float: left;
-  color: #808080;
-}
+// comment back in when user link has been implemented
+// .post-feed-item-header > a:hover {
+//   float: left;
+//   color: #808080;
+// }
 
 .post-header-follow {
   float: right;
