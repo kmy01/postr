@@ -20,9 +20,9 @@ Postr is a multi purpose blogging platform that allows users to easily find new 
 
   There are five main forms: `TextForm`, `PhotoForm`, `LinkForm`, `AudioForm`, `VideoForm` that users can utilize to post their different contents.
 
-![dashboard](docs/dashboard.png)
-![explore](docs/explore.png)
-![text form](docs/textform.png)
+![dashboard](docs/photos/dashboard.png)
+![explore](docs/photos/explore.png)
+![text form](docs/photos/textform.png)
 
 ### Liking Posts
 
