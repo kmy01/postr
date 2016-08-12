@@ -1,138 +1,49 @@
 # Postr
 
-[Heroku link][heroku]
+[Postr live][heroku]
 
-[heroku]: https://postr-kmy.herokuapp.com
+[heroku]: http://postr-kmy.herokuapp.com
 
-## Minimum Viable Product
+Postr is a full-stack web application inspired by Tumblr.  It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Flux architectural framework on the frontend.  
 
-Postr is a web application inspired by Tumblr that will be build using Ruby on Rails and React.js.  By the end of Week 9, this app will, at a minimum, satisfy the following criteria:
+## Features & Implementation
 
-- [x] Hosting on Heroku
-- [x] New account creation, login, and guest/demo login
-- [ ] A production README, replacing this README (**NB**: check out the [sample production README](docs/production_readme.md) -- you'll write this later)
-- [x] Form for posting for various types of media
-  - [ ] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
-- [x] Feed for user's dashboard
-  - [x] Smooth, bug-free navigation
-  - [x] Adequate seed data to demonstrate the site's features
-  - [x] Adequate CSS styling
-- [x] Follow other users
-  - [x] Smooth, bug-free navigation
-  - [x] Adequate seed data to demonstrate the site's features
-  - [x] Adequate CSS styling
-- [x] Likes, liking post
-  - [x] Smooth, bug-free navigation
-  - [x] Adequate seed data to demonstrate the site's features
-  - [x] Adequate CSS styling
+### Blogging App
 
-## Design Docs
-* [View Wireframes][views]
-* [React Components][components]
-* [Flux Cycles][flux-cycles]
-* [API endpoints][api-endpoints]
-* [DB schema][schema]
+Postr is a multi purpose blogging platform that allows users to easily find new and interesting content. Upon entering the root page, the application listens for any active users through a `SessionStore` using the `SessionStore.currentUser()` method. The application makes a redirect when a user signs in or a new user is created.
 
-[views]: docs/views.md
-[components]: docs/components.md
-[flux-cycles]: docs/flux-cycles.md
-[api-endpoints]: docs/api-endpoints.md
-[schema]: docs/schema.md
+### Blogging through different forms of media
 
-## Implementation Timeline
+  On Postr users are able to create post in various different forms (text, photo, link, audio, video). Each post is stored within a table on the database that has columns for accommodating the different types of media the user wishes to post. Posts are fetched through an API call to the database where it is then stored in a `PostStore`.
 
-### Phase 1: Backend setup and Front End User Authentication (2 days, W1 W 6pm)
+  The `Dashboard` component and the `Explore` component handles the job of rendering the post. The former renders post from other users that the user follows and the latter renders all existing post that is not created by the user. Each of the main components have a `PostFeed` component and within that it has a `PostFeedItem` component that holds each individual post.
 
-**Objective:** Functioning rails project with front-end Authentication
+  There are five main forms: `TextForm`, `PhotoForm`, `LinkForm`, `AudioForm`, `VideoForm` that users can utilize to post their different contents.
 
-- [x] create new project
-- [x] create `User` model
-- [x] authentication backend setup
-- [x] create `StaticPages` controller and root view
-- [x] set up webpack & flux scaffold with skeleton files
-- [x] setup `APIUtil` to interact with the API
-- [x] set up flux cycle for frontend auth
-- [x] user signup/signin components
-- [x] blank landing component after signin
-- [x] style signin/signup components
-- [x] seed users
+![dashboard](docs/dashboard.png)
+![explore](docs/explore.png)
+![text form](docs/textform.png)
 
-### Phase 2: Feed / Posts Model, API, and components (3 days, W2 M 6pm)
+### Liking Posts
 
-**Objective:** Posts can be created, read, edited and destroyed through
-the API.
+Users are able to like and unlike any post that they come across whether in the dashboard or in the explore locations. This is done through a `likes` join table in the database. The table joins a `user_id` to a `post_id`. The data is passed with the post json data when fetched.
 
-- [x] create `Post` model
-- [x] seed the database with a small amount of test data
-- [x] CRUD API for posts (`PostsController`)
-- [x] jBuilder views for posts
-- [x] test out API interaction in the console.
-- implement each post component, building out the flux loop as needed.
-  - [x] `PostsIndex`
-  - [x] `PostIndexItem`
-  - [x] `PostForm`
-- [x] style posts components
-- [x] seed posts
+### Following Other Users
 
-### Phase 3: Likes (1 days, W2 Tu 6pm)
+Users are able to follow other users. A followee's post will appear on the follower's dashboard. This gives users easy access to all their followers. This is done through a `follows` join table in the database. This table joins a `follower_id` to a `followee_id`. Each of the id is associated to a user.
 
-**Objective:** Posts can be liked by multiple users
+### Tags
 
-- [x] create `Like` model and join table
-- build out API, Flux loop, and components for:
-  - [x] fetching post liked by user
-  - [x] adding likes to post
-- [x] Style new elements
-- [x] Seed liked post
+Users are able to create tags with their post that they've created. Clicking on the tags displayed on the post will direct users to another page with all post that relates to the tag. This is done with a `tags` table and a `taggings` join table. When a user creates a post with tags, the controller first checks if the tags exist in the tags table, if not it creates a new tag. Then it creates new taggings that associates the tag to the post. There is an inverse of relationship between the taggings and the post since both are being created at the same time.
 
-### Phase 4: Follows (1 days, W2 W 6pm)
+## Future Directions for the Project
 
-**Objective:** Posts can be followed by multiple users
+In addition to the features already implemented, I plan to continue work on this project.  The next steps for Postr are outlined below.
 
-- [x] create `Follow` join table
-- build out API, Flux loop, and components for:
-  - [x] fetching post of author followed by user
-  - [x] follow a user
-- [x] Style new elements
-- [x] Seed followers/followee
+### Search
 
-### Phase 5: Tags (1 days, W2 Th 6pm)
+Searching will allow users to search the database for keywords which will check any existing tags that match the search term.
 
-**Objective:** Posts can be tagged with multiple tags, and tags are searchable.
+### Reblogging
 
-- [x] create `Tag` model and join table
-- build out API, Flux loop, and components for:
-  - [x] fetching tags for post
-  - [x] adding tags to post
-  - [x] creating tags while adding to post
-- [x] Style new elements
-- [x] Seed tags and tag the seeded post
-
-## Bonus 1: Reblogs
-
-**Objective:** Posts can be reblogged by multiple users
-
-- [ ] create `Reblog` join table
-- build out API, Flux loop, and components for:
-  - [ ] fetching post reblogged by user
-  - [ ] adding reblog for user
-- [ ] Style new elements
-- [ ] Seed reblogged posts
-
-### Bonus 2: - Pagination / infinite scroll for Posts Index
-
-**objective:** Add infinite scroll to Posts Index
-
-- [ ] Paginate Posts Index API to send 20 results at a time
-- [ ] Append next set of results when user scrolls and is near bottom
-- [ ] Make sure styling still looks good
-- [ ] Ensure we have enough seeded posts to demo infinite scroll
-
-
-[phase-one]: docs/phases/phase1.md
-[phase-two]: docs/phases/phase2.md
-[phase-three]: docs/phases/phase3.md
-[phase-four]: docs/phases/phase4.md
-[phase-five]: docs/phases/phase5.md
+This feature will allow users to reblog another user's post. This will create a new post that is associated to the original post.
