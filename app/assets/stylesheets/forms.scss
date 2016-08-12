@@ -64,8 +64,7 @@
 
 .form-icons {
   float: right;
-  width: 340px;
-  padding: 0 100px;
+  width: 540px;
   border-radius: 3px;
   background: #fff;
   color: #696969;
@@ -74,14 +73,20 @@
 }
 
 .form-icons > li {
-  float: left;
-  padding: 0 15px;
+  text-align: center;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 20%;
   border-right: solid 1px #ccc;
+  cursor: pointer;
+  margin: 20px 0;
+}
+
+.form-icons > li > span {
 }
 
 .form-icons > li:last-child {
-  float: left;
-  padding: 0 15px;
+  display: inline-block;
   border: none;
 }
 
@@ -113,33 +118,57 @@
 
 .url-input {
   box-sizing: border-box;
-  float: left;
   line-height: 24px;
   padding: 15px 20px;
   width: 90%;
+  display: inline-block;
 }
 
 .file-input {
-  // background: url('upload.svg') no-repeat center;
-  background: blue;
-  background-size: 100% 100%;
-  display: block;
+  background: url('icons/upload.svg') no-repeat center;
+  background-size: 80% 80%;
+  display: inline-block;
   box-sizing: border-box;
-  float: right;
   line-height: 24px;
   padding: 15px 20px;
   width: 10%;
  }
 
 .file-input > input {
+  cursor: pointer;
   display: block;
   width: 100%;
   opacity: 0;
 }
 
+.text-icon, .photo-icon, .link-icon, .audio-icon, .video-icon {
+  display:block;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+}
+
 .text-icon {
-  display:none;
-  width: 80px;
-  height: 80px;
-  background: image-url('text.svg') no-repeat;
+  background: url('forms/text.svg') no-repeat;
+  background-size: 100% 100%;
+}
+
+.photo-icon {
+  background: url('forms/photo.svg') no-repeat;
+  background-size: 100% 100%;
+}
+
+.link-icon {
+  background: url('forms/link.svg') no-repeat;
+  background-size: 100% 100%;
+}
+
+.audio-icon {
+  background: url('forms/audio.svg') no-repeat;
+  background-size: 100% 100%;
+}
+
+.video-icon {
+  background: url('forms/video.svg') no-repeat;
+  background-size: 100% 100%;
 }
