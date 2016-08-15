@@ -2,8 +2,10 @@ class Api::PostsController < ApplicationController
   # before action require sign in
   # before ction require user be owner
   def index
-    if params[:pathname]
+    if params[:pathname] == 'dashboard'
       @posts = Post.joins(author: :followers).where("follower_id = ? OR author_id = ?", current_user.id, current_user.id)
+    elsif params[:pathname] == 'likes'
+      @posts = User.find(current_user.id).liked_posts
     else
       # @posts = Post.includes(:likes, :tags, author: :followers).where('author_id != ?', current_user.id)
       @posts = Post.where.not('author_id = ?', current_user.id).joins(author: :followers).where.not("follower_id = ?", current_user.id)
