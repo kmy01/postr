@@ -61,11 +61,15 @@ module.exports = React.createClass({
     }
   },
 
-  _likeText() {
+  _likeRender() {
     if (this.state.likedByUser) {
-      return 'UnLike';
+      return <button
+        className='like-button like-fill'
+        onClick={this._handleLike} />;
     } else {
-      return 'Like';
+      return <button
+        className='like-button'
+        onClick={this._handleLike} />;
     }
   },
 
@@ -231,9 +235,7 @@ module.exports = React.createClass({
           </ul>
 
           <div className='explore-item-footer group'>
-            <button
-              className='like-button'
-              onClick={this._handleLike}>{ this._likeText() }</button>
+            { this._likeRender() }
           </div>
         </div>
       </div>
