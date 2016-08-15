@@ -19,9 +19,7 @@ module.exports = React.createClass({
     postData.append('post[post_type]', 'video');
     postData.append('post[body]', this.state.body);
     postData.append('post[media_content]', this.state.mediaFile);
-    if (!this.state.mediaFile) {
-      postData.append('post[video_url]', this.state.videoUrl);
-    }
+    postData.append('post[video_url]', this.state.videoUrl);
     postData.append('tags', this.state.tags);
 
     PostActions.createPost(postData);
