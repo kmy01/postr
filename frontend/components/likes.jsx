@@ -19,7 +19,7 @@ module.exports = React.createClass({
 
   componentDidMount() {
     this.listener = SessionStore.addListener(this._onChange);
-    PostActions.fetchAllPosts();
+    PostActions.fetchAllPosts('likes');
   },
 
   componentWillUnmount() {
