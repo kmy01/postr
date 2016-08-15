@@ -110,7 +110,7 @@ Post.create!(
 Post.create!(
   post_type: 'photo',
   author_id: 3,
-  photo_url: 'https://c1.staticflickr.com/9/8847/28837404396_e7e7d51cc1_h.jpg',
+  photo_url: 'http://i.imgur.com/Kr1VorB.jpg?1',
   body: 'Beautiful',
   tag_ids: [3, 4, 5, 6, 7]
 ) # 11
