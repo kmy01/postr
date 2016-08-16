@@ -5,7 +5,6 @@ module.exports = {
       method: 'POST',
       data: { user: userData },
       success(resp) {
-        console.log('success Sign up');
         successCb(resp);
       },
       error(resp) {
@@ -20,7 +19,6 @@ module.exports = {
       method: 'POST',
       data: { user: userData },
       success(resp) {
-        console.log('success Log in');
         successCb(resp);
       },
       error(resp) {
@@ -34,7 +32,6 @@ module.exports = {
       url: '/api/session',
       method: 'DELETE',
       success(resp) {
-        console.log('success Log out');
         successCb(resp);
       },
       error(resp) {
