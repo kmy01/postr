@@ -12,6 +12,7 @@
   float: left;
   cursor: pointer;
   padding-right: 16px;
+  line-height: 20px;
 }
 
 .search-bar {
@@ -28,27 +29,54 @@
   cursor: pointer;
 }
 
+.nav-list > li > a {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
 .nav-list > li {
   float: left;
   padding: 0 16px;
 }
 
 .nav-list >li:last-child {
-  padding: 0 0 0 16px;
+  padding: 0;
+  margin: 0 16px;
 }
 
-.account {
+.nav-icon {
+  background-size: 100% 100%;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+.home-nav {
+  background: image-url('icons/home.svg') no-repeat;
+  background-size: 100% 100%;
+}
+
+.explore-nav {
+  background: image-url('icons/explore.svg') no-repeat;
+  background-size: 100% 100%;
+}
+
+.account-nav {
+  background: image-url('icons/account.svg') no-repeat;
+  background-size: 100% 100%;
   position: relative;
 }
 
-.account:hover .account-list {
+.account-nav:hover .account-list {
   display: block;
 }
 
 .account-list {
   display: none;
   position: absolute;
-  left: -16px;
+  top: 20px;
+  left: -30px;
   white-space: nowrap;
   float: right;
   background: #fff;

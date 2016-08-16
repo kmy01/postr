@@ -33,10 +33,13 @@ module.exports = React.createClass({
         <div className='logo'><a href='/'>postr</a></div>
 
         <ul className='nav-list'>
-          <li><a href='/dashboard'>Home</a></li>
-          <li><a href='/explore'>Explore</a></li>
-          <li className='account'>
-            <div>Account</div>
+          <li className='nav-icon home-nav'>
+            <a href='/dashboard'></a>
+          </li>
+          <li className='nav-icon explore-nav'>
+            <a href='/explore'></a>
+          </li>
+          <li className='nav-icon account-nav'>
             <ul className='account-list'>
               <li>{ SessionStore.currentUser().username }</li>
               <li><a href='/likes'>Likes</a></li>
