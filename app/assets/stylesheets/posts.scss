@@ -1,7 +1,3 @@
-// Place all the styles related to the api/posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 .post-feed {
   width: 620px;
   margin: 0 auto;
@@ -28,13 +24,8 @@
   float: left;
   color: #b2b2b2;
   font-weight: 500;
-  cursor: default; //remove link when user link has been implemented
+  cursor: default;
 }
-// comment back in when user link has been implemented
-// .post-feed-item-header > a:hover {
-//   float: left;
-//   color: #808080;
-// }
 
 .post-header-follow {
   float: right;
