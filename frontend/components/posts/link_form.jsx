@@ -11,14 +11,6 @@ module.exports = React.createClass({
     };
   },
 
-  componentDidMount() {
-    //store listener
-  },
-
-  componentWillUnmount() {
-    //remove listeners
-  },
-
   _onSubmit(e) {
     e.preventDefault();
     const postData = new FormData();
