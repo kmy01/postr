@@ -1,6 +1,5 @@
 json.id post.id
 json.post_type post.post_type
-# json.author post.author
 
 json.author do
   json.id post.author.id
