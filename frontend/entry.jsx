@@ -46,14 +46,3 @@ document.addEventListener('DOMContentLoaded', () => {
   Modal.setAppElement(document.body);
   ReactDOM.render(router, document.getElementById('root'));
 });
-
-// const SessionApiUtil = require('./util/session_api_util');
-// window.SessionApiUtil = SessionApiUtil;
-
-// const SessionActions = require('./actions/session_actions');
-// window.SessionActions = SessionActions;
-
-// const PostActions = require('./actions/post_actions');
-// const PostStore = require('./stores/post_store');
-// window.PostStore = PostStore;
-// window.PostActions = PostActions;
