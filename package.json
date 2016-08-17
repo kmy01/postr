@@ -1,7 +1,7 @@
 {
-  "name": "postr_capstone",
+  "name": "postr",
   "version": "1.0.0",
-  "description": "[Heroku link][heroku] **Note:** This should be a link to your production site",
+  "description": "[Heroku link][heroku] post-kmy.herokuapp.com",
   "main": "index.js",
   "directories": {
     "doc": "docs",
@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "./node_modules/.bin/webpack",
+    "heroku-postbuild": "webpack --config webpack.config.prod.js",
     "webpack": "webpack --watch"
   },
   "keywords": [],
