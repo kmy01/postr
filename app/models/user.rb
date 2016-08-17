@@ -25,7 +25,6 @@ class User < ActiveRecord::Base
     through: :likes,
     source: :post
 
-  # associations for when the user is the follower
   has_many :follower_follows,
     class_name: 'Follow',
     foreign_key: :follower_id,
@@ -35,7 +34,6 @@ class User < ActiveRecord::Base
     through: :follower_follows,
     source: :followee
 
-  # associations for when the user is the followee
   has_many :followee_follows,
     class_name: 'Follow',
     foreign_key: :followee_id,

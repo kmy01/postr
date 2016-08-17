@@ -27,7 +27,6 @@ class Post < ActiveRecord::Base
     through: :taggings,
     source: :tag
 
-  # has_attached_file :media_content, default_url: "/images/:style/missing.png"
   has_attached_file :media_content
   validates_attachment_content_type :media_content,
     content_type: ['image/jpeg','image/png','audio/mpeg','audio/x-m4a','video/mp4','video/avi']
