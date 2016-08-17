@@ -1,5 +1,4 @@
 class Api::LikesController < ApplicationController
-  # before action stuff goes here
   def index
     @likes = Like.all
   end
