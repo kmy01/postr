@@ -8,9 +8,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "heroku-postbuild": "webpack --config webpack.config.prod.js",
-    "webpack": "webpack --watch"
   },
   "keywords": [],
   "author": "",
