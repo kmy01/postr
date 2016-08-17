@@ -8,7 +8,7 @@
     "test": "test"
   },
   "scripts": {
-    "heroku-postbuild": "webpack --config webpack.config.prod.js",
+    "heroku-postbuild": "webpack --config webpack.config.prod.js"
   },
   "keywords": [],
   "author": "",
