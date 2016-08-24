@@ -222,7 +222,7 @@ module.exports = React.createClass({
           src={author.avatar_url} />
         <div className='post-feed-item'>
           <div className='post-feed-item-header group'>
-            <a href='#'>{ author.username }</a>
+            <span>{ author.username }</span>
             <button
               className='post-header-follow'
               onClick={this._handleFollow}>{ this._followText() }</button>

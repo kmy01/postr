@@ -222,7 +222,7 @@ module.exports = React.createClass({
             <img
               className='explore-avatar'
               src={author.avatar_url} />
-            <a href='#'>{ author.username }</a>
+            <span>{ author.username }</span>
             <button
               className='explore-header-follow'
               onClick={this._handleFollow}>{ this._followText() }</button>
