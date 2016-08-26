@@ -2,7 +2,7 @@
 
 [Live][heroku]
 
-[heroku]: www.postrblog.tech
+[heroku]: http://www.postrblog.tech
 
 Postr is a full-stack web application inspired by Tumblr.  It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Flux architectural framework on the frontend.  
 
