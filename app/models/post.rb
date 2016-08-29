@@ -29,8 +29,8 @@ class Post < ActiveRecord::Base
 
   has_attached_file :media_content
   validates_attachment_content_type :media_content,
-    content_type: ['image/jpeg','image/png','audio/mpeg','audio/x-m4a','video/mp4','video/avi']
+    content_type: ['image/jpeg','image/png','audio/mpeg', 'audio/x-mpeg', 'audio/mp3', 'audio/x-mp3', 'audio/mpeg3', 'audio/x-mpeg3', 'audio/mpg', 'audio/x-mpg', 'audio/x-mpegaudio', 'audio/x-m4a', 'audio/wav', 'video/mp4','video/avi']
   validates_attachment_file_name :media_content,
-    matches: [/png\Z/i, /jpe?g\Z/i, /m4a\Z/i, /mp3\Z/i, /mp4\Z/i, /avi\Z/i]
+    matches: [/png\Z/i, /jpe?g\Z/i, /m4a\Z/i, /wav\Z/i, /mp3\Z/i, /mp4\Z/i, /avi\Z/i]
 
 end
