@@ -59,7 +59,7 @@
   background-size: 100% 100%;
 }
 
-.photo-post, .audio-post, .video-post {
+.audio-post, .video-post {
   width: 100%;
   height: auto;
 }
@@ -76,7 +76,10 @@
 }
 
 .photo-post {
-  padding-top: 5px;
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .link-post {
