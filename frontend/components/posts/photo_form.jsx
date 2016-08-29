@@ -46,19 +46,29 @@ module.exports = React.createClass({
         mediaFile: file,
         photoUrl: fileReader.result
       });
+
+      let height = document.getElementsByClassName('preview')[0].clientHeight;
+      if (height > 405) height = 405;
+      this.props._changeHeight(241 + height);
     };
 
     if (file) {
       fileReader.readAsDataURL(file);
     }
-    this.props._changeHeight('646px');
   },
 
   _onUrlChange(e) {
     e.preventDefault();
+
+    let preview = new Image();
+    preview.addEventListener("load", () => {
+      let height = document.getElementsByClassName('preview')[0].clientHeight;
+      if (height > 405) height = 405;
+      this.props._changeHeight(241 + height);
+    }, false);
+    preview.src = e.target.value;
+
     this.setState({ photoUrl: e.target.value })
-    this.props._changeHeight('646px');
-    //listen for idle?
   },
 
   _onTagChange(e) {
@@ -67,9 +77,11 @@ module.exports = React.createClass({
 
   _renderPreview() {
     if (this.state.photoUrl) {
-      return <img
-        className="preview"
-        src={this.state.photoUrl} />;
+      return (
+        <img
+          className="preview"
+          src={this.state.photoUrl} />
+      );
     }
   },
 

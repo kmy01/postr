@@ -1,6 +1,7 @@
 .preview {
   margin: 0 auto;
-  height: 405px;
+  max-height: 405px;
+  max-width: 100%;
   border: none;
   display: block;
 }
