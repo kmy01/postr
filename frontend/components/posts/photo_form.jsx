@@ -19,7 +19,9 @@ module.exports = React.createClass({
     postData.append('post[post_type]', 'photo');
     postData.append('post[body]', this.state.body);
     postData.append('post[media_content]', this.state.mediaFile);
-    postData.append('post[photo_url]', this.state.photoUrl);
+    if (this.state.photoUrl !== '') {
+       postData.append('post[photo_url]', this.state.photoUrl);
+    }
     postData.append('tags', this.state.tags);
 
     PostActions.createPost(postData);
