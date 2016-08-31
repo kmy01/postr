@@ -5,7 +5,14 @@ class Api::PostsController < ApplicationController
     elsif params[:pathname] == 'likes'
       @posts = User.find(current_user.id).liked_posts
     else
-      @posts = Post.where.not('author_id = ?', current_user.id).joins(author: :followers).where.not("follower_id = ?", current_user.id)
+      followees = '('
+      User.find(current_user.id).followees.each do |user|
+        followees += "#{user.id},"
+      end
+
+      exclusions = followees + "#{current_user.id})"
+      @posts = Post.where.not("posts.author_id IN #{exclusions}")
+                   .includes(:likes, :tags)
     end
   end
 
