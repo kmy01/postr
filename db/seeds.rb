@@ -134,7 +134,7 @@ Post.create!(
 Post.create!(
   post_type: 'audio',
   author_id: 2,
-  audio_url: 'https://s3.amazonaws.com/postr-dev/posts/media_contents/000/000/019/original/laurabrehm.m4a',
+  audio_url: 'http://s3.amazonaws.com/postr-pro/posts/media_contents/000/000/030/original/laurabrehm.m4a?1472757755',
   body: 'AK, Brenton Mattheus & Laura Brehm - Falling',
   tag_ids: [1, 2]
 ) # 14
