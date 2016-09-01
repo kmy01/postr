@@ -4,6 +4,8 @@ User.create!(username: 'earth', password: 'password123')
 User.create!(username: 'allthingsaboutcars', password: 'password123')
 User.create!(username: 'petspetspets', password: 'password123')
 User.create!(username: 'guest', password: 'password123')
+User.create!(username: 'homedesign', password: 'password123')
+User.create!(username: 'consumerTech', password: 'password123')
 
 Tag.create(name: 'music') # 1
 Tag.create(name: 'edm') # 2
@@ -18,6 +20,13 @@ Tag.create(name: 'rants') # 10
 Tag.create(name: 'pets') # 11
 Tag.create(name: 'cute') # 12
 Tag.create(name: 'adventure') # 13
+Tag.create(name: 'home') #14
+Tag.create(name: 'design') #15
+Tag.create(name: 'electronics') #16
+Tag.create(name: 'tech') #17
+Tag.create(name: 'gadgets') #18
+Tag.create(name: 'food') #19
+
 
 Post.create!(
   post_type: 'text',
@@ -78,8 +87,8 @@ Post.create!(
 Post.create!(
 post_type: 'photo',
 author_id: 4,
-photo_url: 'http://hdwallnpics.com/wp-content/gallery/pictures-of-cars-the-movie/13reel_phototawneer.jpg',
-body: 'Cars - Lightning McQueen',
+photo_url: 'http://st.motortrend.com/uploads/sites/5/2015/10/2016-BMW-M2-Coupe-front-three-quarter-04.jpg',
+body: 'BMW M2',
 tag_ids: [8, 9, 12]
 ) # 8
 
@@ -160,7 +169,85 @@ Post.create!(
   photo_url: 'https://img.buzzfeed.com/buzzfeed-static/static/2014-11/10/16/enhanced/webdr07/edit-11431-1415655953-15.jpg?no-auto',
   body: 'Cute Hedge Hog',
   tag_ids: [11, 12]
-) # 15
+) # 18
+
+Post.create!(
+  post_type: 'link',
+  author_id: 8,
+  link_url: 'http://arstechnica.com/gadgets/2016/09/intel-quietly-releases-apollo-lake-new-low-cost-chips-for-cheap-pcs/',
+  tag_ids: [15, 16, 17]
+) # 19
+
+Post.create!(
+  post_type: 'photo',
+  author_id: 7,
+  photo_url: 'http://media.interiordesign.net.s3.amazonaws.com/West-Elm-Workspace-1-Mid-Century.jpg',
+  body: 'Home Office',
+  tag_ids: [14, 15]
+) # 20
+
+Post.create!(
+  post_type: 'link',
+  author_id: 1,
+  link_url: 'http://arstechnica.com/science/2016/09/spacexs-falcon-9-rocket-apparently-blew-up-during-a-test-firing-thursday/',
+  tag_ids: [17]
+) # 21
+
+Post.create!(
+  post_type: 'photo',
+  author_id: 8,
+  photo_url: 'http://i.amz.mshcdn.com/Rz-FNT8ZevjX-zE_dRpXgyzQi2o=/950x534/https%3A%2F%2Fblueprint-api-production.s3.amazonaws.com%2Fuploads%2Fcard%2Fimage%2F196254%2Fasus-zenbook3-thumb.jpg',
+  body: 'New Asus Zenbook 3',
+  tag_ids: [15,16, 17, 18]
+) # 22
+
+Post.create!(
+  post_type: 'photo',
+  author_id: 7,
+  photo_url: 'http://cdn.home-designing.com/wp-content/uploads/2009/07/living-room-interior-design.jpg',
+  body: 'Modern Home design',
+  tag_ids: [14, 15]
+) # 23
+
+Post.create!(
+  post_type: 'photo',
+  author_id: 1,
+  photo_url: 'http://allthingsruby101.weebly.com/uploads/2/9/4/8/29483869/7680799_orig.jpg',
+  body: 'Puppy with glasses!',
+  tag_ids: [4, 12]
+) # 24
+
+Post.create!(
+  post_type: 'video',
+  author_id: 2,
+  video_url: 'https://www.youtube.com/embed/PT2_F-1esPk',
+  body: 'The Chainsmokers - Closer ft. Halsey',
+  tag_ids: [1, 2]
+) # 25
+
+Post.create!(
+  post_type: 'photo',
+  author_id: 8,
+  photo_url: 'http://www.samsung.com/global/galaxy/galaxy-note7/images/galaxy-note7_highlights_kv.jpg',
+  body: 'Samsung Note 7',
+  tag_ids: [15,16, 17, 18]
+) # 26
+
+Post.create!(
+  post_type: 'photo',
+  author_id: 1,
+  photo_url: 'http://getbento.imgix.net/accounts/a28dc4cd5a54613bcf0768489248ab80/media/images/9902BURNER3-articleLarge.jpg?w=1920&fit=crop&auto=compress,format&h=900',
+  body: 'Dough Doughnuts. So Good!',
+  tag_ids: [19]
+) # 27
+
+Post.create!(
+  post_type: 'photo',
+  author_id: 3,
+  photo_url: 'http://mattmacpherson.com/new003.jpg',
+  body: 'Stunning!',
+  tag_ids: [3, 4, 5, 7]
+) # 28
 
 Like.create(post_id: 14, user_id: 1)
 Like.create(post_id: 10, user_id: 1)
@@ -180,6 +267,9 @@ Like.create(post_id: 13, user_id: 5)
 Like.create(post_id: 11, user_id: 6)
 Like.create(post_id: 6, user_id: 6)
 Like.create(post_id: 10, user_id: 6)
+Like.create(post_id: 2, user_id: 6)
+Like.create(post_id: 5, user_id: 6)
+
 
 Follow.create(followee_id: 2, follower_id: 1)
 Follow.create(followee_id: 3, follower_id: 1)
