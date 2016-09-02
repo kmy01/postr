@@ -14,20 +14,20 @@ module.exports = React.createClass({
   },
 
   getInitialState() {
-    return({ liked_posts: SessionStore.currentUser().liked_posts });
+    return({ liked_posts: PostStore.all() });
   },
 
   componentDidMount() {
-    this.listener = SessionStore.addListener(this._onChange);
+    this.postListener = PostStore.addListener(this._onPostChange);
     PostActions.fetchAllPosts('likes');
   },
 
   componentWillUnmount() {
-    this.listener.remove();
+    this.postListener.remove();
   },
 
-  _onChange() {
-    this.setState({ liked_posts: SessionStore.currentUser().liked_posts });
+  _onPostChange() {
+    this.setState({ liked_posts: PostStore.all() });
   },
 
   render() {
