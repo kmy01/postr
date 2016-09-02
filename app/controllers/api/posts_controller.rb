@@ -3,7 +3,7 @@ class Api::PostsController < ApplicationController
     if params[:pathname] == 'dashboard'
       @posts = Post.joins(author: :followers).where("follower_id = ? OR author_id = ?", current_user.id, current_user.id).includes(:likes, :tags)
     elsif params[:pathname] == 'likes'
-      @posts = User.find(current_user.id).liked_posts
+      @posts = Post.joins(:likes).where("user_id = ?", current_user.id)
     else
       followees = '('
       User.find(current_user.id).followees.each do |user|
