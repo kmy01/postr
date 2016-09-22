@@ -1,11 +1,43 @@
+music_icon = File.open('app/assets/images/avatars/musiclife.jpg')
+earth_icon = File.open('app/assets/images/avatars/earth.png')
+cars_icon = File.open('app/assets/images/avatars/allthingsaboutcars.gif')
+pets_icon = File.open('app/assets/images/avatars/petspetspets.jpeg')
+home_icon = File.open('app/assets/images/avatars/homedesign.jpg')
+tech_icon = File.open('app/assets/images/avatars/consumertech.png')
+
+
 User.create!(username: 'kmy', password: 'password123')
-User.create!(username: 'musiclife', password: 'password123')
-User.create!(username: 'earth', password: 'password123')
-User.create!(username: 'allthingsaboutcars', password: 'password123')
-User.create!(username: 'petspetspets', password: 'password123')
+User.create!(
+  username: 'musiclife',
+  password: 'password123',
+  avatar: music_icon
+)
+User.create!(
+  username: 'earth',
+  password: 'password123',
+  avatar: earth_icon
+)
+User.create!(
+  username: 'allthingsaboutcars',
+  password: 'password123',
+  avatar: cars_icon
+)
+User.create!(
+  username: 'petspetspets',
+  password: 'password123',
+  avatar: pets_icon
+)
 User.create!(username: 'guest', password: 'password123')
-User.create!(username: 'homedesign', password: 'password123')
-User.create!(username: 'consumerTech', password: 'password123')
+User.create!(
+  username: 'homedesign',
+  password: 'password123',
+  avatar: home_icon
+)
+User.create!(
+  username: 'consumerTech',
+  password: 'password123',
+  avatar: tech_icon
+)
 
 Tag.create(name: 'music') # 1
 Tag.create(name: 'edm') # 2
