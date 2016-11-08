@@ -1,0 +1,43 @@
+.main-buttons {
+  width: 300px;
+  height: 50px;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 2px;
+}
+
+.main-buttons:hover {
+  cursor: pointer;
+}
+
+.main-signup-button {
+  background-color: #529ecc;
+  border-radius: 2px;
+}
+
+.main-login-button {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+}
+
+.guest-button {
+  background-color: #d1a799;
+}
+
+.sub-buttons {
+  float: right;
+  margin-top: 15px;
+  margin-right: 25px;
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 65px;
+  height: 35px;
+  text-align: center;
+  border-radius: 2px;
+  font-weight: bold;
+}
+
+.sub-buttons:hover {
+  cursor: pointer;
+}

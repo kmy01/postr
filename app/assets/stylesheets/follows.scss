@@ -1,0 +1,61 @@
+.follows-feed {
+  margin: 0 auto;
+  width: 620px;
+}
+
+.follows-container {
+  margin-left: 80px;
+  width: 500px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  color: #444;
+}
+
+.follows-title {
+  padding-bottom: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.followee-item {
+  padding: 10px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  line-height: 40px;
+}
+
+.followee-avatar {
+  float: left;
+  width: 40px;
+  height: 40px;
+}
+
+.followee-link {
+  float: left;
+  padding-left: 10px;
+  color: #444;
+  font-weight: bold;
+}
+
+.unfollow-button-wrapper {
+  float: right;
+}
+
+.unfollow-button {
+  box-sizing: border-box;
+  vertical-align: middle;
+  cursor: pointer;
+  line-height: 30px;
+  width: 85px;
+  height: 30px;
+  border: solid 1px #bfbfbf;
+  border-radius: 2px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+  color: rgba(0,0,0,0.6);
+}
+
+.unfollow-button:hover {
+  background: rgba(0,0,0,0.10);
+}

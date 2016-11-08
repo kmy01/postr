@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="60"
+   height="60"
+   viewBox="0 0 60.000001 60.000001"
+   id="svg6417"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="upload.svg">
+  <defs
+     id="defs6419" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8"
+     inkscape:cx="200.77093"
+     inkscape:cy="11.671472"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata6422">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-992.36216)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1000%;font-family:sans-serif;letter-spacing:25px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="17.857143"
+       y="1041.1122"
+       id="text6965"
+       sodipodi:linespacing="1000%"><tspan
+         sodipodi:role="line"
+         id="tspan6967"
+         x="17.857143"
+         y="1041.1122" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:11.25px;line-height:1000%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       x="28.789349"
+       y="978.62103"
+       id="text6973"
+       sodipodi:linespacing="1000%"><tspan
+         sodipodi:role="line"
+         id="tspan6975"
+         x="28.789349"
+         y="978.62103" /></text>
+    <g
+       id="g6989"
+       transform="translate(-95.535713,-0.88122558)">
+      <text
+         sodipodi:linespacing="1000%"
+         id="text6969"
+         y="1026.0981"
+         x="115.034"
+         style="font-style:normal;font-weight:normal;font-size:40px;line-height:1000%;font-family:sans-serif;letter-spacing:25px;word-spacing:0px;fill:#cccccc;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:35px;font-family:'Bookman Old Style';-inkscape-font-specification:'Bookman Old Style Semi-Bold';fill:#cccccc"
+           y="1026.0981"
+           x="115.034"
+           id="tspan6971"
+           sodipodi:role="line">+</tspan></text>
+      <text
+         sodipodi:linespacing="0%"
+         id="text6977"
+         y="1025.9784"
+         x="103.30671"
+         style="font-style:normal;font-weight:normal;font-size:11.25px;line-height:0%;font-family:sans-serif;letter-spacing:25px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="line-height:100%;letter-spacing:0px"
+           y="1025.9784"
+           x="103.30671"
+           id="tspan6979"
+           sodipodi:role="line" /><tspan
+           id="tspan6983"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:12.5px;line-height:100%;font-family:'Bookman Old Style';-inkscape-font-specification:'Bookman Old Style Semi-Bold';letter-spacing:0px;fill:#cccccc"
+           y="1037.9521"
+           x="103.30671"
+           sodipodi:role="line">Upload</tspan><tspan
+           id="tspan6981"
+           style="letter-spacing:0px"
+           y="1050.4521"
+           x="103.30671"
+           sodipodi:role="line" /></text>
+    </g>
+  </g>
+</svg>

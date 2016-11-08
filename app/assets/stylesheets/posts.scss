@@ -1,0 +1,112 @@
+.post-feed {
+  width: 620px;
+  margin: 0 auto;
+}
+
+.post-container {
+  margin-bottom: 20px;
+}
+
+.post-feed-item {
+  float: right;
+  background: white;
+  color: #444;
+  width: 540px;
+  border-radius: 3px;
+}
+
+.post-feed-item-header {
+  padding: 15px 20px;
+  font-size: 13px;
+}
+
+.post-feed-item-header > span {
+  float: left;
+  color: #b2b2b2;
+  font-weight: 500;
+  cursor: default;
+}
+
+.post-header-follow {
+  float: right;
+  color: #529ecc;
+  cursor: pointer;
+}
+
+.post-header-follow:hover {
+  color: #5280cc;
+}
+
+.post-feed-item-content {
+}
+
+.post-feed-item-footer {
+  padding: 15px 20px;
+}
+
+.like-button {
+  background: image-url('icons/heart.svg') no-repeat;
+  background-size: 100% 100%;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  float: right;
+  cursor: pointer;
+}
+
+.like-fill {
+  background: image-url('icons/heart-fill.svg') no-repeat;
+  background-size: 100% 100%;
+}
+
+.audio-post, .video-post {
+  width: 100%;
+  height: auto;
+}
+
+.post-body {
+  padding: 15px 20px 0 20px;
+  color: #444;
+  font-size: 14px;
+}
+
+.text-post-title{
+  padding: 5px 20px 0 20px;
+  font-size: 36px;
+}
+
+.photo-post {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.link-post {
+  padding: 5px 20px 0 20px;
+  font-size: 24px;
+  word-wrap: break-word;
+}
+
+.audio-post {
+  padding-top: 5px;
+  height: 25px;
+}
+
+.video-post {
+  padding-top: 5px;
+}
+
+.post-feed-tags {
+  padding: 10px 20px 0 20px;
+  color: #b2b2b2;
+}
+
+.post-feed-tags > li {
+  display: inline;
+  padding-right: 5px;
+}
+
+.post-feed-tags > li:hover {
+  color: #808080;
+}
