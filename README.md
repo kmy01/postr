@@ -47,3 +47,7 @@ Searching will allow users to search the database for keywords which will check 
 ### Reblogging
 
 This feature will allow users to reblog another user's post. This will create a new post that is associated to the original post.
+
+### Pagination
+
+Pagination of the dashboard, likes, and explore to handle posts entries in groups to reduce load.
