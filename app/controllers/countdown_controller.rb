@@ -1,10 +1,15 @@
 class CountdownController < ApplicationController
+  skip_before_action :verify_authenticity_token
+  before_action :verify_token
+
   def countdown
-    logger.info params
-    json_body = {
-      bot_id: ENV['groupme_bot'],
-      text: "I received it!"
-    }
-    HTTP.post(ENV['groupme_endpoint'], json: json_body)
+    bot = CountdownBot.new(params[:text])
+    bot.countdown if bot.asking_for_countdown?
+  end
+
+  private
+
+  def verify_token
+    params[:token] == ENV['token']
   end
 end
