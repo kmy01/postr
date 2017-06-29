@@ -10,5 +10,7 @@ Rails.application.routes.draw do
     resources :tags, only: [:index]
   end
 
+  post '/countdown', to: 'countdown#countdown'
+
   get '*path', to: 'static_pages#root'
 end
