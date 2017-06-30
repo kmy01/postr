@@ -1,7 +1,7 @@
 json.extract! user, :username, :id
 json.avatar_url asset_path(user.avatar.url)
 
-json.liked_posts user.liked_posts
+# json.liked_posts user.liked_posts
 
 json.liked_posts do
   json.array! user.liked_posts do |post|
