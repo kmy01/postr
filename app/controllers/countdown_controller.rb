@@ -4,7 +4,7 @@ class CountdownController < ApplicationController
 
   def countdown
     bot = CountdownBot.new(params[:text])
-    bot.countdown if bot.asking_for_countdown?
+    bot.process!
   end
 
   private
