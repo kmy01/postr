@@ -1,22 +1,28 @@
 class CountdownBot
   attr_reader :message
-  FAKERS = %w[ Friends HarryPotter ].freeze
-  # FAKERS = %w[
-  #   Friends
-  #   HarryPotter
-  #   HeyArnold
-  #   Hobbit
-  #   HowIMetYourMother
-  #   HitchhikersGuideToTheGalaxy
-  #   LeagueOfLegends
-  #   Matz
-  #   Overwatch
-  #   RickAndMorty
-  #   Robin
-  #   RuPaul
-  #   StarWars
-  #   TwinPeaks
-  # ].freeze
+  FAKERS = %w[
+    DrWho
+    Friends
+    HarryPotter
+    HeyArnold
+    Hobbit
+    HowIMetYourMother
+    HitchhikersGuideToTheGalaxy
+    LeagueOfLegends
+    Matz
+    MostInterestingManInTheWorld
+    Overwatch
+    RickAndMorty
+    Robin
+    RuPaul
+    Seinfeld
+    Simpsons
+    StarWars
+    TheFreshPrinceOfBelAir
+    TwinPeaks
+    VentureBros
+    Witcher
+  ].freeze
 
   def initialize(message = '')
     @message = message.downcase
