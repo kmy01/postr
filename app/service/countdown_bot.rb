@@ -30,7 +30,7 @@ class CountdownBot
 
   def process!
     return unless message.include?('mcd')
-    return countdown if asking_for_countdown?
+    # return countdown if asking_for_countdown?
     return richness if asking_for_richness?
   end
 
